@@ -1,2 +1,2 @@
 # Web-Portofolio
-Ini adalah Web Portofolio saya yang berisi file project saya
+Ini adalah Web Portofolio saya. silahkan untuk melihat project saya
