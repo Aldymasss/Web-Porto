@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>✨ BabyPack Project ✨</title>
+    <!-- 👇 css code file 👇 -->
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <nav id="navbar" class="navibar">
+        <a href="#home" class="active">Home</a>
+        <a href="#About">About</a>
+        <a href="https://youtube.com/deaafrizal">Social Media</a>
+        <a href="javascript:void(0);" class="icon" onclick="showMobileNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="img/PXL_20231117_164716852.PORTRAIT.jpg" alt="Profile Banner" class="hero-img" />
+        <div class="hero-content">
+            <h1 class="brand-title">Dimas Aldi Pratama</h1>
+            <p class="brand-tagline">Building impactful digital experiences</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="About" class="about-section">
+        <h2>Tentang Saya</h2>
+        <p>Hi, I'm Dimas Aldi Pratama. Saya seorang Junior Web Developer yang antusias mempelajari teknologi baru dan membangun solusi digital yang berdampak. Saya memiliki minat pada pengembangan web modern, desain minimalis, dan selalu berusaha memberikan pengalaman pengguna terbaik melalui setiap project yang saya kerjakan.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="Projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-slider">
+            <div class="projects-grid slide-active">
+                <div class="project-card">
+                    <img src="img/p1.png" alt="Project 1" />
+                    <h3>BabyPack E-Commerce</h3>
+                    <p>Website toko online modern untuk perlengkapan bayi, dengan tampilan minimalis dan fitur keranjang belanja yang mudah digunakan.</p>
+                </div>
+                <div class="project-card">
+                    <img src="img/uas.png" alt="Project 2" />
+                    <h3>Absensi Mahasiswa</h3>
+                    <p>Aplikasi absensi berbasis web untuk mahasiswa, memudahkan pencatatan kehadiran dan rekap data secara otomatis.</p>
+                </div>
+                <div class="project-card">
+                    <img src="img/game.png" alt="Project 3" />
+                    <h3>Mini Game Platformer</h3>
+                    <p>Game platformer sederhana yang seru dimainkan, dibuat dengan HTML5 dan JavaScript untuk belajar logika pemrograman interaktif.</p>
+                </div>
+                                <div class="project-card">
+                    <img src="img/myweb.png" alt="Project 4" />
+                    <h3>Personal Web Portfolio</h3>
+                    <p>Website portofolio pribadi yang menampilkan karya, pengalaman, dan kontak, dengan desain profesional dan responsif.</p>
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="slideProjects(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="slideProjects(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contact" class="contact-section">
+        <h2>Contact</h2>
+        <p>Let's connect! <a href="aldytama2704@gmail.com">aldytama2704@gmail.com</a></p>
+    </section>
+    <!-- 👇 your content here 👇 -->
+    <!--👇 javascript code file 👇 -->
+    <script src="./main.js"></script>
+</body>
+</html>

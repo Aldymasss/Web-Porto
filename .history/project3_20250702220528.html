@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game Platformer - Detail Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar" class="navibar">
+        <a href="index.html">Home</a>
+        <a href="#About">About</a>
+        <a href="#Projects">Projects</a>
+    </nav>
+    <section class="about-section project-detail-section">
+        <h2>Mini Game Platformer</h2>
+        <div class="project-slider-detail">
+            <button class="slider-btn prev" onclick="slideDetailImages(-1)">&#10094;</button>
+            <div class="slider-images">
+                <img src="img/game/game.png" alt="Mini Game Platformer 1" class="detail-img active" />
+                <img src="img/game/1.png" alt="Mini Game Platformer 2" class="detail-img" />
+                <img src="img/game/2.png" alt="Mini Game Platformer 3" class="detail-img" />
+            </div>
+            <button class="slider-btn next" onclick="slideDetailImages(1)">&#10095;</button>
+        </div>
+        <p>Game platformer sederhana yang dibuat dengan HTML5 dan JavaScript. Dirancang untuk melatih logika pemrograman interaktif dan memberikan hiburan ringan bagi pengguna.</p>
+        <ul>
+            <li>Gameplay sederhana dan seru</li>
+            <li>Dibuat dengan HTML5 & JavaScript</li>
+            <li>Desain karakter dan level custom</li>
+            <li>Responsif di berbagai perangkat</li>
+        </ul><br>
+        <a href="index.html" class="btn">&#8592; Kembali ke Portofolio</a>
+        <a href="https://contoh-link-game.com" class="btn btn-link" target="_blank" rel="noopener">Lihat Website Project</a>
+    </section>
+    <script>
+    let currentDetail = 0;
+    function slideDetailImages(dir) {
+        const imgs = document.querySelectorAll('.detail-img');
+        imgs[currentDetail].classList.remove('active');
+        imgs[currentDetail].classList.remove('prev');
+        let prev = currentDetail;
+        currentDetail += dir;
+        if (currentDetail < 0) currentDetail = imgs.length - 1;
+        if (currentDetail >= imgs.length) currentDetail = 0;
+        imgs[prev].classList.add('prev');
+        imgs[currentDetail].classList.add('active');
+        setTimeout(() => {
+            imgs[prev].classList.remove('prev');
+        }, 500);
+    }
+    </script>
+</body>
+</html>
