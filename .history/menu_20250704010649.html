@@ -238,37 +238,39 @@
         header.classList.remove('scrolled');
       }
     });
-    // Slider logic untuk setiap section (modern, portofolio style)
+    // Slider logic untuk setiap section
     function createSectionSlider(sectionId) {
-      const slider = document.getElementById('slider-' + sectionId);
-      if (!slider) return;
-      const prevBtn = slider.querySelector('.slider-btn.prev');
-      const nextBtn = slider.querySelector('.slider-btn.next');
-      // Cari semua .projects-grid langsung di bawah slider (bisa 1 atau banyak per kategori)
-      const grids = slider.querySelectorAll('.projects-grid');
-      grids.forEach(grid => {
-        let current = 0;
-        const cards = grid.querySelectorAll('.project-card');
-        const cardsPerView = window.innerWidth < 700 ? 1 : 2;
-        function showSlide(idx) {
-          cards.forEach((card, i) => {
-            card.style.display = (i >= idx && i < idx+cardsPerView) ? 'flex' : 'none';
-          });
-        }
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      const slider = section.querySelector('.projects-slider');
+      const grid = slider.querySelector('.projects-grid');
+      const cards = grid.querySelectorAll('.project-card');
+      if (cards.length <= 2) return; // Tidak perlu slider jika card sedikit
+      let current = 0;
+      function showSlide(idx) {
+        cards.forEach((card, i) => {
+          card.style.display = (i >= idx && i < idx+2) ? 'flex' : 'none';
+        });
+      }
+      showSlide(current);
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'slider-btn prev';
+      prevBtn.innerHTML = '&#10094;';
+      prevBtn.onclick = () => {
+        current = (current - 2 + cards.length) % cards.length;
         showSlide(current);
-        prevBtn.addEventListener('click', () => {
-          current = (current - cardsPerView + cards.length) % cards.length;
-          showSlide(current);
-        });
-        nextBtn.addEventListener('click', () => {
-          current = (current + cardsPerView) % cards.length;
-          showSlide(current);
-        });
-        window.addEventListener('resize', () => {
-          showSlide(current);
-        });
-      });
+      };
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'slider-btn next';
+      nextBtn.innerHTML = '&#10095;';
+      nextBtn.onclick = () => {
+        current = (current + 2) % cards.length;
+        showSlide(current);
+      };
+      slider.appendChild(prevBtn);
+      slider.appendChild(nextBtn);
     }
+    // Inisialisasi slider di semua section
     ['menu','beverages','food'].forEach(createSectionSlider);
     </script>
 </body>
