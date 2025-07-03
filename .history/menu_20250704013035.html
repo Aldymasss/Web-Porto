@@ -330,57 +330,6 @@
       setTimeout(updateSlider, 100); // Initial update after render
     }
     createSectionSlider('menu');
-    // Multi-slider logic untuk semua slider di halaman
-    function createSectionSliderById(sliderId) {
-      const slider = document.getElementById(sliderId);
-      if (!slider) return;
-      const prevBtn = slider.querySelector('.slider-btn.prev');
-      const nextBtn = slider.querySelector('.slider-btn.next');
-      const grid = slider.querySelector('.projects-grid');
-      const cards = grid.querySelectorAll('.project-card');
-      let current = 0;
-      function getCardsPerView() {
-        return window.innerWidth < 700 ? 1 : 2;
-      }
-      function updateSlider() {
-        const cardsPerView = getCardsPerView();
-        const maxIndex = Math.max(0, cards.length - cardsPerView);
-        if(current > maxIndex) current = maxIndex;
-        const cardWidth = cards[0].offsetWidth + 32; // 32px gap
-        grid.style.transform = `translateX(-${current * cardWidth}px)`;
-      }
-      prevBtn.addEventListener('click', () => {
-        current = Math.max(0, current - getCardsPerView());
-        updateSlider();
-      });
-      nextBtn.addEventListener('click', () => {
-        const cardsPerView = getCardsPerView();
-        const maxIndex = Math.max(0, cards.length - cardsPerView);
-        current = Math.min(maxIndex, current + cardsPerView);
-        updateSlider();
-      });
-      window.addEventListener('resize', updateSlider);
-      setTimeout(updateSlider, 100);
-    }
-    // Inisialisasi semua slider di halaman
-    [
-      'slider-menu',
-      'slider-beverages-hot',
-      'slider-beverages-icedtea',
-      'slider-beverages-icedcoffee',
-      'slider-beverages-shakes',
-      'slider-beverages-mocktail',
-      'slider-beverages-icecream',
-      'slider-beverages-others',
-      'slider-beverages-bottle',
-      'slider-food-roti',
-      'slider-food-bakery',
-      'slider-food-gakbikin',
-      'slider-food-nasi',
-      'slider-food-tanpanasi',
-      'slider-food-mie',
-      'slider-food-tambahan',
-    ].forEach(createSectionSliderById);
     </script>
 </body>
 </html>
