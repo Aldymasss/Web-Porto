@@ -546,7 +546,7 @@ body.dark-mode .contact-card {
     margin-bottom: 32px;
 }
 .social-card {
-    background: var(--card-bg-light);
+    background: #23272f;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     padding: 32px 24px 28px 24px;
@@ -558,8 +558,9 @@ body.dark-mode .contact-card {
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
 }
-body.dark-mode .social-card {
-    background: var(--card-bg-dark);
+.social-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(225,29,72,0.18);
 }
 .social-icon-bg {
     width: 64px;

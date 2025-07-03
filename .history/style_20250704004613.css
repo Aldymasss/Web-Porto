@@ -402,7 +402,7 @@ nav#navbar, nav.navibar {
     margin: 64px 0 32px 0;
 }
 .about-card {
-    background: var(--card-bg-light);
+    background: #23272f;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     padding: 32px 32px 24px 32px;
@@ -412,9 +412,6 @@ nav#navbar, nav.navibar {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-body.dark-mode .about-card {
-    background: var(--card-bg-dark);
 }
 .about-avatar {
     width: 110px;
@@ -468,7 +465,7 @@ body.dark-mode .about-card {
     margin: 0 0 48px 0;
 }
 .contact-card {
-    background: var(--card-bg-light);
+    background: #23272f;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     padding: 32px 32px 28px 32px;
@@ -479,9 +476,6 @@ body.dark-mode .about-card {
     flex-direction: column;
     align-items: center;
     margin-top: 0;
-}
-body.dark-mode .contact-card {
-    background: var(--card-bg-dark);
 }
 .contact-card h3 {
     color: #2563eb;
@@ -546,7 +540,7 @@ body.dark-mode .contact-card {
     margin-bottom: 32px;
 }
 .social-card {
-    background: var(--card-bg-light);
+    background: #23272f;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     padding: 32px 24px 28px 24px;
@@ -558,8 +552,9 @@ body.dark-mode .contact-card {
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
 }
-body.dark-mode .social-card {
-    background: var(--card-bg-dark);
+.social-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(225,29,72,0.18);
 }
 .social-icon-bg {
     width: 64px;
