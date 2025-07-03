@@ -18,18 +18,18 @@ body {
 header.navbar-container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.2rem 0 1.2rem 0;
+    margin-inline: auto;
+    padding-block: 1.2rem 0.7rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(34,34,34,0.98);
+    background: #23272f;
+    z-index: 9999;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    border-radius: 0 0 18px 18px;
-    transition: background 0.3s cubic-bezier(.77,0,.18,1);
+    left: 0;
+    transition: background 0.3s;
 }
 header.navbar-container .nav-list {
     display: flex;
@@ -40,7 +40,7 @@ header.navbar-container .nav-list {
 header.navbar-container .nav-list ul {
     display: flex;
     gap: 2.2rem;
-    padding: 0;
+    padding-left: 0;
     margin: 0;
     list-style: none;
 }
@@ -49,14 +49,14 @@ header.navbar-container .nav-list li {
 }
 header.navbar-container .nav-list li a {
     display: block;
-    padding: 0.6rem 2.2rem;
+    padding: 0.6rem 1.7rem;
     border-radius: 999px;
     text-decoration: none;
     font-size: 1.08rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #f2f2f2;
     background: transparent;
-    transition: background 0.25s cubic-bezier(.77,0,.18,1), color 0.25s cubic-bezier(.77,0,.18,1), transform 0.18s;
+    transition: background 0.25s, color 0.25s, transform 0.18s;
     position: relative;
 }
 header.navbar-container .nav-list li a.active,
@@ -65,7 +65,7 @@ header.navbar-container .nav-list li a:active {
     background: linear-gradient(90deg,#e11d48 60%,#be123c 100%);
     color: #fff;
     box-shadow: 0 2px 12px rgba(225,29,72,0.10);
-    transform: scale(1.07);
+    transform: scale(1.06);
 }
 header.navbar-container .nav-list li a:hover {
     background: #425c77;
@@ -76,16 +76,16 @@ header.navbar-container .nav-list li a:hover {
 /* Responsive Navbar */
 @media (max-width: 700px) {
     header.navbar-container .nav-list ul {
-        gap: 1.1rem;
+        gap: 0.7rem;
     }
     header.navbar-container .nav-list li a {
-        padding: 0.5rem 1.1rem;
+        padding: 0.5rem 1rem;
         font-size: 0.98rem;
     }
 }
 
-/* Hide old nav */
-nav#navbar, nav.navibar {
+/* Hide old nav style */
+nav, nav * {
     display: none !important;
 }
 
