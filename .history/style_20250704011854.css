@@ -233,9 +233,9 @@ nav#navbar, nav.navibar {
     gap: 1.5rem;
     margin-bottom: 1.5rem;
     margin-top: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
-    transition: none;
+    transition: transform 0.5s cubic-bezier(.77,0,.18,1);
 }
 slider-btn {
     background: var(--primary-color);
