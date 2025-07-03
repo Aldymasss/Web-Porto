@@ -236,9 +236,9 @@
         header.classList.remove('scrolled');
       }
     });
-    // Slider logic untuk section utama (Menu) saja
+    // Slider logic untuk section utama saja (Menu)
     function createSectionSlider(sectionId) {
-      if(sectionId !== 'menu') return; // Hanya slider di section utama
+      if(sectionId !== 'menu') return;
       const slider = document.getElementById('slider-' + sectionId);
       if (!slider) return;
       const prevBtn = slider.querySelector('.slider-btn.prev');
@@ -247,7 +247,6 @@
       let current = 0;
       const cards = grid.querySelectorAll('.project-card');
       const cardsPerView = window.innerWidth < 700 ? 1 : 2;
-      // Atur posisi absolute dan animasi smooth
       grid.style.position = 'relative';
       cards.forEach((card, i) => {
         card.style.position = 'absolute';
