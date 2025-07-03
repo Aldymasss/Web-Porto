@@ -67,16 +67,6 @@ header.navbar-container .nav-list ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    background: none;
-    color: inherit;
-    border-radius: 0;
-    box-shadow: none;
-    position: static;
-    flex-direction: row;
-    align-items: center;
-    z-index: auto;
-    width: auto;
-    transition: none;
 }
 header.navbar-container .nav-list li {
     list-style: none;
@@ -631,54 +621,41 @@ nav#navbar, nav.navibar {
 
 /* Burger menu dropdown (ul) styling by theme */
 header.navbar-container .nav-list ul {
-    display: flex;
-    gap: 2.2rem;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    background: none;
-    color: inherit;
-    border-radius: 0;
-    box-shadow: none;
-    position: static;
-    flex-direction: row;
-    align-items: center;
-    z-index: auto;
-    width: auto;
-    transition: none;
+    /* ...existing code... */
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 8px 32px rgba(92,105,75,0.10);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    display: none;
+    z-index: 1001;
+    padding: 1rem 0;
+    transition: background 0.3s;
 }
-@media (max-width: 900px) {
-    header.navbar-container .nav-list ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100vw;
-        border-radius: 0 0 18px 18px;
-        background: #fff;
-        color: var(--primary-color);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        display: none;
-        z-index: 1001;
-        padding: 1rem 0;
-        box-shadow: 0 8px 32px rgba(92,105,75,0.10);
-        transition: background 0.3s;
-    }
-    header.navbar-container .nav-list ul.open {
-        display: flex;
-    }
-    body.dark-mode header.navbar-container .nav-list ul {
-        background: #222222;
-        color: #fff;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    }
+header.navbar-container .nav-list ul.open {
+    display: flex;
 }
 body.dark-mode header.navbar-container .nav-list ul {
     background: #222222;
     color: #fff;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+header.navbar-container .nav-list ul li a {
+    color: var(--primary-color);
+    background: transparent;
+    padding: 1rem 2.2rem;
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+}
+body.dark-mode header.navbar-container .nav-list ul li a {
+    color: #fff;
 }
 
 @media (max-width: 900px) {
