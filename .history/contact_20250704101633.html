@@ -19,6 +19,9 @@
                 <li><a href="#" class="active">Contact</a></li>
             </ul>
         </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="slider-ball"><i class="fa fa-moon"></i></span>
+        </button>
     </header>
     <section class="about-section" style="margin-bottom:0;">
         <h2 style="text-align:center;color:#5C694B;">Contact Us</h2>
@@ -65,6 +68,28 @@
         </div>
     </section>
     <script>
+    // Theme toggle logic (slide switch)
+    const themeToggle = document.getElementById('themeToggle');
+    const sliderBall = themeToggle.querySelector('.slider-ball');
+    let dark = false;
+    function setTheme(isDark) {
+        dark = isDark;
+        if(dark) {
+            document.body.classList.add('dark-mode');
+            themeToggle.classList.add('active');
+            sliderBall.innerHTML = '<i class="fa fa-sun"></i>';
+            themeToggle.title = 'Mode Terang';
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeToggle.classList.remove('active');
+            sliderBall.innerHTML = '<i class="fa fa-moon"></i>';
+            themeToggle.title = 'Mode Gelap';
+        }
+    }
+    themeToggle.addEventListener('click', function() {
+        setTheme(!dark);
+    });
+    setTheme(false);
     // Burger menu logic
     const burger = document.querySelector('.burger');
     const navUl = document.querySelector('.nav-list ul');
