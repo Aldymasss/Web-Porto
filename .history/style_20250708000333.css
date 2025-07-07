@@ -268,7 +268,13 @@ header.navbar-container .nav-list li a:hover {
     max-width: 100%;
     width: 140px;
   }
-  @media (max-width: 900px) {
+  @media (min-width: 901px) {
+  header.navbar-container .nav-search-inline input[type="search"] {
+    width: 340px;
+    max-width: 480px;
+  }
+}
+@media (max-width: 900px) {
   header.navbar-container .nav-search-inline input[type="search"] {
     width: 140px;
     max-width: 90vw;
@@ -954,57 +960,4 @@ body.dark-mode .social-card p {
     transform: scale(1.01);
     box-shadow: 0 3px 16px rgba(44,48,60,0.15);
   }
-}
-
-/* ===== Burger Menu Responsive ===== */
-.burger {
-    display: none;
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px 0 rgba(92,105,75,0.13);
-    margin-left: auto;
-    margin-right: 0;
-    transition: background 0.2s, box-shadow 0.2s;
-}
-.burger span, .burger span:before, .burger span:after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 20px;
-    border-radius: 3px;
-    background: var(--primary-color);
-    transition: 0.3s;
-}
-.burger span {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.burger span:before {
-    position: absolute;
-    top: -8px;
-    left: 0;
-}
-.burger span:after {
-    position: absolute;
-    top: 8px;
-    left: 0;
-}
-.burger.active span {
-    background: transparent;
-}
-.burger.active span:before {
-    transform: translateY(8px) rotate(45deg);
-    background: var(--primary-color);
-}
-.burger.active span:after {
-    transform: translateY(-8px) rotate(-45deg);
-    background: var(--primary-color);
 }
