@@ -248,18 +248,18 @@
     </section>
     <script src="main.js"></script>
     <script>
-    // Burger menu logic versi portofolio
+    // Burger menu logic
     const burger = document.querySelector('.burger');
-    const navList = document.querySelector('.nav-list');
+    const navUl = document.querySelector('.nav-list ul');
     burger.addEventListener('click', function() {
       burger.classList.toggle('active');
-      navList.classList.toggle('open');
+      navUl.classList.toggle('open');
     });
     document.querySelectorAll('.nav-list ul li a').forEach(link => {
       link.addEventListener('click', function() {
         if(window.innerWidth <= 900) {
           burger.classList.remove('active');
-          navList.classList.remove('open');
+          navUl.classList.remove('open');
         }
       });
     });
