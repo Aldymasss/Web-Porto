@@ -1002,7 +1002,7 @@ body.dark-mode .social-card p {
 /* Enhanced Mobile Search */
 @media (max-width: 900px) {
   header.navbar-container .nav-search-inline {
-    display: flex !important;
+    display: none;
   }
   .burger {
     display: block !important;

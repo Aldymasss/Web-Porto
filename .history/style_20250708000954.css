@@ -306,7 +306,8 @@ header.navbar-container .nav-list li a:hover {
     text-align: left;
     width: 100%;
     display: block;
-  }  header.navbar-container .nav-search-inline {
+  }
+  header.navbar-container .nav-search-inline {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1002,7 +1003,7 @@ body.dark-mode .social-card p {
 /* Enhanced Mobile Search */
 @media (max-width: 900px) {
   header.navbar-container .nav-search-inline {
-    display: flex !important;
+    display: none;
   }
   .burger {
     display: block !important;
