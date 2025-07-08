@@ -1093,36 +1093,3 @@ body.dark-mode .social-card p {
     top: 44%;
   }
 }
-
-/* --- SLIDER ARROW COLOR ENHANCEMENT --- */
-.slider-btn {
-  background: #fff !important;
-  border: 1.5px solid var(--primary-color) !important;
-  box-shadow: 0 2px 8px rgba(44,48,60,0.10) !important;
-}
-.slider-btn i {
-  color: var(--primary-color) !important;
-  filter: none !important;
-}
-.slider-btn:hover, .slider-btn:focus {
-  background: #e6e9e0 !important;
-  border-color: #e11d48 !important;
-}
-.slider-btn:hover i, .slider-btn:focus i {
-  color: #e11d48 !important;
-}
-body.dark-mode .slider-btn {
-  background: #23272f !important;
-  border: 1.5px solid #fff !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important;
-}
-body.dark-mode .slider-btn i {
-  color: #fff !important;
-}
-body.dark-mode .slider-btn:hover, body.dark-mode .slider-btn:focus {
-  background: #181818 !important;
-  border-color: #e11d48 !important;
-}
-body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
-  color: #e11d48 !important;
-}
