@@ -1067,8 +1067,8 @@ body.dark-mode .social-card p {
 
 /* --- BURGER MENU BACKGROUND VISIBLE --- */
 .burger {
-  background: rgba(243, 244, 246, 0.927) !important;
+  background: rgba(44,48,60,0.18) !important;
 }
 .burger:hover, .burger:focus {
-  background: rgba(243, 243, 244, 0.979) !important;
+  background: rgba(44,48,60,0.28) !important;
 }

@@ -1064,11 +1064,3 @@ body.dark-mode .social-card p {
     height: 38px;
   }
 }
-
-/* --- BURGER MENU BACKGROUND VISIBLE --- */
-.burger {
-  background: rgba(243, 244, 246, 0.927) !important;
-}
-.burger:hover, .burger:focus {
-  background: rgba(243, 243, 244, 0.979) !important;
-}

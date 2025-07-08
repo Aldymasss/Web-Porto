@@ -215,34 +215,21 @@ header.navbar-container .nav-list li a:hover {
     position: relative;
     width: 38px;
     height: 38px;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    border-radius: 50%;
+    box-shadow: none;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
     order: 3;
-    align-self: center;
-    z-index: 1100;
-    top: 1px;
     transition: background 0.2s, box-shadow 0.2s;
-  }
-  .burger span {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 22px;
-    height: 2.5px;
-    background: #fff;
-    border-radius: 2px;
-    transform: translate(-50%, -50%);
-    box-shadow: none;
-    transition: all 0.3s cubic-bezier(.77,0,.18,1);
-  }
-  .burger.active span {
-    background: #fff;
+    align-self: center;
+    /* Fine-tune vertical alignment jika perlu */
+    top: 1px;
   }
   header.navbar-container .nav-list {
     position: fixed;
@@ -352,7 +339,7 @@ header.navbar-container .nav-list li a:hover {
     box-shadow: 0 2px 8px rgba(44,48,60,0.1);
   }
   .burger {
-    display: none !important;
+    display: transparent;
   }
   header.navbar-container .nav-list {
     position: static;
@@ -499,29 +486,54 @@ body.dark-mode .projects-slider {
   box-shadow: 0 4px 16px 0 rgba(92,105,75,0.13);
 }
 .slider-btn {
-    background: transparent !important;
-    color: var(--primary-color) !important;
-    border: 1.5px solid rgba(92,105,75,0.25) !important;
-    box-shadow: none !important;
+    background: rgba(255,255,255,0.9);
+    color: var(--primary-color);
+    border: 1px solid rgba(92,105,75,0.2);
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
     opacity: 0.85;
+    box-shadow: 0 2px 8px rgba(92,105,75,0.15);
     transition: all 0.2s cubic-bezier(.77,0,.18,1);
-    backdrop-filter: none !important;
+    backdrop-filter: blur(10px);
 }
 .slider-btn:hover {
-    background: rgba(92,105,75,0.08) !important;
-    color: var(--primary-color) !important;
+    background: rgba(255,255,255,1);
+    color: var(--primary-color);
     opacity: 1;
-    box-shadow: none !important;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 3px 12px rgba(92,105,75,0.25);
 }
+.slider-btn i {
+  margin: 0;
+}
+.slider-btn.prev { left: 0.5rem; }
+.slider-btn.next { right: 0.5rem; }
 .slider-btn:active, .slider-btn:focus {
-    background: rgba(92,105,75,0.15) !important;
-    color: var(--primary-color) !important;
-    outline: none;
-    box-shadow: none !important;
+  background: rgba(255,255,255,1);
+  color: var(--primary-color);
+  outline: none;
+  transform: translateY(-50%) scale(0.95);
+}
+body.dark-mode .slider-btn {
+  background: rgba(35,39,47,0.9);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 2px 8px rgba(44,48,60,0.18);
+}
+body.dark-mode .slider-btn:hover {
+  background: rgba(35,39,47,1);
+  color: #fff;
+}
+body.dark-mode .slider-btn:active, body.dark-mode .slider-btn:focus {
+  background: rgba(35,39,47,1);
+  color: #fff;
 }
 @media (max-width: 900px) {
     .projects-grid {
@@ -1063,12 +1075,4 @@ body.dark-mode .social-card p {
     width: 38px;
     height: 38px;
   }
-}
-
-/* --- BURGER MENU BACKGROUND VISIBLE --- */
-.burger {
-  background: rgba(243, 244, 246, 0.927) !important;
-}
-.burger:hover, .burger:focus {
-  background: rgba(243, 243, 244, 0.979) !important;
 }
