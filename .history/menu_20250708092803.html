@@ -360,6 +360,35 @@
       'slider-food-tanpanasi',
       'slider-food-mie',
       'slider-food-tambahan',    ].forEach(createSectionSliderById);
+    
+    // Burger menu logic
+    const burger = document.querySelector('.burger');
+    const navList = document.querySelector('.nav-list');
+    
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('active');
+      navList.classList.toggle('open');
+    });
+    
+    // Close burger menu when clicking nav links
+    document.querySelectorAll('.nav-list ul li a').forEach(link => {
+      link.addEventListener('click', function() {
+        if(window.innerWidth <= 900) {
+          burger.classList.remove('active');
+          navList.classList.remove('open');
+        }
+      });
+    });
+    
+    // Navbar transparent when scrolling
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header.navbar-container');
+      if(window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
     </script>
 </body>
 </html>

@@ -321,8 +321,8 @@ header.navbar-container .nav-list li a:hover {
   header.navbar-container {
     justify-content: center;
     padding: 1.2rem 0 1.2rem 0;
-  }  .navbar-logo {
-    margin-left: 2rem;
+  }
+  .navbar-logo {
     margin-right: 2rem;
     width: 44px;
     height: 44px;
