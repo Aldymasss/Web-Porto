@@ -214,7 +214,7 @@ header.navbar-container .nav-list li a:hover {
     width: 38px;
     height: 38px;
     background: transparent;
-    border: circle;
+    border: none;
     cursor: pointer;
     z-index: 1100;
     border-radius: 50%;
@@ -335,7 +335,7 @@ header.navbar-container .nav-list li a:hover {
     box-shadow: 0 2px 8px rgba(44,48,60,0.1);
   }
   .burger {
-    display: transparent;
+    display: none;
   }
   header.navbar-container .nav-list {
     position: static;
