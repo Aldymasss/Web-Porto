@@ -1130,28 +1130,3 @@ body.dark-mode .slider-btn:hover, body.dark-mode .slider-btn:focus {
 body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
   color: #e11d48 !important;
 }
-
-/* === HERO SECTION RESPONSIVE === */
-@media (max-width: 800px) {
-  .hero {
-    height: 40vh;
-  }
-  .brand-title {
-    font-size: 2rem;
-  }
-  .brand-tagline {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero {
-    height: 28vh;
-  }
-  .brand-title {
-    font-size: 1.5rem;
-  }
-  .brand-tagline {
-    font-size: 0.9rem;
-  }
-}
