@@ -1240,31 +1240,30 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         opacity: 1;
         visibility: visible;
         transform: none;
-        background: rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.1);
         backdrop-filter: none;
         box-shadow: none;
         border: none;
-        border-radius: 6px;
-        margin-top: 0.3rem;
-        padding: 0.3rem;
-        min-width: auto;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
     }
     
     .dropdown-menu li a {
-        padding: 0.6rem 0.8rem !important;
+        padding: 0.8rem 1rem !important;
         color: rgba(255,255,255,0.9) !important;
-        font-size: 1rem !important;
-        border-radius: 4px !important;
+        font-size: 1.1rem !important;
+        border-radius: 6px !important;
     }
     
     .dropdown-menu li a:hover {
-        background: rgba(255,255,255,0.15) !important;
+        background: rgba(255,255,255,0.2) !important;
         color: #fff !important;
     }
     
     .dropdown-divider {
         background: rgba(255,255,255,0.3);
-        margin: 0.2rem 0;
+        margin: 0.3rem 0;
     }
     
     .dropdown-toggle i {
