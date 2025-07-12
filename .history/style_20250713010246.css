@@ -1240,9 +1240,8 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 .dropdown-menu li a:hover {
     background: linear-gradient(135deg, var(--primary-color), #4a5d3a) !important;
     color: #fff !important;
-    transform: translateY(-1px) scale(1.02) !important;
-    box-shadow: 0 4px 16px rgba(92,105,75,0.3) !important;
-    border-color: var(--primary-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(92,105,75,0.25) !important;
 }
 
 .dropdown-menu li a:active {
@@ -1251,8 +1250,8 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 
 .dropdown-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(92,105,75,0.25), transparent);
-    margin: 0.5rem 0.8rem;
+    background: linear-gradient(90deg, transparent, rgba(92,105,75,0.2), transparent);
+    margin: 0.4rem 0.6rem;
     border: none;
 }
 
