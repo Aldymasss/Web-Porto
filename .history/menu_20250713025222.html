@@ -510,6 +510,44 @@ document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
     }
   });
 });
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Keep dropdown open for a moment, then close
+          setTimeout(() => {
+            navDropdown.classList.remove('active');
+          }, 1000);
+        }
+      }
+    });
+  }
+}
+
+// Handle regular nav links (not dropdown) for smooth scrolling
+document.querySelectorAll('.nav-list > ul > li > a[href^="#"]:not(.dropdown-toggle)').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Close mobile menu if open
+      if(window.innerWidth <= 900) {
+        burger.classList.remove('active');
+        navList.classList.remove('open');
+      }
+      
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
     </script>
 </body>
 </html>

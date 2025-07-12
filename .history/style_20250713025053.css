@@ -142,9 +142,14 @@ header.navbar-container .nav-list li a:hover {
         gap: 0.6rem; /* Lebih konsisten pada tampilan mobile */
         justify-content: center;
     }
-    header.navbar-container .nav-list li a {
+    header.navbar-container .nav-list li a,
+    .nav-dropdown > .dropdown-toggle {
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
+    }
+    
+    .dropdown-menu {
+        min-width: 120px; /* Lebih kecil pada tampilan mobile */
     }
 }
 

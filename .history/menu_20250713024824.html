@@ -15,10 +15,18 @@
         </form>
         <button class="burger" aria-label="Toggle navigation"><span></span></button>        <nav class="nav-list" aria-label="Main Navigation">
             <ul>
-                <li><a href="menu.html">Home</a></li>
-                <li><a href="#menu" class="active">Menu</a></li>
-                <li><a href="#beverages">Beverages</a></li>
-                <li><a href="#food">Food</a></li>
+                <li><a href="menu.html">Home</a></li>                <li class="nav-dropdown">
+                    <a href="#menu" class="active dropdown-toggle" aria-expanded="false" aria-haspopup="true">Menu <i class="fa fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#menu">Overview</a></li>
+                        <li><a href="#beverages">Beverages</a></li>
+                        <li><a href="#food">Food</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a href="#pondasi-nasi">Nasi</a></li>
+                        <li><a href="#pondasi-tanpa-nasi">Tanpa Nasi</a></li>
+                        <li><a href="#pondasi-mie">Mie</a></li>
+                    </ul>
+                </li>
                 <li><a href="#about">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -476,8 +484,8 @@ searchInput.addEventListener('input', function() {
   }
 });
 
-// === SMOOTH SCROLLING FOR ALL NAVIGATION LINKS ===
-document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
+// === DROPDOWN SMOOTH SCROLLING ===
+document.querySelectorAll('.dropdown-menu a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href').substring(1);
@@ -507,6 +515,80 @@ document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
         targetElement.style.borderRadius = '';
         targetElement.style.padding = '';
       }, 2000);
+    }
+  });
+});
+
+// === DROPDOWN CLICK TO TOGGLE ===
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const navDropdown = document.querySelector('.nav-dropdown');
+
+if (dropdownToggle && navDropdown) {
+  // Improved toggle functionality
+  dropdownToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    navDropdown.classList.toggle('active');
+    
+    // Focus management for accessibility
+    const isActive = navDropdown.classList.contains('active');
+    dropdownToggle.setAttribute('aria-expanded', isActive);
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!navDropdown.contains(e.target)) {
+      navDropdown.classList.remove('active');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  
+  // Prevent dropdown from closing when clicking inside dropdown menu
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (dropdownMenu) {
+    dropdownMenu.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Handle dropdown menu links - scroll to section but keep dropdown open
+      if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Keep dropdown open for a moment, then close
+          setTimeout(() => {
+            navDropdown.classList.remove('active');
+          }, 1000);
+        }
+      }
+    });
+  }
+}
+
+// Handle regular nav links (not dropdown) for smooth scrolling
+document.querySelectorAll('.nav-list > ul > li > a[href^="#"]:not(.dropdown-toggle)').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Close mobile menu if open
+      if(window.innerWidth <= 900) {
+        burger.classList.remove('active');
+        navList.classList.remove('open');
+      }
+      
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   });
 });
