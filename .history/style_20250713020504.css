@@ -1290,7 +1290,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     font-weight: 600 !important;
     text-decoration: none;
     border-radius: 6px !important;
-    margin: 0.15rem 0.3rem !important; /* Tambah margin vertikal */
+    margin: 0 0.3rem !important;
     transition: all 0.2s cubic-bezier(.77,0,.18,1);
     box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
     transform: none !important;
@@ -1301,7 +1301,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     position: relative;
     line-height: 1.2;
     border: 1px solid rgba(92,105,75,0.1);
-    text-align: left; /* Ratakan teks ke kiri */
 }
 
 .dropdown-menu li a:hover {
@@ -1321,8 +1320,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     background: linear-gradient(90deg, transparent, rgba(92,105,75,0.25), transparent);
     margin: 0.4rem 0.6rem;
     border: none;
-    display: block;
-    width: calc(100% - 1.2rem); /* Lebar full dengan margin */
 }
 
 /* Mobile dropdown styling */
@@ -1335,8 +1332,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         background: rgba(255,255,255,0.1);
         backdrop-filter: blur(8px);
         box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        width: 100%;
-        display: block;
         border: 1px solid rgba(255,255,255,0.15);
         border-radius: 8px;
         margin-top: 0.5rem;
