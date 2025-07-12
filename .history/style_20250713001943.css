@@ -92,7 +92,7 @@ header.navbar-container .nav-list li {
 header.navbar-container .nav-list li a {
     display: block;
     padding: 0.6rem 1.5rem;
-    border-radius: 999px;
+    border-radius: 10px;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
