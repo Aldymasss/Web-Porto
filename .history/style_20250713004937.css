@@ -1217,14 +1217,14 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 
 .dropdown-menu li a {
     display: block !important;
-    padding: 0.4rem 0.7rem !important;
+    padding: 0.5rem 0.8rem !important;
     color: #2d3748 !important;
     background: transparent !important;
-    font-size: 0.75rem !important;
+    font-size: 0.8rem !important;
     font-weight: 500 !important;
     text-decoration: none;
     border-radius: 4px !important;
-    margin: 0 0.15rem !important;
+    margin: 0 0.2rem !important;
     transition: all 0.2s cubic-bezier(.77,0,.18,1);
     box-shadow: none !important;
     transform: none !important;
@@ -1233,7 +1233,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
-    line-height: 1.2;
 }
 
 .dropdown-menu li a:hover {
