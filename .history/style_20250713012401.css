@@ -1255,13 +1255,13 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 .nav-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0px);
 }
 
 .nav-dropdown.active .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0px);
 }
 
 .dropdown-menu li {
