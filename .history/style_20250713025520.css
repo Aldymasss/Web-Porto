@@ -1151,3 +1151,8 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 }
 
 /* Navbar styling section - back to original */
+@media (max-width: 900px) {
+    .dropdown-menu::before {
+        display: none;
+    }
+}
