@@ -1165,10 +1165,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     /* Reset any inherited styles that might cause misalignment */
     margin: 0 !important;
     height: auto !important;
-    /* Ensure exact same baseline as other nav items */
-    float: none !important;
-    clear: none !important;
-    position: relative !important;
+    vertical-align: baseline !important;
 }
 
 .dropdown-toggle {

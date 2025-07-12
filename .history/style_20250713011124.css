@@ -1161,18 +1161,10 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     position: relative;
 }
 
-.nav-dropdown > .dropdown-toggle {
-    /* Reset any inherited styles that might cause misalignment */
-    margin: 0 !important;
-    height: auto !important;
-    /* Ensure exact same baseline as other nav items */
-    float: none !important;
-    clear: none !important;
-    position: relative !important;
-}
-
 .dropdown-toggle {
-    display: block !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.4rem;
     padding: 0.6rem 1.5rem !important;
     border-radius: 999px !important;
     text-decoration: none !important;
@@ -1184,38 +1176,19 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     position: relative !important;
     letter-spacing: 0.3px !important;
     box-sizing: border-box !important;
+    min-height: auto !important;
     line-height: 1 !important;
-    margin: 0 !important;
-    height: auto !important;
 }
 
 .dropdown-toggle i {
     font-size: 0.8rem;
     transition: transform 0.3s cubic-bezier(.77,0,.18,1);
     opacity: 0.7;
-    margin-left: 0.4rem;
-    display: inline;
-    vertical-align: middle;
 }
 
 .nav-dropdown:hover .dropdown-toggle i {
     transform: rotate(180deg);
     opacity: 1;
-}
-
-.dropdown-toggle:hover {
-    background: #e6e9e0 !important;
-    color: var(--primary-color) !important;
-    transform: scale(1.04) !important;
-}
-
-.dropdown-toggle.active,
-.dropdown-toggle:focus,
-.dropdown-toggle:active {
-    background: #fff !important;
-    color: var(--primary-color) !important;
-    box-shadow: 0 2px 12px rgba(37,99,235,0.10) !important;
-    transform: scale(1.07) !important;
 }
 
 .dropdown-menu {
