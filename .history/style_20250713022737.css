@@ -1188,24 +1188,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     float: none !important;
     clear: none !important;
     position: relative !important;
-    transition: all 0.3s ease;
-}
-
-.nav-dropdown > .dropdown-toggle::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: var(--primary-color);
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-    border-radius: 10px;
-}
-
-.nav-dropdown:hover > .dropdown-toggle::after {
-    width: 60%;
 }
 
 .dropdown-toggle i {
@@ -1222,7 +1204,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 .nav-dropdown:hover .dropdown-toggle i {
     transform: rotate(180deg);
     opacity: 1;
-    color: var(--primary-color);
 }
 
 .dropdown-toggle:hover {
@@ -1403,58 +1384,5 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     .menu-icon {
         color: rgba(255,255,255,0.9);
         margin-right: 0.8rem;
-    }
-}
-
-/* Dropdown animation */
-@keyframes dropdownFadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-.nav-dropdown:hover .dropdown-menu {
-    animation: dropdownFadeIn 0.3s forwards;
-}
-
-/* Modern box shadow effect */
-.dropdown-menu::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 3px;
-    transform: translateX(-50%) rotate(45deg);
-    box-shadow: -3px -3px 5px rgba(0,0,0,0.04);
-    z-index: -1;
-}
-
-@media (max-width: 900px) {
-    .dropdown-menu::before {
-        display: none;
-    }
-    
-    @keyframes mobileDropdownFadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .nav-dropdown.active .dropdown-menu {
-        animation: mobileDropdownFadeIn 0.3s forwards;
     }
 }
