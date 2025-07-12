@@ -1217,14 +1217,14 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 
 .dropdown-menu li a {
     display: block !important;
-    padding: 0.5rem 0.8rem !important;
+    padding: 0.6rem 0.9rem !important;
     color: #1a202c !important;
     background: rgba(255,255,255,0.9) !important;
-    font-size: 0.82rem !important;
+    font-size: 0.85rem !important;
     font-weight: 600 !important;
     text-decoration: none;
     border-radius: 6px !important;
-    margin: 0 0.3rem !important;
+    margin: 0 0.4rem !important;
     transition: all 0.2s cubic-bezier(.77,0,.18,1);
     box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
     transform: none !important;
@@ -1252,7 +1252,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 .dropdown-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(92,105,75,0.25), transparent);
-    margin: 0.4rem 0.6rem;
+    margin: 0.5rem 0.8rem;
     border: none;
 }
 
