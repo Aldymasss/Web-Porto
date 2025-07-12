@@ -138,17 +138,11 @@ header.navbar-container .nav-list li a:hover {
 /* Responsive Navbar */
 @media (max-width: 700px) {
     header.navbar-container .nav-list ul {
-        gap: 0.6rem; /* Lebih konsisten pada tampilan mobile */
-        justify-content: center;
+        gap: 0.8rem;
     }
-    header.navbar-container .nav-list li a,
-    .nav-dropdown > .dropdown-toggle {
+    header.navbar-container .nav-list li a {
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
-    }
-    
-    .dropdown-menu {
-        min-width: 120px; /* Lebih kecil pada tampilan mobile */
     }
 }
 
@@ -1258,7 +1252,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     transition: all 0.25s cubic-bezier(.77,0,.18,1);
     z-index: 1050;
     border: 1px solid rgba(92,105,75,0.15);
-    margin-top: 6px; /* Jarak vertikal yang lebih dekat dengan dropdown */
+    margin-top: 8px;
 }
 
 .nav-dropdown:hover .dropdown-menu {

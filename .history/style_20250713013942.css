@@ -71,7 +71,7 @@ header.navbar-container .nav-list {
 }
 header.navbar-container .nav-list ul {
     display: flex;
-    gap: 1rem; /* Jarak yang lebih konsisten antar item navbar */
+    gap: 2rem;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -82,7 +82,6 @@ header.navbar-container .nav-list ul {
     position: static;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Distribusi yang lebih merata */
     z-index: auto;
     width: auto;
     transition: none;
@@ -101,7 +100,7 @@ header.navbar-container .nav-list li {
 }
 header.navbar-container .nav-list li a {
     display: block;
-    padding: 0.6rem 1.2rem; /* Padding yang lebih konsisten */
+    padding: 0.6rem 1.5rem;
     border-radius: 999px;
     text-decoration: none;
     font-size: 1.1rem;
@@ -113,7 +112,6 @@ header.navbar-container .nav-list li a {
     letter-spacing: 0.3px;
     line-height: 1.5;
     box-sizing: border-box;
-    text-align: center; /* Teks yang rata tengah */
 }
 header.navbar-container .nav-list li a.active,
 header.navbar-container .nav-list li a:focus,
@@ -138,17 +136,11 @@ header.navbar-container .nav-list li a:hover {
 /* Responsive Navbar */
 @media (max-width: 700px) {
     header.navbar-container .nav-list ul {
-        gap: 0.6rem; /* Lebih konsisten pada tampilan mobile */
-        justify-content: center;
+        gap: 0.8rem;
     }
-    header.navbar-container .nav-list li a,
-    .nav-dropdown > .dropdown-toggle {
+    header.navbar-container .nav-list li a {
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
-    }
-    
-    .dropdown-menu {
-        min-width: 120px; /* Lebih kecil pada tampilan mobile */
     }
 }
 
@@ -1194,7 +1186,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 .nav-dropdown > .dropdown-toggle {
     /* Use exact same CSS as standard nav links */
     display: block;
-    padding: 0.6rem 1.2rem; /* Match padding with other nav items */
+    padding: 0.6rem 1.5rem;
     border-radius: 999px;
     text-decoration: none;
     font-size: 1.1rem;
@@ -1207,7 +1199,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     line-height: 1.5;
     margin: 0;
     box-sizing: border-box;
-    text-align: center; /* Teks yang rata tengah */
 }
 
 .dropdown-toggle i {
@@ -1258,7 +1249,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     transition: all 0.25s cubic-bezier(.77,0,.18,1);
     z-index: 1050;
     border: 1px solid rgba(92,105,75,0.15);
-    margin-top: 6px; /* Jarak vertikal yang lebih dekat dengan dropdown */
+    margin-top: 8px;
 }
 
 .nav-dropdown:hover .dropdown-menu {

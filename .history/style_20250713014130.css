@@ -1258,7 +1258,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     transition: all 0.25s cubic-bezier(.77,0,.18,1);
     z-index: 1050;
     border: 1px solid rgba(92,105,75,0.15);
-    margin-top: 6px; /* Jarak vertikal yang lebih dekat dengan dropdown */
+    margin-top: 8px;
 }
 
 .nav-dropdown:hover .dropdown-menu {
