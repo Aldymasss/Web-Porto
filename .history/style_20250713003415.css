@@ -1252,7 +1252,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         margin-top: 0.2rem;
         padding: 0.2rem;
         min-width: auto;
-        max-width: none;
     }
     
     .dropdown-menu li a {
@@ -1260,8 +1259,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         color: rgba(255,255,255,0.9) !important;
         font-size: 0.9rem !important;
         border-radius: 3px !important;
-        overflow: visible;
-        text-overflow: unset;
     }
     
     .dropdown-menu li a:hover {
