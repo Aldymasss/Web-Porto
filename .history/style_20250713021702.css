@@ -1196,8 +1196,10 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     transition: transform 0.3s cubic-bezier(.77,0,.18,1);
     opacity: 0.7;
     margin-left: 0.4rem;
-    display: inline;
-    vertical-align: middle;
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: -1px; /* Fine-tune vertical alignment with text */
 }
 
 .nav-dropdown:hover .dropdown-toggle i {

@@ -1180,15 +1180,34 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     position: relative;
 }
 
-.nav-dropdown > .dropdown-toggle {
-    /* Reset any inherited styles that might cause misalignment */
-    margin: 0 !important;
-    height: auto !important;
-    /* Ensure exact same baseline as other nav items */
-    float: none !important;
-    clear: none !important;
-    position: relative !important;
+/* Styling for dropdown - match exactly with standard nav links */
+.nav-dropdown {
+    position: relative;
+    /* Match exactly with standard nav items */
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
+
+/* Ensure dropdown toggle looks identical to other nav items */
+.nav-dropdown > .dropdown-toggle {
+    /* Use exact same CSS as standard nav links */
+    display: block;
+    padding: 0.6rem 1.2rem; /* Match padding with other nav items */
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: transparent;
+    transition: background 0.25s cubic-bezier(.77,0,.18,1), color 0.25s cubic-bezier(.77,0,.18,1), transform 0.18s, box-shadow 0.18s;
+    position: relative;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center; /* Teks yang rata tengah */
 }
 
 .dropdown-toggle i {
@@ -1196,8 +1215,10 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     transition: transform 0.3s cubic-bezier(.77,0,.18,1);
     opacity: 0.7;
     margin-left: 0.4rem;
-    display: inline;
-    vertical-align: middle;
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: -1px; /* Fine-tune vertical alignment with text */
 }
 
 .nav-dropdown:hover .dropdown-toggle i {
@@ -1308,6 +1329,8 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         background: rgba(255,255,255,0.1);
         backdrop-filter: blur(8px);
         box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        width: 100%;
+        display: block;
         border: 1px solid rgba(255,255,255,0.15);
         border-radius: 8px;
         margin-top: 0.5rem;
