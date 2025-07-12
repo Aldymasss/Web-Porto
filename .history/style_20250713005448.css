@@ -1249,7 +1249,7 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 .dropdown-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(92,105,75,0.2), transparent);
-    margin: 0.4rem 0.6rem;
+    margin: 0.2rem 0.4rem;
     border: none;
 }
 
