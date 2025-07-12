@@ -239,7 +239,7 @@
                 </div>
                 <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
             </div>
-            <h3 style="text-align:center;" id="pondasi-mie">PONDASI DARI MIE</h3>
+            <h3 style="text-align:center;">PONDASI DARI MIE</h3>
             <div class="projects-slider" id="slider-food-mie">
                 <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
                 <div class="projects-grid">
@@ -478,66 +478,10 @@ searchInput.addEventListener('input', function() {
     // Remove search result message
     const existingMsg = document.querySelector('.search-result-message');
     if (existingMsg) existingMsg.remove();
-  } else {    // Real-time search
+  } else {
+    // Real-time search
     const result = searchAllMenus(keyword);
   }
-});
-
-// === DROPDOWN SMOOTH SCROLLING ===
-document.querySelectorAll('.dropdown-menu a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    
-    if (targetElement) {
-      // Close mobile menu if open
-      if(window.innerWidth <= 900) {
-        burger.classList.remove('active');
-        navList.classList.remove('open');
-      }
-      
-      // Smooth scroll to target
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      
-      // Add visual highlight effect
-      targetElement.style.transition = 'all 0.3s ease';
-      targetElement.style.backgroundColor = 'rgba(92,105,75,0.1)';
-      targetElement.style.borderRadius = '8px';
-      targetElement.style.padding = '1rem';
-      
-      setTimeout(() => {
-        targetElement.style.backgroundColor = '';
-        targetElement.style.borderRadius = '';
-        targetElement.style.padding = '';
-      }, 2000);
-    }
-  });
-});
-
-// Handle regular nav links (not dropdown) for smooth scrolling
-document.querySelectorAll('.nav-list > ul > li > a[href^="#"]:not(.dropdown-toggle)').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    
-    if (targetElement) {
-      // Close mobile menu if open
-      if(window.innerWidth <= 900) {
-        burger.classList.remove('active');
-        navList.classList.remove('open');
-      }
-      
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
 });
     </script>
 </body>
