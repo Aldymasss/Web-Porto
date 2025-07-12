@@ -1317,6 +1317,8 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     background: linear-gradient(90deg, transparent, rgba(92,105,75,0.25), transparent);
     margin: 0.4rem 0.6rem;
     border: none;
+    width: calc(100% - 1.2rem); /* Full width minus margins */
+    align-self: center; /* Center in flex container */
 }
 
 /* Mobile dropdown styling */
@@ -1329,6 +1331,8 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         background: rgba(255,255,255,0.1);
         backdrop-filter: blur(8px);
         box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
         border: 1px solid rgba(255,255,255,0.15);
         border-radius: 8px;
         margin-top: 0.5rem;
