@@ -1254,40 +1254,34 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         opacity: 1;
         visibility: visible;
         transform: none;
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(8px);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        border: 1px solid rgba(255,255,255,0.15);
-        border-radius: 8px;
-        margin-top: 0.5rem;
-        padding: 0.4rem;
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 4px;
+        margin-top: 0.2rem;
+        padding: 0.2rem;
         min-width: auto;
         max-width: none;
     }
     
     .dropdown-menu li a {
-        padding: 0.8rem 1rem !important;
-        color: rgba(255,255,255,0.95) !important;
-        font-size: 1rem !important;
-        font-weight: 500 !important;
-        border-radius: 6px !important;
-        margin: 0.1rem 0 !important;
+        padding: 0.5rem 0.6rem !important;
+        color: rgba(255,255,255,0.9) !important;
+        font-size: 0.9rem !important;
+        border-radius: 3px !important;
         overflow: visible;
         text-overflow: unset;
-        letter-spacing: 0.3px;
     }
     
     .dropdown-menu li a:hover {
-        background: rgba(255,255,255,0.18) !important;
+        background: rgba(255,255,255,0.12) !important;
         color: #fff !important;
-        transform: translateY(-1px) !important;
-        box-shadow: 0 2px 8px rgba(255,255,255,0.1) !important;
     }
     
     .dropdown-divider {
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        margin: 0.3rem 0.5rem;
-        height: 1px;
+        background: rgba(255,255,255,0.3);
+        margin: 0.1rem 0;
     }
     
     .dropdown-toggle i {
