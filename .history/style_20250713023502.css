@@ -47,7 +47,6 @@ header.navbar-container {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-    overflow: visible;
 }
 header.navbar-container.scrolled {
     background: rgba(92,105,75,0.65) !important;
@@ -295,17 +294,17 @@ header.navbar-container .nav-list li a:hover {
     margin: 0;
     padding: 0;
     display: flex;
-  }  header.navbar-container .nav-list ul li a {
-    font-size: 1.1rem;
-    padding: 1rem;
+  }
+  header.navbar-container .nav-list ul li a {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem 1.2rem 0.5rem;
     color: #fff;
     background: transparent;
-    border-radius: 12px;
+    border-radius: 999px;
     text-align: left;
     width: 100%;
-    display: flex;
-    align-items: center;
-  }header.navbar-container .nav-search-inline {
+    display: block;
+  }  header.navbar-container .nav-search-inline {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -334,7 +333,28 @@ header.navbar-container .nav-list li a:hover {
     width: 140px;
     max-width: 90vw;
   }
-}  /* This is a duplicate style that was causing issues - removed */
+}
+  header.navbar-container .nav-list ul {
+    flex-direction: column;
+    gap: 2.2rem;
+    background: none;
+    box-shadow: none;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  header.navbar-container .nav-list ul li a {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem 1.2rem 0.5rem;
+    color: #fff;
+    background: transparent;
+    border-radius: 999px;
+    text-align: left;
+    width: 100%;
+    display: block;
+  }
 }
 @media (min-width: 901px) {
   header.navbar-container {
@@ -1019,7 +1039,7 @@ body.dark-mode .social-card p {
   height: 3px;
   width: 20px;
   border-radius: 3px;
-  background: #fff;
+  background: var(--primary-color);
   transition: 0.3s;
 }
 .burger span {
@@ -1043,11 +1063,11 @@ body.dark-mode .social-card p {
 }
 .burger.active span:before {
   transform: translateY(8px) rotate(45deg);
-  background: #fff;
+  background: var(--primary-color);
 }
 .burger.active span:after {
   transform: translateY(-8px) rotate(-45deg);
-  background: #fff;
+  background: var(--primary-color);
 }
 .burger:hover, .burger:focus {
   background: rgba(245, 245, 246, 0.954) !important;
@@ -1313,13 +1333,11 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
         border: none;
         border-radius: 12px;
         margin-top: 0.75rem;
-        margin-bottom: 0.75rem;
         padding: 0.5rem;
         min-width: auto;
         max-width: none;
-        width: 90%;
+        width: 100%;
         left: 0;
-        margin-left: 5%;
     }
     
     .dropdown-menu li a {
