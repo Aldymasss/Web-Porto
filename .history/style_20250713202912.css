@@ -738,8 +738,8 @@ body.dark-mode .about-card {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 18px;
-    border: 4px solid #5C694B;
-    box-shadow: 0 2px 8px rgba(92,105,75,0.25);
+    border: 4px solid #e11d48;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 .about-card h3 {
     margin: 0 0 10px 0;
@@ -777,7 +777,7 @@ body.dark-mode .about-desc {
     text-decoration: none;
 }
 .social-icon:hover {
-    background: #3d4630;
+    background: #e11d48;
     color: #fff;
     transform: scale(1.12);
 }
