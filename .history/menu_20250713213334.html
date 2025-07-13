@@ -358,7 +358,8 @@
         // Hide all menu cards first
         allCards.forEach(card => {
             card.style.display = 'none';
-        });        // Hide all sections and their headings - we'll only show sections with matching results
+        });
+          // Hide all sections and their headings - we'll only show sections with matching results
         allSections.forEach(section => {
             section.style.display = 'none';
             
@@ -371,12 +372,6 @@
             section.querySelectorAll('h3 + p').forEach(desc => {
                 desc.style.display = 'none';
             });
-            
-            // Keep section's main h2 heading visible in case the section is shown
-            const mainHeading = section.querySelector('h2');
-            if (mainHeading) {
-                mainHeading.style.display = ''; // This will be visible when the section is shown
-            }
         });// Filter cards based on keyword
         allCards.forEach(card => {
             const titleEl = card.querySelector('h3, h4');
@@ -411,27 +406,20 @@
                     if (section.id) {
                         visibleSections.add(section.id);
                     }
-                      // Find and show the category heading for this card
-                    const categoryContainer = card.closest('.menu-category');
-                    if (categoryContainer) {
-                        // Show all relevant h3 headings in this category
-                        let slider = card.closest('.projects-slider');
-                        if (slider) {
-                            // Find the heading that corresponds to this slider
-                            let heading = slider.previousElementSibling;
-                            while (heading && heading.tagName !== 'H3') {
-                                heading = heading.previousElementSibling;
-                            }
-                            
-                            if (heading) {
-                                heading.style.display = '';
-                                
-                                // If there's a description p tag right after the h3, show it too
-                                if (heading.nextElementSibling && heading.nextElementSibling.tagName === 'P') {
-                                    heading.nextElementSibling.style.display = '';
-                                }
-                            }
+                    
+                    // Find the category heading (h3) for this card and show it
+                    let categoryHeading = null;
+                    let current = card;
+                    while (current && current !== section) {
+                        const prevElement = current.previousElementSibling;
+                        if (prevElement && prevElement.tagName === 'H3') {
+                            categoryHeading = prevElement;
+                            break;
                         }
+                        current = current.parentElement;
+                    }
+                    if (categoryHeading) {
+                        categoryHeading.style.display = '';
                     }
                 }
                   // Make sure only the specific slider containing this card is visible
@@ -482,16 +470,6 @@
         // Show all sections
         document.querySelectorAll('.projects-section').forEach(section => {
             section.style.display = '';
-            
-            // Show all h2, h3 headings and category descriptions
-            section.querySelectorAll('h2, h3').forEach(heading => {
-                heading.style.display = '';
-            });
-            
-            // Show all category descriptions
-            section.querySelectorAll('p').forEach(desc => {
-                desc.style.display = '';
-            });
         });
         
         // Show all cards

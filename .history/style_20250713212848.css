@@ -1215,12 +1215,9 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 
 /* Highlight search matches */
 .search-highlight {
-  background-color: rgba(92,105,75,0.25);
+  background-color: rgba(92,105,75,0.15);
   padding: 0 2px;
   border-radius: 2px;
-  font-weight: bold;
-  display: inline-block;
-  box-shadow: 0 0 3px rgba(92,105,75,0.3);
 }
 
 /* Mobile responsiveness for About section */

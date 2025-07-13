@@ -15,6 +15,19 @@ body {
     --text-dark: #fff;
     --card-bg-light: #f7f7f7;
     --card-bg-dark: #23272f;
+    --error-color: #e11d48;
+}
+
+/* Animations for search result message */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 body {
@@ -1181,25 +1194,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 /* Search result message styling */
 .search-result-message {
   animation: slideInFromTop 0.3s ease-out;
-  background: #5C694B;
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-  margin: 1rem auto;
-  border-radius: 12px;
-  max-width: 600px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(92,105,75,0.2);
-  position: sticky;
-  top: 70px;
-  z-index: 100;
-  transition: opacity 0.5s ease;
-  width: 80%;
-}
-
-/* Style for no results found */
-.search-result-message.no-results {
-  background: #e11d48;
 }
 
 @keyframes slideInFromTop {
@@ -1211,16 +1205,6 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Highlight search matches */
-.search-highlight {
-  background-color: rgba(92,105,75,0.25);
-  padding: 0 2px;
-  border-radius: 2px;
-  font-weight: bold;
-  display: inline-block;
-  box-shadow: 0 0 3px rgba(92,105,75,0.3);
 }
 
 /* Mobile responsiveness for About section */
