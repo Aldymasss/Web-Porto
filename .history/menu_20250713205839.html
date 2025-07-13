@@ -478,12 +478,8 @@ document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      // Get burger and navList elements
-      const burger = document.querySelector('.burger');
-      const navList = document.querySelector('.nav-list');
-      
       // Close mobile menu if open
-      if(window.innerWidth <= 900 && burger && navList) {
+      if(window.innerWidth <= 900) {
         burger.classList.remove('active');
         navList.classList.remove('open');
       }
