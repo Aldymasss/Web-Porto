@@ -403,7 +403,8 @@
                 }
                 if (priceEl && price.includes(keyword)) {
                     priceEl.innerHTML = highlightText(priceEl.innerHTML, keyword);
-                }                // Find the section containing this card
+                }
+                  // Find the section containing this card
                 let section = card.closest('.projects-section');
                 if (section) {
                     // Show only this section
@@ -427,24 +428,13 @@
                             if (heading) {
                                 heading.style.display = '';
                                 
-                                // If there's a description tag right after the h3, show it too
+                                // If there's a description p tag right after the h3, show it too
                                 if (heading.nextElementSibling && 
                                    (heading.nextElementSibling.tagName === 'P' || 
                                     heading.nextElementSibling.classList.contains('description'))) {
                                     heading.nextElementSibling.style.display = '';
                                 }
                             }
-                        }
-                    } else {
-                        // For other menu structures, find the closest heading
-                        let parent = card.parentElement;
-                        while (parent && parent !== section) {
-                            if (parent.previousElementSibling && 
-                                (parent.previousElementSibling.tagName === 'H3' || 
-                                 parent.previousElementSibling.tagName === 'H4')) {
-                                parent.previousElementSibling.style.display = '';
-                            }
-                            parent = parent.parentElement;
                         }
                     }
                 }
@@ -474,19 +464,15 @@
             foundCount, 
             foundSections: Array.from(visibleSections)
         };
-    }    // Helper function to highlight text
+    }
+      // Helper function to highlight text
     function highlightText(text, keyword) {
         if (!keyword) return text;
         
         try {
-            // Make sure we're working with strings
-            const textString = String(text);
-            const keywordString = String(keyword);
-            
-            // Escape special regex chars
-            const cleanKeyword = keywordString.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const cleanKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape special regex chars
             const regex = new RegExp(cleanKeyword, 'gi');
-            return textString.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+            return text.replace(regex, match => `<span class="search-highlight">${match}</span>`);
         } catch (e) {
             console.error("Error highlighting text:", e);
             return text; // Return original text if there's an error
@@ -555,24 +541,16 @@
                 resultMsg.innerHTML = `
                     <i class="fa fa-search" style="margin-right:8px;"></i>
                     Menampilkan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"
-                `;            } else {
+                `;
+            } else {
                 resultMsg.innerHTML = `
                     <i class="fa fa-exclamation-circle" style="margin-right:8px;"></i>
                     Tidak ada menu yang ditemukan untuk "<strong>${keyword}</strong>"
-                    <span style="display:block;font-size:0.9em;opacity:0.8;margin-top:5px;">
-                        Coba kata kunci lain atau periksa ejaan
-                    </span>
                 `;                
                 resultMsg.classList.add('no-results');
                 
                 // Show all sections again if no results found
                 resetSearch();
-                
-                // Highlight the search input to indicate need for change
-                searchInput.classList.add('search-error');
-                setTimeout(() => {
-                    searchInput.classList.remove('search-error');
-                }, 2000);
             }
             
             // Insert message after header

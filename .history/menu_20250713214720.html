@@ -555,24 +555,16 @@
                 resultMsg.innerHTML = `
                     <i class="fa fa-search" style="margin-right:8px;"></i>
                     Menampilkan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"
-                `;            } else {
+                `;
+            } else {
                 resultMsg.innerHTML = `
                     <i class="fa fa-exclamation-circle" style="margin-right:8px;"></i>
                     Tidak ada menu yang ditemukan untuk "<strong>${keyword}</strong>"
-                    <span style="display:block;font-size:0.9em;opacity:0.8;margin-top:5px;">
-                        Coba kata kunci lain atau periksa ejaan
-                    </span>
                 `;                
                 resultMsg.classList.add('no-results');
                 
                 // Show all sections again if no results found
                 resetSearch();
-                
-                // Highlight the search input to indicate need for change
-                searchInput.classList.add('search-error');
-                setTimeout(() => {
-                    searchInput.classList.remove('search-error');
-                }, 2000);
             }
             
             // Insert message after header
