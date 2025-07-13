@@ -1,0 +1,55 @@
+/* Additional styles for menu.html to improve spacing */
+
+.project-card h4 {
+    margin: 18px 16px 10px 16px;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 0 4px;
+    text-align: center;
+}
+
+.project-card h3 {
+    margin: 18px 16px 10px 16px !important;
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    padding: 0 4px !important;
+    text-align: center !important;
+}
+
+.project-card p {
+    margin: 0 16px 16px 16px !important;
+    color: #666 !important;
+    line-height: 1.5 !important;
+    padding: 0 8px !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
+}
+
+.project-card .btn {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+    padding: 10px 20px !important;
+}
+
+/* Add more space between cards */
+.projects-grid {
+    gap: 24px;
+    padding: 10px 0;
+}
+
+/* Improve overall card appearance */
+.project-card {
+    padding: 0 0 12px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 280px !important;
+}
+
+/* Add space between image and content */
+.project-card img {
+    margin-bottom: 5px !important;
+}
