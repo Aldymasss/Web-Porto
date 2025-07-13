@@ -344,49 +344,42 @@
       'slider-food-tambahan',    ].forEach(createSectionSliderById);    // === SEARCH MENU FUNCTIONALITY ===
     const searchForm = document.querySelector('.nav-search');
     const searchInput = searchForm.querySelector('input[type="search"]');    function searchAllMenus(keyword) {
-        console.log("Searching for:", keyword); // Debug
         keyword = keyword.toLowerCase();
         const allCards = document.querySelectorAll('.project-card');
         const allSections = document.querySelectorAll('.projects-section');
-        const allSliders = document.querySelectorAll('.projects-slider');
-        const allHeadings = document.querySelectorAll('.menu-category h3');
-        const allDescriptions = document.querySelectorAll('.menu-category p');
-        
         let foundCount = 0;
         let visibleSections = new Set();
-        let visibleSliders = new Set();
-        let visibleHeadings = new Set();
         
         // First remove any previous highlights
         document.querySelectorAll('.search-highlight').forEach(el => {
             el.outerHTML = el.innerHTML;
         });
         
-        // STEP 1: Hide everything first
-        // Hide all menu cards
+        // Hide all menu cards first
         allCards.forEach(card => {
             card.style.display = 'none';
         });
         
-        // Hide all sections
+        // Hide all sections and their headings - we'll only show sections with matching results
         allSections.forEach(section => {
             section.style.display = 'none';
-        });
-        
-        // Hide all sliders
-        allSliders.forEach(slider => {
-            slider.style.display = 'none';
-        });
-        
-        // Hide all category headings
-        allHeadings.forEach(heading => {
-            heading.style.display = 'none';
-        });
-        
-        // Hide all descriptions
-        allDescriptions.forEach(desc => {
-            desc.style.display = 'none';
-        });// STEP 2: Filter cards based on keyword and show matching items
+            
+            // Hide all h3 category headings and their descriptions
+            section.querySelectorAll('h3').forEach(heading => {
+                heading.style.display = 'none';
+            });
+            
+            // Hide all category descriptions (usually p tags right after h3)
+            section.querySelectorAll('h3 + p, h3 + .description').forEach(desc => {
+                desc.style.display = 'none';
+            });
+            
+            // Keep section's main h2 heading visible in case the section is shown
+            const mainHeading = section.querySelector('h2');
+            if (mainHeading) {
+                mainHeading.style.display = ''; // This will be visible when the section is shown
+            }
+        });// Filter cards based on keyword
         allCards.forEach(card => {
             const titleEl = card.querySelector('h3, h4');
             const descEl = card.querySelector('p');
@@ -400,7 +393,6 @@
                 // This card matches our search - make it visible
                 card.style.display = '';
                 foundCount++;
-                console.log("Found match:", title); // Debug
                 
                 // Highlight matching text
                 if (titleEl && title.includes(keyword)) {
@@ -411,51 +403,48 @@
                 }
                 if (priceEl && price.includes(keyword)) {
                     priceEl.innerHTML = highlightText(priceEl.innerHTML, keyword);
-                }                // STEP 3: Show relevant sections and headings for this card
+                }                // Find the section containing this card
                 let section = card.closest('.projects-section');
                 if (section) {
-                    // Show this section
+                    // Show only this section
                     section.style.display = '';
                     if (section.id) {
                         visibleSections.add(section.id);
                     }
                     
-                    // Show the main section heading
-                    const mainHeading = section.querySelector('h2');
-                    if (mainHeading) {
-                        mainHeading.style.display = '';
-                    }
-                    
-                    // Find and show slider
-                    let slider = card.closest('.projects-slider');
-                    if (slider) {
-                        slider.style.display = '';
-                        visibleSliders.add(slider.id);
-                        
-                        // Find and show heading for this slider
-                        let heading = slider.previousElementSibling;
-                        while (heading && heading.tagName !== 'H3') {
-                            heading = heading.previousElementSibling;
-                        }
-                        
-                        if (heading) {
-                            heading.style.display = '';
-                            visibleHeadings.add(heading.textContent);
+                    // Find and show the category heading for this card
+                    const categoryContainer = card.closest('.menu-category');
+                    if (categoryContainer) {
+                        // Show all relevant h3 headings in this category
+                        let slider = card.closest('.projects-slider');
+                        if (slider) {
+                            // Find the heading that corresponds to this slider
+                            let heading = slider.previousElementSibling;
+                            while (heading && heading.tagName !== 'H3') {
+                                heading = heading.previousElementSibling;
+                            }
                             
-                            // Show description if exists
-                            let nextEl = heading.nextElementSibling;
-                            if (nextEl && (nextEl.tagName === 'P' || nextEl.classList.contains('description'))) {
-                                nextEl.style.display = '';
+                            if (heading) {
+                                heading.style.display = '';
+                                
+                                // If there's a description tag right after the h3, show it too
+                                if (heading.nextElementSibling && 
+                                   (heading.nextElementSibling.tagName === 'P' || 
+                                    heading.nextElementSibling.classList.contains('description'))) {
+                                    heading.nextElementSibling.style.display = '';
+                                }
                             }
                         }
-                        
-                        // Make sure this card's grid is active
-                        const projectsGrid = card.closest('.projects-grid');
-                        if (projectsGrid) {
-                            slider.querySelectorAll('.projects-grid').forEach(grid => {
-                                grid.classList.remove('slide-active');
-                            });
-                            projectsGrid.classList.add('slide-active');
+                    } else {
+                        // For other menu structures, find the closest heading
+                        let parent = card.parentElement;
+                        while (parent && parent !== section) {
+                            if (parent.previousElementSibling && 
+                                (parent.previousElementSibling.tagName === 'H3' || 
+                                 parent.previousElementSibling.tagName === 'H4')) {
+                                parent.previousElementSibling.style.display = '';
+                            }
+                            parent = parent.parentElement;
                         }
                     }
                 }
