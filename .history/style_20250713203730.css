@@ -1154,18 +1154,3 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
 }
 
 /* Navbar styling section - back to original */
-
-/* Mobile responsiveness for About section */
-@media (max-width: 700px) {
-  .about-card {
-    padding: 24px 20px 20px 20px;
-  }
-  
-  .about-section h2 {
-    font-size: 1.7rem;
-  }
-  
-  .about-section .about-card p {
-    font-size: 0.95rem;
-  }
-}
