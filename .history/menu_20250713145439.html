@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Menu Project - Paperplane Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="navbar-container">
+        <img src="img/brand-name.png" alt="Paperplane Project Logo" class="navbar-logo" />
+        <form class="nav-search nav-search-inline" role="search" autocomplete="off">
+            <input type="search" placeholder="Search menu..." aria-label="Search menu" />
+            <button type="submit" aria-label="Cari"><i class="fa fa-search"></i></button>
+        </form>
+        <button class="burger" aria-label="Toggle navigation"><span></span></button>        <nav class="nav-list" aria-label="Main Navigation">
+            <ul>
+                <li><a href="menu.html">Home</a></li>
+                <li><a href="#menu" class="active">Best Seller</a></li>
+                <li><a href="#beverages">Beverages</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav></header>
+      <!-- Jumbotron Section -->    <section class="hero">
+        <img src="img/jumbotron.png" alt="Project Background" class="hero-img">
+        <div class="hero-content">
+            <h1 class="brand-title">Paperplane Project</h1>
+            <p class="brand-tagline">Rasakan pengalaman kuliner yang tak terlupakan</p>
+        </div>
+    </section>
+      <section id="menu" class="projects-section">
+        <h2 style="text-align:center;color:#5C694B;">Menu Project</h2>
+        <div class="projects-slider" id="slider-menu">
+            <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+            <div class="projects-grid slide-active">                <div class="project-card">
+                    <img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <h3>Nasi Goreng</h3>
+                    <p>Nasi goreng spesial dengan topping ayam dan telur.</p>
+                    <span class="btn">Rp 20.000</span>
+                </div>
+                <div class="project-card">
+                    <img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <h3>Mie Ayam</h3>
+                    <p>Mie ayam gurih dengan pangsit dan sayur segar.</p>
+                    <span class="btn">Rp 18.000</span>
+                </div>
+                <div class="project-card">
+                    <img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <h3>Kopi Susu</h3>
+                    <p>Kopi robusta dengan susu segar, cocok untuk pagi hari.</p>
+                    <span class="btn">Rp 15.000</span>
+                </div>
+                <div class="project-card">
+                    <img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <h3>Teh Tarik</h3>
+                    <p>Teh tarik manis dan creamy, disajikan hangat/dingin.</p>
+                    <span class="btn">Rp 12.000</span>
+                </div>
+            </div>
+            <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <!-- Section BEVERAGES -->
+    <section id="beverages" class="projects-section">
+        <h2 style="text-align:center;color:#5C694B;">Beverages</h2>
+        <div class="menu-category">
+            <h3 style="text-align:center;">HOT</h3>
+            <div class="projects-slider" id="slider-beverages-hot">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">
+                    <div class="project-card"><img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>ESPRESSO</h4><p>Ekstrak kopi murni dengan rasa kuat.</p><span class="btn">Rp 18.000</span></div>
+                    <div class="project-card"><img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>AMERICANO</h4><p>Espresso dengan tambahan air panas.</p><span class="btn">Rp 18.000</span></div>
+                    <div class="project-card"><img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>CAPPUCCINO</h4><p>Espresso dengan steam milk dan foam.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>TEA</h4><p>Teh panas pilihan dengan rasa autentik.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/PXL_20231029_130207014.PORTRAIT.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SOE SOE COKLAT</h4><p>Coklat panas dengan rasa manis yang sempurna.</p><span class="btn">Rp 18.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <h3 style="text-align:center;">ICED TEA</h3>
+            <div class="projects-slider" id="slider-beverages-icedtea">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>JASMINE TEA</h4><p>Teh melati dingin dengan aroma yang menenangkan.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>APPLE TEA</h4><p>Teh dingin dengan perisa apel segar.</p><span class="btn">Rp 22.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>LEMON TEA</h4><p>Teh dingin dengan lemon segar.</p><span class="btn">Rp 18.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>LYCHEE TEA</h4><p>Teh dingin dengan perisa leci yang manis.</p><span class="btn">Rp 22.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <h3 style="text-align:center;">ICED COFFEE</h3>
+            <div class="projects-slider" id="slider-beverages-icedcoffee">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>AMERICANO</h4><p>Americano dingin yang menyegarkan.</p><span class="btn">Rp 18.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KOPI SOE SOE</h4><p>Kopi susu dingin dengan sentuhan lokal.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KOPI SUSU GULA AREN</h4><p>Kopi susu dengan gula aren asli.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>CAFFE LATTE</h4><p>Kopi susu dingin dengan rasa yang seimbang.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>BISCOFF SALTED CARAMEL</h4><p>Kopi dengan caramel asin dan biskuit Biscoff.</p><span class="btn">Rp 28.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <h3 style="text-align:center;">SHAKES</h3>
+            <div class="projects-slider" id="slider-beverages-shakes">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MILO</h4><p>Milkshake Milo dingin dengan powder milo, nostalgia dalam setiap tegukan.</p><span class="btn">Rp 22.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>OREO</h4><p>Milkshake dengan biskuit Oreo yang lezat.</p><span class="btn">Rp 25.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>TARO</h4><p>Milkshake taro yang creamy.</p><span class="btn">Rp 25.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MATCHA</h4><p>Milkshake matcha yang khas dan lembut.</p><span class="btn">Rp 26.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MOKA</h4><p>Milkshake coklat dengan sentuhan kopi.</p><span class="btn">Rp 26.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>ES COKLAT</h4><p>Milkshake coklat yang rich dan dingin.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>BISCOFF</h4><p>Milkshake dengan biskuit Biscoff yang lezat.</p><span class="btn">Rp 28.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <h3 style="text-align:center;">MOCKTAIL</h3>
+            <div class="projects-slider" id="slider-beverages-mocktail">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>ROSELLA ANANAS</h4><p>Mocktail dengan campuran bunga rosella dan nanas.</p><span class="btn">Rp 23.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>ELDER LEMON TONIC</h4><p>Mocktail dengan elderflower, lemon, dan tonic water.</p><span class="btn">Rp 23.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>AGAVE CUTE CUMBER</h4><p>Mocktail segar dengan agave dan mentimun.</p><span class="btn">Rp 26.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MAGIC RED</h4><p>Mocktail berwarna merah dengan rasa buah eksotis.</p><span class="btn">Rp 23.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>SODA GEMBIRA</h4><p>Mocktail klasik dengan soda, susu, dan sirup.</p><span class="btn">Rp 18.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>            <h3 style="text-align:center;">ICE CREAM</h3>
+            <p style="text-align:center;font-style:italic;margin:10px 0;font-size:14px;">Harga di bawah ini per 2 scoop</p>
+            <div class="projects-slider" id="slider-beverages-icecream">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>CHOCOLATE</h4><p>Es krim cokelat premium dengan tekstur lembut.</p><span class="btn">Rp 35.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>RUM RAISIN</h4><p>Es krim klasik dengan kismis dan aroma rum.</p><span class="btn">Rp 35.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>VANILLA</h4><p>Es krim vanila lembut dengan aroma vanilla Madagaskar.</p><span class="btn">Rp 35.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>STMJ</h4><p>Es krim spesial dengan susu, telur, madu, dan jahe.</p><span class="btn">Rp 35.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MOKA</h4><p>Es krim moka dengan sentuhan kopi arabika pilihan.</p><span class="btn">Rp 35.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>            <h3 style="text-align:center;">OTHERS</h3>
+            <div class="projects-slider" id="slider-beverages-others">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MINERAL WATER</h4><p>Air mineral kemasan.</p><span class="btn">Rp 10.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>TONIC WATER</h4><p>Air tonik soda dengan quinine.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>SODA WATER</h4><p>Air soda murni tanpa pemanis.</p><span class="btn">Rp 10.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>COLA</h4><p>Minuman soda cola kemasan.</p><span class="btn">Rp 12.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            
+            <h3 style="text-align:center;">BOTTLE 1000ML</h3>
+            <div class="projects-slider" id="slider-beverages-bottle">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>AMERICANO</h4><p>Americano dalam botol 1000ml.</p><span class="btn">Rp 55.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KOPI SOE SOE</h4><p>Kopi susu dalam botol 1000ml.</p><span class="btn">Rp 55.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KOPI SUSU GULA AREN</h4><p>Kopi susu gula aren dalam botol 1000ml.</p><span class="btn">Rp 55.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>BISCOFF SALTED CARAMEL</h4><p>Kopi dengan Biscoff dan salted caramel dalam botol 1000ml.</p><span class="btn">Rp 80.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>JASMINE TEA</h4><p>Teh melati dalam botol 1000ml.</p><span class="btn">Rp 40.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>APPLE TEA</h4><p>Teh apel dalam botol 1000ml.</p><span class="btn">Rp 60.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>LEMON TEA</h4><p>Teh lemon dalam botol 1000ml.</p><span class="btn">Rp 50.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>LYCHEE TEA</h4><p>Teh leci dalam botol 1000ml.</p><span class="btn">Rp 60.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FOOD -->    <section id="food" class="projects-section">
+        <h2 style="text-align:center;color:#5C694B;">Food</h2>
+        <div class="menu-category">
+            <h3 style="text-align:center;">ROTI PANGGANG</h3>
+            <div class="projects-slider" id="slider-food-roti">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KAYA BUTTER</h4><p>Roti panggang dengan selai kaya dan butter.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PEANUT BUTTER</h4><p>Roti panggang dengan selai kacang.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MATCHA</h4><p>Roti panggang dengan selai matcha.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>TIRAMISU</h4><p>Roti panggang dengan rasa tiramisu.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>HONEY BUTTER</h4><p>Roti panggang dengan madu dan butter.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MARTABAK MANIS</h4><p>Roti panggang dengan rasa martabak manis.</p><span class="btn">Rp 20.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>CHEESE BUTTER</h4><p>Roti panggang dengan keju dan butter.</p><span class="btn">Rp 22.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NUTELLA</h4><p>Roti panggang dengan selai Nutella.</p><span class="btn">Rp 22.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>ICE CREAM TOAST</h4><p>Roti panggang dengan ice cream pilihan.</p><span class="btn">Rp 28.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>            <h3 style="text-align:center;">BAKERY</h3>
+            <div class="projects-slider" id="slider-food-bakery">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>BRIOCHE TOAST WHOLE</h4><p>Brioche toast utuh dengan tekstur lembut.</p><span class="btn">Rp 25.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>SOUR DOUGH WHOLE</h4><p>Roti sourdough utuh dengan tekstur renyah.</p><span class="btn">Rp 45.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>CINNAMON ROLL</h4><p>Roti gulung dengan kayu manis.</p><span class="btn">Rp 10.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>BREAD+</h4><p>Roti spesial dengan topping tambahan.</p><span class="btn">Rp 12.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>CHEESE BUN</h4><p>Roti dengan isian keju yang melimpah.</p><span class="btn">Rp 12.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PISANG KLASIK</h4><p>Roti dengan isian pisang klasik.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>BRATWURST HORN</h4><p>Roti berbentuk tanduk dengan isian bratwurst.</p><span class="btn">Rp 12.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>CROISSANT & DANISH</h4><p>Pilihan croissant dan danish segar.</p><span class="btn">Rp 12.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PLAIN CROISSANT</h4><p>Croissant klasik yang renyah dan berlapis.</p><span class="btn">Rp 12.000</span></div>                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KOUIGN AMANN</h4><p>Pastry manis dari Prancis dengan lapisan butter dan gula.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NUTELLA DANISH</h4><p>Danish dengan isian Nutella yang lezat.</p><span class="btn">Rp 15.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <p style="text-align:center;font-style:italic;margin:10px 0;font-size:14px;">Freshly baked everyday.</p>
+            <h3 style="text-align:center;">GAK BIKIN KENYANG</h3>
+            <div class="projects-slider" id="slider-food-gakbikin">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>MENDOAN</h4><p>Tempe goreng tepung, cocolan.</p><span class="btn">Rp 10.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>TAHU BAKSO</h4><p>Tahu bakso digoreng, cocolan.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PENTOL PAPRIKA</h4><p>Pentol kulit bakso, cocolan.</p><span class="btn">Rp 17.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PENTOL AJA</h4><p>Pentol cocolan.</p><span class="btn">Rp 17.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PISANG GORENG PAK CIK</h4><p>Pisang goreng pokat setai kaya.</p><span class="btn">Rp 18.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>FRENCH FRIES</h4><p>Kentang goreng.</p><span class="btn">Rp 18.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>SOMAY PAPERPLANE</h4><p>Siomay ayam kukus, cocolan.</p><span class="btn">Rp 25.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>PP PLATTER</h4><p>Bratwurst sausages, french fries, bakso goreng.</p><span class="btn">Rp 35.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>            <h3 style="text-align:center;" id="pondasi-nasi">PONDASI DARI NASI</h3>
+            <p style="text-align:center;font-style:italic;margin:10px 0;font-size:14px;">Apapun hidangan asal makan nasi dulu</p>
+            <div class="projects-slider" id="slider-food-nasi">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI AYAM KEDEWATAN</h4><p>Nasi, ayam suwir betulu, sambal matah kecobrangan, sambal tempong, kering tempe kacang, telur.</p><span class="btn">Rp 19.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI AYAM KANGKUNG</h4><p>Nasi, ayam butter saus tiram, kangkung balacan, kering tempe kacang, telur.</p><span class="btn">Rp 19.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI LALAPAN TEMPE</h4><p>Nasi, tempe goreng, lalapan, sambal.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI LALAPAN TELOR CEPLOK</h4><p>Nasi, telur, lalapan, sambal.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI TELUR ORAK ARIK</h4><p>Nasi, telur orak arik, lalapan, sambal.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI SARDEN KALENG</h4><p>Nasi, sarden kaleng, lalapan, sambal.</p><span class="btn">Rp 19.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI TONGKOL SUWIR</h4><p>Nasi, tongkol suwir cabe ijo, lalapan, sambal.</p><span class="btn">Rp 19.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI OMELETTE KEJU</h4><p>Nasi, telur dadar isi keju, lalapan, sambal.</p><span class="btn">Rp 19.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI BABI SAMBAL MATAH</h4><p>Nasi, babi sambal matah, kering tempe, lalapan, sambal.</p><span class="btn">Rp 22.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI BABI KECAP</h4><p>Nasi, babi kecap, sayur asin, kering tempe, lalapan, sambal.</p><span class="btn">Rp 22.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI AYAM KALASAN</h4><p>Nasi, ayam kalasan, serundeng, telur, lalapan, sambal.</p><span class="btn">Rp 29.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <h3 style="text-align:center;" id="pondasi-tanpa-nasi">PONDASI TANPA NASI</h3>
+            <div class="projects-slider" id="slider-food-tanpanasi">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>AYAM BETUTU</h4><p>Sambal matah, sambal terasi, sambal tempong, kering tempe, lalapan.</p><span class="btn">Rp 35.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>NASI TAMBAH</h4><p>Nasi putih porsi tambahan.</p><span class="btn">Rp 5.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>KANGKUNG BALACAN</h4><p>Tumis kangkung dengan bumbu balacan.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/toko-batik/p1.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;"><h4>SAYUR ASIN BABI</h4><p>Tumis sayur asin dengan daging babi.</p><span class="btn">Rp 19.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>            <h3 style="text-align:center;" id="pondasi-mie">PONDASI DARI MIE</h3>
+            <div class="projects-slider" id="slider-food-mie">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MIE AYAM PP</h4><p>Mie ayam jamur, bakso.</p><span class="btn">Rp 23.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MIE PP BIASA</h4><p>Mie tanpa ayam jamur, bakso.</p><span class="btn">Rp 15.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MIE KERITING AYAM DADU</h4><p>Mie keriting, ayam potong dadu.</p><span class="btn">Rp 23.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>IFUMIE KOMPLIT LAUT</h4><p>Ifumie, seafood, daging, sayur.</p><span class="btn">Rp 32.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BAKMI GORENG BABAT GONGSO</h4><p>Mie goreng dengan babat gongso.</p><span class="btn">Rp 35.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>            <h3 style="text-align:center;">TAMBAHAN</h3>
+            <div class="projects-slider" id="slider-food-tambahan">
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SAMBAL</h4><p>Sambal homemade.</p><span class="btn">Rp 2.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SAMBAL MATAH</h4><p>Sambal matah segar.</p><span class="btn">Rp 2.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SAMBAL TEMPONG</h4><p>Sambal tempong pedas.</p><span class="btn">Rp 2.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SAMBAL TERASI</h4><p>Sambal terasi gurih.</p><span class="btn">Rp 2.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>KERING TEMPE KACANG</h4><p>Kering tempe dengan kacang renyah.</p><span class="btn">Rp 5.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>TELUR CEPLOK MATA SAPI</h4><p>Telur goreng sunny side up.</p><span class="btn">Rp 5.000</span></div>
+                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>TELUR DADAR</h4><p>Telur dadar goreng.</p><span class="btn">Rp 5.000</span></div>
+                </div>
+                <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+    <script>    // Burger menu logic versi portofolio
+    const burger = document.querySelector('.burger');
+    const navList = document.querySelector('.nav-list');
+    
+    // Ensure burger menu works properly
+    burger.addEventListener('click', function(e) {
+      e.preventDefault();
+      burger.classList.toggle('active');
+      navList.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-list ul li a').forEach(link => {
+      link.addEventListener('click', function() {
+        if(window.innerWidth <= 900) {
+          burger.classList.remove('active');
+          navList.classList.remove('open');
+        }
+      });
+    });
+    // Navbar transparan saat scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header.navbar-container');
+      if(window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    // Slider logic untuk section utama (Menu) - carousel horizontal
+    function createSectionSlider(sectionId) {
+      if(sectionId !== 'menu') return;
+      const slider = document.getElementById('slider-' + sectionId);
+      if (!slider) return;
+      const prevBtn = slider.querySelector('.slider-btn.prev');
+      const nextBtn = slider.querySelector('.slider-btn.next');
+      const grid = slider.querySelector('.projects-grid');
+      const cards = grid.querySelectorAll('.project-card');
+      let current = 0;
+      function getCardsPerView() {
+        return window.innerWidth < 700 ? 1 : 2;
+      }
+      function updateSlider() {
+        const cardsPerView = getCardsPerView();
+        const maxIndex = Math.max(0, cards.length - cardsPerView);
+        if(current > maxIndex) current = maxIndex;
+        const cardWidth = cards[0].offsetWidth + 32; // 32px gap
+        grid.style.transform = `translateX(-${current * cardWidth}px)`;
+      }
+      prevBtn.addEventListener('click', () => {
+        current = Math.max(0, current - getCardsPerView());
+        updateSlider();
+      });
+      nextBtn.addEventListener('click', () => {
+        const cardsPerView = getCardsPerView();
+        const maxIndex = Math.max(0, cards.length - cardsPerView);
+        current = Math.min(maxIndex, current + cardsPerView);
+        updateSlider();
+      });
+      window.addEventListener('resize', updateSlider);
+      setTimeout(updateSlider, 100); // Initial update after render
+    }
+    createSectionSlider('menu');
+    // Multi-slider logic untuk semua slider di halaman
+    function createSectionSliderById(sliderId) {
+      const slider = document.getElementById(sliderId);
+      if (!slider) return;
+      const prevBtn = slider.querySelector('.slider-btn.prev');
+      const nextBtn = slider.querySelector('.slider-btn.next');
+      const grid = slider.querySelector('.projects-grid');
+      const cards = grid.querySelectorAll('.project-card');
+      let current = 0;
+      function getCardsPerView() {
+        return window.innerWidth < 700 ? 1 : 2;
+      }
+      function updateSlider() {
+        const cardsPerView = getCardsPerView();
+        const maxIndex = Math.max(0, cards.length - cardsPerView);
+        if(current > maxIndex) current = maxIndex;
+        const cardWidth = cards[0].offsetWidth + 32; // 32px gap
+        grid.style.transform = `translateX(-${current * cardWidth}px)`;
+      }
+      prevBtn.addEventListener('click', () => {
+        current = Math.max(0, current - getCardsPerView());
+        updateSlider();
+      });
+      nextBtn.addEventListener('click', () => {
+        const cardsPerView = getCardsPerView();
+        const maxIndex = Math.max(0, cards.length - cardsPerView);
+        current = Math.min(maxIndex, current + cardsPerView);
+        updateSlider();
+      });
+      window.addEventListener('resize', updateSlider);
+      setTimeout(updateSlider, 100);
+    }
+    // Inisialisasi semua slider di halaman
+    [
+      'slider-menu',
+      'slider-beverages-hot',
+      'slider-beverages-icedtea',
+      'slider-beverages-icedcoffee',
+      'slider-beverages-shakes',
+      'slider-beverages-mocktail',
+      'slider-beverages-icecream',
+      'slider-beverages-others',
+      'slider-beverages-bottle',
+      'slider-food-roti',
+      'slider-food-bakery',
+      'slider-food-gakbikin',
+      'slider-food-nasi',
+      'slider-food-tanpanasi',
+      'slider-food-mie',
+      'slider-food-tambahan',    ].forEach(createSectionSliderById);    // === ENHANCED SEARCH MENU FUNCTIONALITY ===
+const searchForm = document.querySelector('.nav-search');
+const searchInput = searchForm.querySelector('input[type="search"]');
+
+function searchAllMenus(keyword) {
+  keyword = keyword.toLowerCase();
+  const allCards = document.querySelectorAll('.project-card');
+  let foundCount = 0;
+  let foundSections = [];
+  
+  allCards.forEach(card => {
+    const title = card.querySelector('h3, h4')?.textContent.toLowerCase() || '';
+    const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+    
+    if (keyword === '' || title.includes(keyword) || desc.includes(keyword)) {
+      card.style.display = '';
+      card.style.opacity = '1';
+      foundCount++;
+      
+      // Find parent section
+      const parentSection = card.closest('section');
+      if (parentSection && !foundSections.includes(parentSection.id)) {
+        foundSections.push(parentSection.id);
+      }
+    } else {
+      card.style.display = 'none';
+      card.style.opacity = '0.5';
+    }
+  });
+  
+  return { foundCount, foundSections };
+}
+
+function showSearchResult(keyword, result) {
+  // Remove existing search result message
+  const existingMsg = document.querySelector('.search-result-message');
+  if (existingMsg) existingMsg.remove();
+  
+  if (keyword !== '') {
+    const resultMsg = document.createElement('div');
+    resultMsg.className = 'search-result-message';
+    resultMsg.style.cssText = `
+      background: #5C694B;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      margin: 1rem auto;
+      border-radius: 12px;
+      max-width: 600px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(92,105,75,0.2);
+    `;
+    
+    if (result.foundCount > 0) {
+      resultMsg.innerHTML = `
+        <i class="fa fa-check-circle" style="margin-right:8px;"></i>
+        Ditemukan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"
+      `;
+    } else {
+      resultMsg.innerHTML = `
+        <i class="fa fa-exclamation-circle" style="margin-right:8px;"></i>
+        Tidak ada menu yang ditemukan untuk "<strong>${keyword}</strong>"
+      `;
+      resultMsg.style.background = '#e11d48';
+    }
+    
+    const firstSection = document.querySelector('section');
+    firstSection.parentNode.insertBefore(resultMsg, firstSection);
+    
+    // Auto hide after 3 seconds
+    setTimeout(() => {
+      if (resultMsg && resultMsg.parentNode) {
+        resultMsg.remove();
+      }
+    }, 3000);
+  }
+}
+
+searchForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const keyword = searchInput.value.trim();
+  const result = searchAllMenus(keyword);
+  showSearchResult(keyword, result);
+  
+  // Scroll to first found section
+  if (result.foundSections.length > 0) {
+    const firstFoundSection = document.getElementById(result.foundSections[0]);
+    if (firstFoundSection) {
+      firstFoundSection.scrollIntoView({behavior: 'smooth'});
+    }
+  }
+});
+
+searchInput.addEventListener('input', function() {
+  const keyword = searchInput.value.trim();
+  if (keyword === '') {
+    // Reset all cards
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.style.display = '';
+      card.style.opacity = '1';
+    });
+    // Remove search result message
+    const existingMsg = document.querySelector('.search-result-message');
+    if (existingMsg) existingMsg.remove();
+  } else {    // Real-time search
+    const result = searchAllMenus(keyword);
+  }
+});
+
+// === SMOOTH SCROLLING FOR ALL NAVIGATION LINKS ===
+document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Close mobile menu if open
+      if(window.innerWidth <= 900) {
+        burger.classList.remove('active');
+        navList.classList.remove('open');
+      }
+      
+      // Smooth scroll to target
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Add visual highlight effect
+      targetElement.style.transition = 'all 0.3s ease';
+      targetElement.style.backgroundColor = 'rgba(92,105,75,0.1)';
+      targetElement.style.borderRadius = '8px';
+      targetElement.style.padding = '1rem';
+      
+      setTimeout(() => {
+        targetElement.style.backgroundColor = '';
+        targetElement.style.borderRadius = '';
+        targetElement.style.padding = '';
+      }, 2000);
+    }
+  });
+});
+    </script>
+</body>
+</html>
