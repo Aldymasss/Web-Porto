@@ -101,9 +101,6 @@
     margin: 1rem !important;
     padding: 0 1rem 1rem 1rem !important;
     box-shadow: 0 5px 15px rgba(92,105,75,0.15) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
 }
 
 /* Add hover effect to cards */
