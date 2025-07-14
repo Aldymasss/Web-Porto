@@ -175,7 +175,6 @@
     overflow: hidden !important;
     width: 100% !important;
     padding: 1rem 0 !important;
-    direction: ltr !important; /* Ensures overall container is LTR */
 }
 
 /* Adjust slider buttons for horizontal layout */
@@ -204,22 +203,16 @@
 
 #slider-menu .slider-btn.prev {
     left: 10px !important;
-    z-index: 20 !important;
 }
 
 #slider-menu .slider-btn.next {
     right: 10px !important;
-    z-index: 20 !important;
 }
 
 /* Make best seller section responsive */
 @media (max-width: 1200px) {
     #slider-menu .project-card {
         width: 260px !important;
-    }
-    
-    #slider-menu .projects-grid {
-        gap: 1.25rem !important;
     }
 }
 
@@ -238,12 +231,6 @@
         min-height: 80px !important;
         padding: 0 1rem !important;
     }
-    
-    /* Improve scrolling on tablets */
-    #slider-menu {
-        overflow: visible !important;
-        padding: 1rem 0 2rem 0 !important;
-    }
 }
 
 @media (max-width: 768px) {
@@ -259,17 +246,6 @@
     #slider-menu .slider-btn {
         width: 35px !important;
         height: 35px !important;
-    }
-    
-    /* Better positioning for mobile buttons */
-    #slider-menu .slider-btn.prev {
-        left: 5px !important;
-        top: calc(50% - 20px) !important;
-    }
-    
-    #slider-menu .slider-btn.next {
-        right: 5px !important;
-        top: calc(50% - 20px) !important;
     }
 }
 
