@@ -6,25 +6,6 @@
     <title>Social Media - Dimas Aldi Pratama</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        /* Position burger menu on the right side */
-        .navbar-container {
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-            padding: 0.5rem 1rem;
-        }
-        .burger {
-            position: relative;
-            right: 0;
-            z-index: 1000;
-        }
-        @media (max-width: 900px) {
-            .navbar-container {
-                justify-content: flex-end;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="navbar-container">
@@ -107,15 +88,6 @@
         e.preventDefault();
         window.location.href = 'index.html#AboutCard';
     }
-    // Navbar transparan saat scroll
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header.navbar-container');
-      if(window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
     // Burger menu logic
     const burger = document.querySelector('.burger');
     const navList = document.querySelector('.nav-list');

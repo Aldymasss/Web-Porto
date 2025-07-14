@@ -27,8 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Only search in titles and prices, not descriptions
             if (title.includes(keyword) || price.includes(keyword)) {
                 card.style.display = '';
-                foundCount++;                if (titleEl && title.includes(keyword)) titleEl.innerHTML = highlightText(titleEl.innerHTML, keyword);
-                // Only highlight matches in title and price, not descriptions
+                foundCount++;
+                if (titleEl && title.includes(keyword)) titleEl.innerHTML = highlightText(titleEl.innerHTML, keyword);
+                if (descEl && desc.includes(keyword)) descEl.innerHTML = highlightText(descEl.innerHTML, keyword);
                 if (priceEl && price.includes(keyword)) priceEl.innerHTML = highlightText(priceEl.innerHTML, keyword);
                 // Show parent slider, section, heading
                 const slider = card.closest('.projects-slider');

@@ -107,15 +107,6 @@
         e.preventDefault();
         window.location.href = 'index.html#AboutCard';
     }
-    // Navbar transparan saat scroll
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header.navbar-container');
-      if(window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
     // Burger menu logic
     const burger = document.querySelector('.burger');
     const navList = document.querySelector('.nav-list');
