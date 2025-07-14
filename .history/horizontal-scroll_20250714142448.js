@@ -21,37 +21,34 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isPaused) return;
             
             const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-              // With direction: rtl in CSS, scrolling mechanics work differently
+            
+            // Since we're using direction: rtl in CSS,
+            // scrolling right-to-left is actually increasing scrollLeft value
             if (scrollDirection < 0) {
                 // Scrolling right to left (content moving leftward)
                 if (scrollContainer.scrollLeft >= maxScroll - 1) {
-                    // Reached the end, reset to beginning smoothly
-                    // Create a transition effect by using requestAnimationFrame
-                    const resetScroll = () => {
+                    // Reached the end, reset to beginning with a slight delay
+                    setTimeout(() => {
                         scrollContainer.style.scrollBehavior = 'auto';
                         scrollContainer.scrollLeft = 0;
                         setTimeout(() => {
                             scrollContainer.style.scrollBehavior = 'smooth';
-                        }, 50);
-                    };
-                    
-                    setTimeout(resetScroll, 1000);
+                        }, 100);
+                    }, 500);
                 } else {
                     scrollContainer.scrollLeft += scrollSpeed;
                 }
             } else {
                 // Scrolling left to right (content moving rightward)
                 if (scrollContainer.scrollLeft <= 0) {
-                    // Reached the beginning, reset to end smoothly
-                    const resetScroll = () => {
+                    // Reached the beginning, reset to end with a slight delay
+                    setTimeout(() => {
                         scrollContainer.style.scrollBehavior = 'auto';
                         scrollContainer.scrollLeft = maxScroll;
                         setTimeout(() => {
                             scrollContainer.style.scrollBehavior = 'smooth';
-                        }, 50);
-                    };
-                    
-                    setTimeout(resetScroll, 1000);
+                        }, 100);
+                    }, 500);
                 } else {
                     scrollContainer.scrollLeft -= scrollSpeed;
                 }

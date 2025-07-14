@@ -1,9 +1,10 @@
 // Horizontal auto-scrolling functionality for Menu Project section
 document.addEventListener('DOMContentLoaded', function() {
-    // Set up auto-scrolling for the slider-menu    const sliderMenu = document.getElementById('slider-menu');
+    // Set up auto-scrolling for the slider-menu
+    const sliderMenu = document.getElementById('slider-menu');
     if (!sliderMenu) return;
     
-    const scrollContainer = sliderMenu.querySelector('#slider-container');
+    const scrollContainer = sliderMenu.querySelector('.projects-grid');
     if (!scrollContainer) return;
     
     let scrollDirection = -1; // -1 for right-to-left, 1 for left-to-right
@@ -21,37 +22,34 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isPaused) return;
             
             const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-              // With direction: rtl in CSS, scrolling mechanics work differently
+            
+            // Since we're using direction: rtl in CSS,
+            // scrolling right-to-left is actually increasing scrollLeft value
             if (scrollDirection < 0) {
                 // Scrolling right to left (content moving leftward)
                 if (scrollContainer.scrollLeft >= maxScroll - 1) {
-                    // Reached the end, reset to beginning smoothly
-                    // Create a transition effect by using requestAnimationFrame
-                    const resetScroll = () => {
+                    // Reached the end, reset to beginning with a slight delay
+                    setTimeout(() => {
                         scrollContainer.style.scrollBehavior = 'auto';
                         scrollContainer.scrollLeft = 0;
                         setTimeout(() => {
                             scrollContainer.style.scrollBehavior = 'smooth';
-                        }, 50);
-                    };
-                    
-                    setTimeout(resetScroll, 1000);
+                        }, 100);
+                    }, 500);
                 } else {
                     scrollContainer.scrollLeft += scrollSpeed;
                 }
             } else {
                 // Scrolling left to right (content moving rightward)
                 if (scrollContainer.scrollLeft <= 0) {
-                    // Reached the beginning, reset to end smoothly
-                    const resetScroll = () => {
+                    // Reached the beginning, reset to end with a slight delay
+                    setTimeout(() => {
                         scrollContainer.style.scrollBehavior = 'auto';
                         scrollContainer.scrollLeft = maxScroll;
                         setTimeout(() => {
                             scrollContainer.style.scrollBehavior = 'smooth';
-                        }, 50);
-                    };
-                    
-                    setTimeout(resetScroll, 1000);
+                        }, 100);
+                    }, 500);
                 } else {
                     scrollContainer.scrollLeft -= scrollSpeed;
                 }
