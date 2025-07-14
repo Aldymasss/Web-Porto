@@ -117,15 +117,12 @@
 
 /* Special styling for best seller section cards */
 #slider-menu .project-card {
-    min-height: 380px !important;
-    width: 280px !important; /* Fixed width for horizontal cards */
-    flex: 0 0 auto !important; /* Prevent card from growing/shrinking */
-    margin: 0.5rem !important;
+    min-height: 340px !important;
+    margin: 1rem !important;
     padding: 0 0 1rem 0 !important;
     box-shadow: 0 5px 15px rgba(92,105,75,0.15) !important;
     border-radius: 16px !important;
     background-color: #fff !important;
-    scroll-snap-align: start !important; /* For better scrolling experience */
 }
 
 /* Add hover effect to cards */
@@ -168,62 +165,23 @@
     letter-spacing: 1px !important;
 }
 
-/* Container styling for horizontal slider */
-.projects-slider#slider-menu {
-    position: relative !important;
-    overflow: hidden !important;
-    width: 100% !important;
-    padding: 1rem 0 !important;
-}
-
-/* Adjust slider buttons for horizontal layout */
-#slider-menu .slider-btn {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 10 !important;
-    width: 40px !important;
-    height: 40px !important;
-    background-color: rgba(92, 105, 75, 0.8) !important;
-    color: white !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    border: none !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
-}
-
-#slider-menu .slider-btn:hover {
-    background-color: rgba(92, 105, 75, 1) !important;
-}
-
-#slider-menu .slider-btn.prev {
-    left: 10px !important;
-}
-
-#slider-menu .slider-btn.next {
-    right: 10px !important;
-}
-
-/* Make best seller section responsive */
+/* Make best seller section more responsive */
 @media (max-width: 1200px) {
-    #slider-menu .project-card {
-        width: 260px !important;
+    #slider-menu .projects-grid {
+        gap: 25px !important;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
     }
 }
 
 @media (max-width: 900px) {
     #slider-menu .projects-grid {
-        gap: 0.75rem !important;
-        padding: 1rem !important;
+        gap: 20px !important;
+        padding: 20px 15px !important;
     }
     
     #slider-menu .project-card {
-        width: 240px !important;
-        min-height: 360px !important;
+        min-height: 320px !important;
+        margin: 0.75rem !important;
     }
     
     #slider-menu .project-card p {
@@ -233,18 +191,16 @@
 }
 
 @media (max-width: 768px) {
+    #slider-menu .projects-grid {
+        gap: 15px !important;
+    }
+    
     #slider-menu .project-card {
-        width: 220px !important;
-        min-height: 340px !important;
+        min-height: 300px !important;
     }
     
     #slider-menu .project-card img {
-        height: 150px !important;
-    }
-    
-    #slider-menu .slider-btn {
-        width: 35px !important;
-        height: 35px !important;
+        height: 160px !important;
     }
 }
 
