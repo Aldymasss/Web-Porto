@@ -1,0 +1,59 @@
+/* Page Transition Animations */
+:root {
+  --transition-duration: 0.6s;
+  --transition-timing: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Body styles for transition */
+body {
+  opacity: 1;
+  transition: opacity var(--transition-duration) var(--transition-timing);
+}
+
+/* Page transition overlay */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5C694B; /* Paperplane project theme color */
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform var(--transition-duration) var(--transition-timing);
+}
+
+/* Show overlay during transition */
+.transitioning .page-transition-overlay {
+  transform: translateY(0);
+}
+
+/* Hide content during transition */
+.transitioning {
+  overflow: hidden;
+}
+
+/* Transition out animation */
+.transition-out {
+  opacity: 0;
+}
+
+/* Fade in animation for content */
+.fade-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.loaded .fade-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger transition for multiple elements */
+.stagger-fade:nth-child(1) { transition-delay: 0.1s; }
+.stagger-fade:nth-child(2) { transition-delay: 0.2s; }
+.stagger-fade:nth-child(3) { transition-delay: 0.3s; }
+.stagger-fade:nth-child(4) { transition-delay: 0.4s; }
+.stagger-fade:nth-child(5) { transition-delay: 0.5s; }
+.stagger-fade:nth-child(6) { transition-delay: 0.6s; }
