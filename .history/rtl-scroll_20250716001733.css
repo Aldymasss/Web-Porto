@@ -1,0 +1,126 @@
+/* RTL Horizontal Scrolling Styles */
+
+/* Make projects-grid scroll from right to left */
+#slider-menu .projects-grid#slider-container {
+    direction: rtl !important; /* Content starts from right side */
+    scroll-snap-type: x mandatory !important;
+    padding: 1.5rem 1rem !important;
+    scroll-behavior: smooth !important;
+    overflow-x: auto !important;
+}
+
+/* Class added via JS when scrolling is active */
+#slider-menu .projects-grid#slider-container.rtl-scroll-active {
+    will-change: scroll-position !important; /* Performance optimization */
+}
+
+/* Reset direction for card content to ensure text displays correctly */
+#slider-menu .projects-grid#slider-container .project-card {
+    direction: ltr !important; /* Reset direction for card content */
+    scroll-snap-align: center !important;
+    box-shadow: 0 5px 15px rgba(92,105,75,0.15) !important;
+    position: relative !important; /* For z-index to work properly */
+}
+
+/* Add smooth transition when hovering over cards */
+#slider-menu .projects-grid#slider-container .project-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; /* Custom easing for smoother animation */
+    transform-origin: center center !important;
+}
+
+/* Highlight card on hover */
+#slider-menu .projects-grid#slider-container .project-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    z-index: 5 !important;
+}
+
+/* Enhanced slider button positioning */
+#slider-menu .slider-btn {
+    z-index: 100 !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.3s, transform 0.3s !important;
+}
+
+#slider-menu .slider-btn:hover {
+    opacity: 1 !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Style for active button state when clicked */
+#slider-menu .slider-btn.btn-active {
+    background-color: rgba(92, 105, 75, 1) !important;
+    transform: translateY(-50%) scale(0.95) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+}
+
+/* Add a subtle scroll indicator */
+#slider-menu::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    width: 60px !important;
+    background: linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0)) !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+    opacity: 0.7 !important;
+}
+
+/* Also add indicator to the left side for context */
+#slider-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100% !important;
+    width: 60px !important;
+    background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0)) !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+    opacity: 0.7 !important;
+}
+
+/* Touch interaction styles */
+#slider-menu #slider-container.active {
+    cursor: grabbing !important;
+    user-select: none !important;
+    scroll-snap-type: none !important; /* Disable snap while dragging for smoother feel */
+}
+
+#slider-menu #slider-container.active .project-card {
+    transform: scale(0.98) !important;
+    transition: transform 0.2s ease-out !important;
+}
+
+/* Add a subtle hint to show scrollability */
+@keyframes scrollHint {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+}
+
+#slider-menu::after {
+    animation: scrollHint 2s ease-in-out 1; /* Show animation once */
+}
+
+/* Make slider buttons more visible on mobile */
+@media (max-width: 768px) {
+    #slider-menu .slider-btn {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    #slider-menu .slider-btn.prev {
+        left: 5px !important;
+    }
+    
+    #slider-menu .slider-btn.next {
+        right: 5px !important;
+    }
+    
+    /* Adjust gradient width on mobile */
+    #slider-menu::after,
+    #slider-menu::before {
+        width: 40px !important;
+    }
+}
