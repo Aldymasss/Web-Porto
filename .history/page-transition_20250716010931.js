@@ -100,13 +100,6 @@ window.addEventListener('pageshow', function(event) {
     setTimeout(() => {
       document.body.classList.add('loaded');
       document.body.classList.remove('transitioning');
-      
-      // Restore scroll position if available
-      const scrollPosition = sessionStorage.getItem('scrollPosition');
-      if (scrollPosition) {
-        window.scrollTo(0, parseInt(scrollPosition));
-        sessionStorage.removeItem('scrollPosition');
-      }
     }, 100);
   }
   
@@ -118,46 +111,8 @@ window.addEventListener('pageshow', function(event) {
     // This is likely a back/forward navigation
     document.body.classList.remove('transitioning');
     document.body.classList.add('loaded');
-    
-    // Restore scroll position if available
-    const scrollPosition = sessionStorage.getItem('scrollPosition');
-    if (scrollPosition) {
-      setTimeout(() => {
-        window.scrollTo(0, parseInt(scrollPosition));
-        sessionStorage.removeItem('scrollPosition');
-      }, 50);
-    }
   }
   
   // Update the last page
   sessionStorage.setItem('lastPage', currentPage);
-  
-  // Add preloading for linked pages to make transitions smoother
-  setTimeout(() => {
-    preloadLinkedPages();
-  }, 1500);
 });
-
-// Function to preload pages linked from the current page
-function preloadLinkedPages() {
-  const links = document.querySelectorAll('a[href$=".html"]');
-  const preloadedPages = new Set();
-  
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && 
-        !href.startsWith('http') && 
-        !href.startsWith('#') && 
-        href.endsWith('.html') &&
-        !preloadedPages.has(href)) {
-      
-      preloadedPages.add(href);
-      
-      // Create a preload link in the head
-      const preloadLink = document.createElement('link');
-      preloadLink.rel = 'prefetch';
-      preloadLink.href = href;
-      document.head.appendChild(preloadLink);
-    }
-  });
-}
