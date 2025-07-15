@@ -1,63 +1,42 @@
-// Horizontal auto-scrolling functionality for Menu Project section
+// Horizontal auto-scrolling functionality for Menu Project sections
 document.addEventListener('DOMContentLoaded', function() {
-    // Set up auto-scrolling for the recommendations slider
-    const sliderRecommendations = document.getElementById('slider-recommendations');
-    if (sliderRecommendations) {
-        const recommendationsContainer = sliderRecommendations.querySelector('#recommendations-container');
-        if (recommendationsContainer) {
-            setupSlider(sliderRecommendations, recommendationsContainer);
-        }
-    }
+    // Initialize the recommendation slider
+    initializeSlider('slider-recommendations', 'recommendations-container');
     
-    // Set up auto-scrolling for the slider-menu
-    const sliderMenu = document.getElementById('slider-menu');
-    if (sliderMenu) {
-        const scrollContainer = sliderMenu.querySelector('#slider-container');
-        if (scrollContainer) {
-            setupSlider(sliderMenu, scrollContainer);
-        }
-    }
+    // Initialize the regular menu slider
+    initializeSlider('slider-menu', 'slider-container');
     
-    // Function to set up a slider
-    function setupSlider(sliderElement, scrollContainerElement) {
-        let scrollDirection = -1; // -1 for right-to-left, 1 for left-to-right
-        let scrollInterval = null;
+    // Function to initialize a slider with its container
+    function initializeSlider(sliderId, containerId) {
+        const sliderElement = document.getElementById(sliderId);
+        if (!sliderElement) return;
+        
+        const scrollContainer = sliderElement.querySelector('#' + containerId);
+        if (!scrollContainer) return;
+        
         let isPaused = false;
-        let scrollSpeed = 0.8; // Pixels per frame - reduced for smoother scrolling
+        let scrollSpeed = 0.8; // Pixels per frame
+        let scrollInterval = null;
         
-        // Add event listeners for the slider
-        sliderElement.addEventListener('mouseenter', function() {
-            isPaused = true;
-        });
+        // Initialize position and detect browser behavior
+        scrollContainer.scrollLeft = 0;
         
-        sliderElement.addEventListener('mouseleave', function() {
-            isPaused = false;
-        });
-        
-        const prevBtn = sliderElement.querySelector('.slider-btn.prev');
-        const nextBtn = sliderElement.querySelector('.slider-btn.next');
-        
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function() {
-                scrollContainerElement.scrollBy({
-                    left: -300,
-                    behavior: 'smooth'
-                });
-            });
+        // Detect browser behavior for RTL scrolling
+        function detectRTLScrollBehavior() {
+            scrollContainer.scrollLeft = 1;
+            if (scrollContainer.scrollLeft === 1) {
+                // Standard behavior: scrollLeft is positive in RTL
+                return 'positive';
+            } else {
+                // Firefox/legacy behavior: scrollLeft is negative in RTL
+                return 'negative';
+            }
         }
         
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function() {
-                scrollContainerElement.scrollBy({
-                    left: 300,
-                    behavior: 'smooth'
-                });
-            });
-        }
-        
-        // Initialize position
-        scrollContainerElement.scrollLeft = 0;        // Get the RTL behavior of the browser
-        const rtlBehavior = scrollContainerElement.dataset.rtlBehavior || 'positive';
+        // Store the browser's RTL scrolling behavior
+        const rtlBehavior = detectRTLScrollBehavior();
+        scrollContainer.dataset.rtlBehavior = rtlBehavior;
+        scrollContainer.scrollLeft = 0;
         
         // Add a visual indicator for auto-scrolling
         const indicator = document.createElement('div');
@@ -87,177 +66,95 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         }, 500);
         
-        scrollInterval = setInterval(() => {
-            if (isPaused) return;
-            
-            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-            
-            // Handle scrolling based on detected browser behavior
-            if (rtlBehavior === 'negative') {
-                // Firefox-like behavior: scrollLeft goes negative in RTL mode
-                if (scrollContainer.scrollLeft > -maxScroll) {
-                    // Still has space to scroll left
-                    scrollContainer.scrollLeft -= scrollSpeed;
-                } else {
-                    // Reached the end, wait a bit then reset
-                    const resetScroll = () => {
-                        scrollContainer.style.scrollBehavior = 'auto';
-                        scrollContainer.scrollLeft = 0;
-                        setTimeout(() => {
-                            scrollContainer.style.scrollBehavior = 'smooth';
-                        }, 50);
-                    };
-                    
-                    setTimeout(resetScroll, 1500);
-                }
-            } else {
-                // Chrome-like behavior: scrollLeft is positive in RTL mode
-                if (scrollContainer.scrollLeft < maxScroll) {
-                    // Still has space to scroll right
-                    scrollContainer.scrollLeft += scrollSpeed;
-                } else {
-                    // Reached the end, wait a bit then reset
-                    const resetScroll = () => {
-                        scrollContainer.style.scrollBehavior = 'auto';
-                        scrollContainer.scrollLeft = 0;
-                        setTimeout(() => {
-                            scrollContainer.style.scrollBehavior = 'smooth';
-                        }, 50);
-                    };
-                    
-                    setTimeout(resetScroll, 1500);
-                }
-            }
-        }, 16); // ~60fps for smooth scrolling
-    }
-    
-    // Pause scrolling when hovering
-    scrollContainer.addEventListener('mouseenter', () => {
-        isPaused = true;
-    });
-    
-    scrollContainer.addEventListener('mouseleave', () => {
-        isPaused = false;
-    });
-    
-    // Pause scrolling when touching (for mobile)
-    scrollContainer.addEventListener('touchstart', () => {
-        isPaused = true;
-    });
-    
-    scrollContainer.addEventListener('touchend', () => {
-        // Resume after a small delay to allow tapping items
-        setTimeout(() => {
+        // Handle mouse events to pause scrolling
+        scrollContainer.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+        
+        scrollContainer.addEventListener('mouseleave', () => {
             isPaused = false;
-        }, 1000);
-    });    // Handle slider button clicks
-    const prevBtn = sliderMenu.querySelector('.slider-btn.prev');
-    const nextBtn = sliderMenu.querySelector('.slider-btn.next');
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-            // Get the width of one card plus its margin
-            const cardWidth = scrollContainer.querySelector('.project-card').offsetWidth + 16; // 16px for margin
-            
-            // Get the RTL behavior of the browser that we detected earlier
-            const rtlBehavior = scrollContainer.dataset.rtlBehavior || 'positive';
-            
-            // Handle click based on browser RTL behavior
-            if (rtlBehavior === 'negative') {
-                // For Firefox-like browsers: use negative value to scroll previous
-                scrollContainer.scrollBy({
-                    left: -cardWidth,
-                    behavior: 'smooth'
-                });
-            } else {            // For Chrome-like browsers: use positive value to scroll previous
-                scrollContainer.scrollBy({
-                    left: cardWidth,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Add visual feedback for button click
-            prevBtn.classList.add('btn-active');
-            setTimeout(() => prevBtn.classList.remove('btn-active'), 300);
-            
-            // Pause auto-scrolling briefly after button click
-            isPaused = true;
-            setTimeout(() => { isPaused = false; }, 2000);
         });
-    }
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            // Get the width of one card plus its margin
-            const cardWidth = scrollContainer.querySelector('.project-card').offsetWidth + 16; // 16px for margin
-            
-            // Get the RTL behavior of the browser that we detected earlier
-            const rtlBehavior = scrollContainer.dataset.rtlBehavior || 'positive';
-            
-            // Handle click based on browser RTL behavior
-            if (rtlBehavior === 'negative') {
-                // For Firefox-like browsers: use positive value to scroll next
-                scrollContainer.scrollBy({
-                    left: cardWidth,
-                    behavior: 'smooth'
-                });
-            } else {            // For Chrome-like browsers: use negative value to scroll next
-                scrollContainer.scrollBy({
-                    left: -cardWidth,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Add visual feedback for button click
-            nextBtn.classList.add('btn-active');
-            setTimeout(() => nextBtn.classList.remove('btn-active'), 300);
-            
-            // Pause auto-scrolling briefly after button click
+        
+        // Handle touch events
+        scrollContainer.addEventListener('touchstart', () => {
             isPaused = true;
-            setTimeout(() => { isPaused = false; }, 2000);
         });
-    }// Function to check and fix browser inconsistencies with RTL scrolling
-    function initializeRTLScrolling() {
-        // Set initial position to rightmost (which is scrollLeft=0 in RTL mode)
-        scrollContainer.scrollLeft = 0;
         
-        // Add a class to help with CSS targeting if needed
-        scrollContainer.classList.add('rtl-scroll-active');
+        scrollContainer.addEventListener('touchend', () => {
+            setTimeout(() => {
+                isPaused = false;
+            }, 1000);
+        });
         
-        // Detect browser behavior for RTL scrolling
-        // Chrome and Firefox have different implementations
-        const detectRTLScrollBehavior = () => {
-            scrollContainer.scrollLeft = 1;
-            if (scrollContainer.scrollLeft === 1) {
-                // Standard behavior: scrollLeft is positive in RTL
-                return 'positive';
-            } else {
-                // Firefox/legacy behavior: scrollLeft is negative in RTL
-                return 'negative';
-            }
-        };
+        // Handle slider button clicks
+        const prevBtn = sliderElement.querySelector('.slider-btn.prev');
+        const nextBtn = sliderElement.querySelector('.slider-btn.next');
         
-        // Store the browser's RTL scrolling behavior for later use
-        const rtlBehavior = detectRTLScrollBehavior();
-        scrollContainer.dataset.rtlBehavior = rtlBehavior;
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                scrollContainer.scrollBy({
+                    left: -300,
+                    behavior: 'smooth'
+                });
+                
+                prevBtn.classList.add('btn-active');
+                setTimeout(() => prevBtn.classList.remove('btn-active'), 300);
+                
+                isPaused = true;
+                setTimeout(() => { isPaused = false; }, 2000);
+            });
+        }
         
-        // Reset scroll position
-        scrollContainer.scrollLeft = 0;
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                scrollContainer.scrollBy({
+                    left: 300,
+                    behavior: 'smooth'
+                });
+                
+                nextBtn.classList.add('btn-active');
+                setTimeout(() => nextBtn.classList.remove('btn-active'), 300);
+                
+                isPaused = true;
+                setTimeout(() => { isPaused = false; }, 2000);
+            });
+        }
         
-        // Make cards appear sequentially with a staggered animation
+        // Staggered animation for cards
         const cards = scrollContainer.querySelectorAll('.project-card');
         cards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             
-            // Staggered animation
             setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
             }, 100 * index);
         });
+        
+        // Start auto-scrolling
+        scrollInterval = setInterval(() => {
+            if (isPaused) return;
+            
+            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            
+            // Handle scrolling based on browser behavior
+            if (rtlBehavior === 'negative') {
+                // Firefox-like behavior
+                if (scrollContainer.scrollLeft > -maxScroll) {
+                    scrollContainer.scrollLeft -= scrollSpeed;
+                } else {
+                    scrollContainer.scrollLeft = 0;
+                }
+            } else {
+                // Chrome-like behavior
+                if (scrollContainer.scrollLeft < maxScroll) {
+                    scrollContainer.scrollLeft += scrollSpeed;
+                } else {
+                    scrollContainer.scrollLeft = 0;
+                }
+            }
+        }, 16);
     }
-    
-    // Initialize RTL scrolling and then start auto-scrolling
-    initializeRTLScrolling();
-    setTimeout(startAutoScroll, 1500);
 });

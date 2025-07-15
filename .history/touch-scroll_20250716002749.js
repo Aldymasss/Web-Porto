@@ -78,7 +78,4 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update scroll position
         slider.scrollLeft = scrollLeft - walk;
     }, { passive: false });
-    } // End of setupTouchScrolling function
-        slider.scrollLeft = scrollLeft - walk;
-    }, { passive: false });
 });
