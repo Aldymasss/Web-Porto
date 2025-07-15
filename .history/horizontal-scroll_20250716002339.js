@@ -5,59 +5,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sliderRecommendations) {
         const recommendationsContainer = sliderRecommendations.querySelector('#recommendations-container');
         if (recommendationsContainer) {
-            setupSlider(sliderRecommendations, recommendationsContainer);
+            setupSlider(sliderRecommendations, recommendationsContainer, 'recommendations');
         }
     }
     
     // Set up auto-scrolling for the slider-menu
     const sliderMenu = document.getElementById('slider-menu');
-    if (sliderMenu) {
-        const scrollContainer = sliderMenu.querySelector('#slider-container');
-        if (scrollContainer) {
-            setupSlider(sliderMenu, scrollContainer);
-        }
-    }
+    if (!sliderMenu) return;
     
-    // Function to set up a slider
-    function setupSlider(sliderElement, scrollContainerElement) {
-        let scrollDirection = -1; // -1 for right-to-left, 1 for left-to-right
-        let scrollInterval = null;
-        let isPaused = false;
-        let scrollSpeed = 0.8; // Pixels per frame - reduced for smoother scrolling
-        
-        // Add event listeners for the slider
-        sliderElement.addEventListener('mouseenter', function() {
-            isPaused = true;
-        });
-        
-        sliderElement.addEventListener('mouseleave', function() {
-            isPaused = false;
-        });
-        
-        const prevBtn = sliderElement.querySelector('.slider-btn.prev');
-        const nextBtn = sliderElement.querySelector('.slider-btn.next');
-        
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function() {
-                scrollContainerElement.scrollBy({
-                    left: -300,
-                    behavior: 'smooth'
-                });
-            });
-        }
-        
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function() {
-                scrollContainerElement.scrollBy({
-                    left: 300,
-                    behavior: 'smooth'
-                });
-            });
-        }
+    const scrollContainer = sliderMenu.querySelector('#slider-container');
+    if (!scrollContainer) return;
+    
+    let scrollDirection = -1; // -1 for right-to-left, 1 for left-to-right
+    let scrollInterval = null;
+    let isPaused = false;
+    let scrollSpeed = 0.8; // Pixels per frame - reduced for smoother scrolling    // Start auto-scrolling
+    function startAutoScroll() {
+        if (scrollInterval) clearInterval(scrollInterval);
         
         // Initialize position
-        scrollContainerElement.scrollLeft = 0;        // Get the RTL behavior of the browser
-        const rtlBehavior = scrollContainerElement.dataset.rtlBehavior || 'positive';
+        // For RTL, we start at the left (which is actually the right side of the content in RTL)
+        scrollContainer.scrollLeft = 0;
+        
+        // Get the RTL behavior of the browser that we detected earlier
+        const rtlBehavior = scrollContainer.dataset.rtlBehavior || 'positive';
         
         // Add a visual indicator for auto-scrolling
         const indicator = document.createElement('div');
@@ -74,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         indicator.style.opacity = '0';
         indicator.style.transition = 'opacity 0.5s';
         indicator.style.zIndex = '100';
-        sliderElement.appendChild(indicator);
+        sliderMenu.appendChild(indicator);
         
         // Show indicator briefly
         setTimeout(() => {

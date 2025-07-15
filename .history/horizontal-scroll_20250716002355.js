@@ -5,25 +5,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sliderRecommendations) {
         const recommendationsContainer = sliderRecommendations.querySelector('#recommendations-container');
         if (recommendationsContainer) {
-            setupSlider(sliderRecommendations, recommendationsContainer);
+            setupSlider(sliderRecommendations, recommendationsContainer, 'recommendations');
         }
     }
     
     // Set up auto-scrolling for the slider-menu
     const sliderMenu = document.getElementById('slider-menu');
-    if (sliderMenu) {
-        const scrollContainer = sliderMenu.querySelector('#slider-container');
-        if (scrollContainer) {
-            setupSlider(sliderMenu, scrollContainer);
-        }
-    }
+    if (!sliderMenu) return;
     
-    // Function to set up a slider
-    function setupSlider(sliderElement, scrollContainerElement) {
-        let scrollDirection = -1; // -1 for right-to-left, 1 for left-to-right
-        let scrollInterval = null;
+    const scrollContainer = sliderMenu.querySelector('#slider-container');
+    if (!scrollContainer) return;
+    
+    let scrollDirection = -1; // -1 for right-to-left, 1 for left-to-right
+    let scrollInterval = null;
+    let isPaused = false;
+    let scrollSpeed = 0.8; // Pixels per frame - reduced for smoother scrolling    // Function to set up a slider
+    function setupSlider(sliderElement, scrollContainerElement, sliderId) {
+        let scrollDir = -1; // -1 for right-to-left, 1 for left-to-right
+        let scrollInt = null;
         let isPaused = false;
-        let scrollSpeed = 0.8; // Pixels per frame - reduced for smoother scrolling
+        let speed = 0.8; // Pixels per frame
         
         // Add event listeners for the slider
         sliderElement.addEventListener('mouseenter', function() {
@@ -55,9 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
+        // Start scrolling for this slider
+        startScrollingFor(sliderElement, scrollContainerElement, sliderId);
+    }
+    
+    // Start auto-scrolling for a specific slider
+    function startScrollingFor(sliderElement, scrollContainerElement, sliderId) {
+        let scrollInterval = null;
+        
         // Initialize position
-        scrollContainerElement.scrollLeft = 0;        // Get the RTL behavior of the browser
-        const rtlBehavior = scrollContainerElement.dataset.rtlBehavior || 'positive';
+        scrollContainerElement.scrollLeft = 0;
+        
+        // Get the RTL behavior of the browser that we detected earlier
+        const rtlBehavior = scrollContainer.dataset.rtlBehavior || 'positive';
         
         // Add a visual indicator for auto-scrolling
         const indicator = document.createElement('div');
@@ -74,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         indicator.style.opacity = '0';
         indicator.style.transition = 'opacity 0.5s';
         indicator.style.zIndex = '100';
-        sliderElement.appendChild(indicator);
+        sliderMenu.appendChild(indicator);
         
         // Show indicator briefly
         setTimeout(() => {

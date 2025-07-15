@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Initialize position
-        scrollContainerElement.scrollLeft = 0;        // Get the RTL behavior of the browser
+        scrollContainerElement.scrollLeft = 0;
+          // Get the RTL behavior of the browser that we detected earlier
         const rtlBehavior = scrollContainerElement.dataset.rtlBehavior || 'positive';
         
         // Add a visual indicator for auto-scrolling
