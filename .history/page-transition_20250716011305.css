@@ -1,0 +1,144 @@
+/* Page Transition Animations */
+:root {
+  --transition-duration: 0.6s;
+  --transition-timing: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Body styles for transition */
+body {
+  opacity: 1;
+  transition: opacity var(--transition-duration) var(--transition-timing);
+}
+
+/* Page transition overlay */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5C694B; /* Paperplane project theme color */
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform var(--transition-duration) var(--transition-timing);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Loading spinner for the overlay */
+.page-transition-overlay::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 0.8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.transitioning .page-transition-overlay::after {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  :root {
+    --transition-duration: 0.5s; /* Slightly faster transitions on mobile */
+  }
+  
+  .page-transition-overlay::after {
+    width: 30px; /* Smaller spinner on mobile */
+    height: 30px;
+  }
+  
+  .transition-logo img {
+    max-width: 100px; /* Smaller logo on mobile */
+  }
+}
+
+/* Show overlay during transition */
+.transitioning .page-transition-overlay {
+  transform: translateY(0);
+}
+
+/* Hide content during transition */
+.transitioning {
+  overflow: hidden;
+}
+
+/* Transition out animation */
+.transition-out {
+  opacity: 0;
+}
+
+/* Fade in animation for content */
+.fade-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.loaded .fade-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger transition for multiple elements */
+.stagger-fade:nth-child(1) { transition-delay: 0.1s; }
+.stagger-fade:nth-child(2) { transition-delay: 0.2s; }
+.stagger-fade:nth-child(3) { transition-delay: 0.3s; }
+.stagger-fade:nth-child(4) { transition-delay: 0.4s; }
+.stagger-fade:nth-child(5) { transition-delay: 0.5s; }
+.stagger-fade:nth-child(6) { transition-delay: 0.6s; }
+
+/* Logo transition in overlay */
+.transition-logo {
+  position: relative;
+  z-index: 10000;
+}
+
+.transition-logo img {
+  max-width: 150px;
+  filter: brightness(0) invert(1); /* Make logo white */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.transitioning .transition-logo img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Enhance link hover effect for better interaction feedback */
+.nav-list a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s var(--transition-timing);
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+/* Add scale effect to active page */
+.nav-list a.active {
+  transform: scale(1.05);
+}
