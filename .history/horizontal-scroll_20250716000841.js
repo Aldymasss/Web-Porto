@@ -130,16 +130,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     left: -cardWidth,
                     behavior: 'smooth'
                 });
-            } else {            // For Chrome-like browsers: use positive value to scroll previous
+            } else {
+                // For Chrome-like browsers: use positive value to scroll previous
                 scrollContainer.scrollBy({
                     left: cardWidth,
                     behavior: 'smooth'
                 });
             }
-            
-            // Add visual feedback for button click
-            prevBtn.classList.add('btn-active');
-            setTimeout(() => prevBtn.classList.remove('btn-active'), 300);
             
             // Pause auto-scrolling briefly after button click
             isPaused = true;
@@ -161,16 +158,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     left: cardWidth,
                     behavior: 'smooth'
                 });
-            } else {            // For Chrome-like browsers: use negative value to scroll next
+            } else {
+                // For Chrome-like browsers: use negative value to scroll next
                 scrollContainer.scrollBy({
                     left: -cardWidth,
                     behavior: 'smooth'
                 });
             }
-            
-            // Add visual feedback for button click
-            nextBtn.classList.add('btn-active');
-            setTimeout(() => nextBtn.classList.remove('btn-active'), 300);
             
             // Pause auto-scrolling briefly after button click
             isPaused = true;

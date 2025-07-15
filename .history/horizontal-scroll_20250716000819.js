@@ -130,53 +130,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     left: -cardWidth,
                     behavior: 'smooth'
                 });
-            } else {            // For Chrome-like browsers: use positive value to scroll previous
+            } else {
+                // For Chrome-like browsers: use positive value to scroll previous
                 scrollContainer.scrollBy({
                     left: cardWidth,
                     behavior: 'smooth'
                 });
             }
-            
-            // Add visual feedback for button click
-            prevBtn.classList.add('btn-active');
-            setTimeout(() => prevBtn.classList.remove('btn-active'), 300);
             
             // Pause auto-scrolling briefly after button click
             isPaused = true;
             setTimeout(() => { isPaused = false; }, 2000);
         });
     }
-      if (nextBtn) {
+    
+    if (nextBtn) {
         nextBtn.addEventListener('click', function() {
             // Get the width of one card plus its margin
             const cardWidth = scrollContainer.querySelector('.project-card').offsetWidth + 16; // 16px for margin
             
-            // Get the RTL behavior of the browser that we detected earlier
-            const rtlBehavior = scrollContainer.dataset.rtlBehavior || 'positive';
-            
-            // Handle click based on browser RTL behavior
-            if (rtlBehavior === 'negative') {
-                // For Firefox-like browsers: use positive value to scroll next
-                scrollContainer.scrollBy({
-                    left: cardWidth,
-                    behavior: 'smooth'
-                });
-            } else {            // For Chrome-like browsers: use negative value to scroll next
-                scrollContainer.scrollBy({
-                    left: -cardWidth,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Add visual feedback for button click
-            nextBtn.classList.add('btn-active');
-            setTimeout(() => nextBtn.classList.remove('btn-active'), 300);
-            
+            // Scroll left (which visually goes right in RTL)            scrollContainer.scrollBy({
+                left: -cardWidth,
+                behavior: 'smooth'
+            });
             // Pause auto-scrolling briefly after button click
             isPaused = true;
             setTimeout(() => { isPaused = false; }, 2000);
         });
-    }// Function to check and fix browser inconsistencies with RTL scrolling
+    }    // Function to check and fix browser inconsistencies with RTL scrolling
     function initializeRTLScrolling() {
         // Set initial position to rightmost (which is scrollLeft=0 in RTL mode)
         scrollContainer.scrollLeft = 0;

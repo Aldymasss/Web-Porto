@@ -81,28 +81,6 @@
     opacity: 0.7 !important;
 }
 
-/* Touch interaction styles */
-#slider-menu #slider-container.active {
-    cursor: grabbing !important;
-    user-select: none !important;
-    scroll-snap-type: none !important; /* Disable snap while dragging for smoother feel */
-}
-
-#slider-menu #slider-container.active .project-card {
-    transform: scale(0.98) !important;
-    transition: transform 0.2s ease-out !important;
-}
-
-/* Add a subtle hint to show scrollability */
-@keyframes scrollHint {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-10px); }
-}
-
-#slider-menu::after {
-    animation: scrollHint 2s ease-in-out 1; /* Show animation once */
-}
-
 /* Make slider buttons more visible on mobile */
 @media (max-width: 768px) {
     #slider-menu .slider-btn {

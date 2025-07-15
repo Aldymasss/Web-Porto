@@ -161,16 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     left: cardWidth,
                     behavior: 'smooth'
                 });
-            } else {            // For Chrome-like browsers: use negative value to scroll next
+            } else {
+                // For Chrome-like browsers: use negative value to scroll next
                 scrollContainer.scrollBy({
                     left: -cardWidth,
                     behavior: 'smooth'
                 });
             }
-            
-            // Add visual feedback for button click
-            nextBtn.classList.add('btn-active');
-            setTimeout(() => nextBtn.classList.remove('btn-active'), 300);
             
             // Pause auto-scrolling briefly after button click
             isPaused = true;
