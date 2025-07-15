@@ -1,0 +1,7 @@
+# File yang tidak perlu diupload
+*.bak
+.history/
+.vscode/
+node_modules/
+.DS_Store
+Thumbs.db
