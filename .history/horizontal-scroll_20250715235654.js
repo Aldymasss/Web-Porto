@@ -96,8 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get the width of one card plus its margin
             const cardWidth = scrollContainer.querySelector('.project-card').offsetWidth + 16; // 16px for margin
             
-            // Scroll left (which visually goes right in RTL)            scrollContainer.scrollBy({
-                left: -cardWidth,
+            // Scroll left (which visually goes right in RTL)
+            scrollContainer.scrollBy({
+                left: -300,
                 behavior: 'smooth'
             });
             // Pause auto-scrolling briefly after button click
@@ -105,30 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => { isPaused = false; }, 2000);
         });
     }
-      // Function to check and fix browser inconsistencies with RTL scrolling
-    function initializeRTLScrolling() {
-        // Set initial position to rightmost (which is scrollLeft=0 in RTL mode)
-        scrollContainer.scrollLeft = 0;
-        
-        // Add a class to help with CSS targeting if needed
-        scrollContainer.classList.add('rtl-scroll-active');
-        
-        // Make cards appear sequentially with a staggered animation
-        const cards = scrollContainer.querySelectorAll('.project-card');
-        cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            
-            // Staggered animation
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100 * index);
-        });
-    }
     
-    // Initialize RTL scrolling and then start auto-scrolling
-    initializeRTLScrolling();
-    setTimeout(startAutoScroll, 1500);
+    // Start auto-scrolling after a short delay
+    setTimeout(startAutoScroll, 1000);
 });

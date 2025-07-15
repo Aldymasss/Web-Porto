@@ -1,0 +1,54 @@
+/* RTL Horizontal Scrolling Styles */
+
+/* Make projects-grid scroll from right to left */
+#slider-menu .projects-grid#slider-container {
+    direction: rtl !important; /* Content starts from right side */
+    scroll-snap-type: x mandatory !important;
+    padding: 1.5rem 1rem !important;
+    scroll-behavior: smooth !important;
+}
+
+/* Reset direction for card content to ensure text displays correctly */
+#slider-menu .projects-grid#slider-container .project-card {
+    direction: ltr !important; /* Reset direction for card content */
+    scroll-snap-align: center !important;
+}
+
+/* Add smooth transition when hovering over cards */
+#slider-menu .projects-grid#slider-container .project-card {
+    transition: transform 0.3s ease-in-out !important;
+}
+
+/* Highlight card on hover */
+#slider-menu .projects-grid#slider-container .project-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    z-index: 5 !important;
+}
+
+/* Enhanced slider button positioning */
+#slider-menu .slider-btn {
+    z-index: 100 !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.3s, transform 0.3s !important;
+}
+
+#slider-menu .slider-btn:hover {
+    opacity: 1 !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Make slider buttons more visible on mobile */
+@media (max-width: 768px) {
+    #slider-menu .slider-btn {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    #slider-menu .slider-btn.prev {
+        left: 5px !important;
+    }
+    
+    #slider-menu .slider-btn.next {
+        right: 5px !important;
+    }
+}
