@@ -2,6 +2,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.querySelector('.nav-search');
     const searchInput = searchForm.querySelector('input[type="search"]');
+    const searchButton = searchForm.querySelector('button');
+    
+    // Add focus to search input when clicking the search button on small screens
+    searchButton.addEventListener('click', function(e) {
+        if (window.innerWidth <= 450) {
+            if (!searchInput.value.trim()) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        }
+    });
 
     // Main search function - hides all non-matching items
     function searchAllMenus(keyword) {
