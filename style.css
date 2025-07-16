@@ -975,6 +975,7 @@ body.dark-mode .social-card p {
 @media (max-width: 900px) {
   header.navbar-container .nav-search-inline {
     display: flex !important;
+    margin-right: 15px; /* Menambahkan jarak antara search box dan burger menu */
   }
   .burger {
     display: block !important;
@@ -983,10 +984,28 @@ body.dark-mode .social-card p {
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
     transition: all 0.25s cubic-bezier(.77,0,.18,1);
-  }
-  header.navbar-container .nav-search-inline input[type="search"]:focus {
+  }  header.navbar-container .nav-search-inline input[type="search"]:focus {
     transform: scale(1.01);
     box-shadow: 0 3px 16px rgba(44,48,60,0.15);
+  }
+    /* Tambahkan jarak yang lebih besar untuk perangkat dengan layar sangat kecil */
+  @media (max-width: 480px) {
+    header.navbar-container .nav-search-inline {
+      margin-right: 12px; /* Jarak yang sedikit lebih kecil untuk layar sangat kecil */
+      max-width: 160px; /* Batasi lebar search box pada layar kecil */
+    }
+  }
+  
+  /* Untuk layar sangat kecil seperti iPhone SE dan perangkat kecil lainnya */
+  @media (max-width: 360px) {
+    header.navbar-container .nav-search-inline {
+      margin-right: 8px; /* Jarak yang lebih kecil untuk perangkat sangat kecil */
+      max-width: 130px; /* Search box lebih kecil pada perangkat sangat kecil */
+    }
+    
+    header.navbar-container .nav-search-inline input[type="search"] {
+      padding: 0.6rem 1rem; /* Padding yang sedikit lebih kecil */
+    }
   }
 }
 
