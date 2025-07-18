@@ -1006,6 +1006,15 @@ body.dark-mode .social-card p {
     header.navbar-container .nav-search-inline input[type="search"] {
       padding: 0.6rem 1rem; /* Padding yang sedikit lebih kecil */
     }
+    
+    /* Maximum spacing for section headers on smallest screens */
+    h3[style*="text-align:center"] {
+      margin: 45px 0 25px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+      border-top: 1px solid rgba(92, 105, 75, 0.2);
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -1165,6 +1174,15 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
   .brand-tagline {
     font-size: 0.9rem;
   }
+
+  /* Additional spacing for section headers on smaller screens */
+  h3[style*="text-align:center"] {
+    margin: 40px 0 20px;
+    padding-top: 15px;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 5;
+  }
 }
 
 /* Navbar styling section - back to original */
@@ -1286,6 +1304,23 @@ input[type="search"].search-error {
   .logo-circle {
     width: 120px;
     height: 120px;
+  }
+
+  /* Fix for section headers spacing on mobile */
+  h3[style*="text-align:center"] {
+    margin: 30px 0 20px;
+    padding-top: 10px;
+    clear: both;
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  
+  /* Special styling for the main recommendation heading */
+  h3[style*="text-align:center"][style*="text-transform:uppercase"] {
+    margin: 25px 0 30px;
+    padding: 15px 0;
+    font-size: 1.5rem;
   }
 }
 
