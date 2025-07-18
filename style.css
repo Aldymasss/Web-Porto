@@ -477,6 +477,11 @@ body.dark-mode .projects-slider {
   transition: transform 0.6s cubic-bezier(.77,0,.18,1);
   will-change: transform;
   position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Untuk scrolling halus di iOS */
+  scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
 }
 .projects-slider .project-card {
   min-width: 270px;
