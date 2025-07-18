@@ -483,6 +483,14 @@ body.dark-mode .projects-slider {
   -webkit-overflow-scrolling: touch; /* Untuk scrolling halus di iOS */
   scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
 }
+.projects-slider .projects-grid::-webkit-scrollbar {
+  display: none; /* Menyembunyikan scrollbar di Chrome/Safari */
+}
+
+.projects-slider .projects-grid.active {
+  cursor: grabbing;
+}
+
 .projects-slider .project-card {
   min-width: 270px;
   max-width: 320px;

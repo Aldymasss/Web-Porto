@@ -1,0 +1,71 @@
+/* Styling khusus untuk slider pada perangkat mobile */
+
+@media (max-width: 768px) {
+    /* Memastikan slider terlihat dengan baik pada layar kecil */
+    .projects-slider {
+        width: 100%;
+        overflow: visible;
+        margin-bottom: 30px;
+    }
+    
+    /* Mengatur tata letak card pada tampilan mobile */
+    .projects-slider .projects-grid {
+        padding-bottom: 15px;
+        padding-top: 5px;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-left: 10px;
+        width: calc(100% + 20px);
+    }
+    
+    /* Ukuran card yang lebih optimal untuk mobile */
+    .projects-slider .project-card {
+        flex: 0 0 auto;
+        width: 80%;
+        min-width: 250px;
+        max-width: 300px;
+        margin-right: 15px;
+    }
+    
+    /* Untuk card terakhir dalam slider */
+    .projects-slider .project-card:last-child {
+        margin-right: 10px;
+    }
+    
+    /* Memperbaiki tombol slider pada mobile */
+    .projects-slider .slider-btn {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(92, 105, 75, 0.85);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Posisi tombol prev */
+    .projects-slider .slider-btn.prev {
+        left: 5px;
+    }
+    
+    /* Posisi tombol next */
+    .projects-slider .slider-btn.next {
+        right: 5px;
+    }
+    
+    /* Indikator visual untuk menunjukkan ada konten lain yang bisa di-scroll */
+    .projects-slider::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 30px;
+        background: linear-gradient(to left, rgba(255,255,255,0.7), transparent);
+        pointer-events: none;
+        z-index: 5;
+    }
+}
+
+/* Styling saat user melakukan touch drag */
+.projects-grid.active .project-card {
+    transform: scale(0.98);
+    transition: transform 0.2s ease-out;
+}
