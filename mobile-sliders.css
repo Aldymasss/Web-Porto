@@ -4,24 +4,27 @@
     /* Memastikan slider terlihat dengan baik pada layar kecil */
     .projects-slider {
         width: 100%;
-        overflow: visible;
+        overflow-x: auto;
         margin-bottom: 30px;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: thin; /* For Firefox */
     }
     
     /* Mengatur tata letak card pada tampilan mobile */
     .projects-slider .projects-grid {
+        display: flex;
+        flex-wrap: nowrap;
         padding-bottom: 15px;
         padding-top: 5px;
-        margin-left: -10px;
-        margin-right: -10px;
         padding-left: 10px;
-        width: calc(100% + 20px);
+        padding-right: 20px; /* Extra padding to ensure last card is fully visible */
+        gap: 15px;
+        width: auto; /* Allow content to determine width */
     }
     
     /* Ukuran card yang lebih optimal untuk mobile */
     .projects-slider .project-card {
-        flex: 0 0 auto;
-        width: 80%;
+        flex: 0 0 85%;
         min-width: 250px;
         max-width: 300px;
         margin-right: 15px;
@@ -29,7 +32,8 @@
     
     /* Untuk card terakhir dalam slider */
     .projects-slider .project-card:last-child {
-        margin-right: 10px;
+        margin-right: 15px;
+        padding-right: 15px;
     }
     
     /* Memperbaiki tombol slider pada mobile */
