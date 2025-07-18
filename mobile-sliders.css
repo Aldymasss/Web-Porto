@@ -8,9 +8,11 @@
         margin-bottom: 30px;
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         scrollbar-width: thin; /* For Firefox */
+        position: relative;
+        padding: 10px 0; /* Tambahan padding untuk memperbaiki tampilan tanpa tombol */
     }
     
-    /* Mengatur tata letak card pada tampilan mobile */
+    /* Mengatur tata letak card pada tampilan mobile dengan scroll behavior */
     .projects-slider .projects-grid {
         display: flex;
         flex-wrap: nowrap;
@@ -20,14 +22,24 @@
         padding-right: 20px; /* Extra padding to ensure last card is fully visible */
         gap: 15px;
         width: auto; /* Allow content to determine width */
+        scroll-behavior: smooth; /* Menambahkan scroll yang smooth */
+        overflow-x: auto; /* Memastikan bisa scroll horizontal */
+        scrollbar-width: thin;
     }
     
-    /* Ukuran card yang lebih optimal untuk mobile */
+    /* Ukuran card yang lebih optimal untuk mobile dengan animasi */
     .projects-slider .project-card {
         flex: 0 0 85%;
         min-width: 250px;
         max-width: 300px;
         margin-right: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Animasi hover pada card */
+    .projects-slider .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
     
     /* Untuk card terakhir dalam slider */
@@ -36,22 +48,9 @@
         padding-right: 15px;
     }
     
-    /* Memperbaiki tombol slider pada mobile */
+    /* Menyembunyikan tombol slider */
     .projects-slider .slider-btn {
-        width: 32px;
-        height: 32px;
-        background-color: rgba(92, 105, 75, 0.85);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Posisi tombol prev */
-    .projects-slider .slider-btn.prev {
-        left: 5px;
-    }
-    
-    /* Posisi tombol next */
-    .projects-slider .slider-btn.next {
-        right: 5px;
+        display: none; /* Menyembunyikan semua tombol slider */
     }
     
     /* Indikator visual untuk menunjukkan ada konten lain yang bisa di-scroll */
@@ -74,6 +73,61 @@
     transition: transform 0.2s ease-out;
 }
 
+/* Animasi untuk konten saat halaman dimuat */
+.project-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animasi untuk setiap kartu dengan delay berbeda */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling untuk animasi saat masuk viewport */
+.projects-grid.animate-in .project-card {
+    animation: fadeInSlide 0.6s ease forwards;
+    opacity: 0;
+}
+
+.projects-grid.animate-in .project-card:nth-child(1) { animation-delay: 0.1s; }
+.projects-grid.animate-in .project-card:nth-child(2) { animation-delay: 0.2s; }
+.projects-grid.animate-in .project-card:nth-child(3) { animation-delay: 0.3s; }
+.projects-grid.animate-in .project-card:nth-child(4) { animation-delay: 0.4s; }
+.projects-grid.animate-in .project-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Styling untuk card yang sedang dalam viewport */
+.project-card.in-view {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    z-index: 2;
+}
+
 /* Scrollbar styling untuk browser modern */
 .projects-slider::-webkit-scrollbar {
     height: 4px;
@@ -87,6 +141,35 @@
 .projects-slider::-webkit-scrollbar-thumb {
     background: #5C694B;
     border-radius: 10px;
+}
+
+/* Efek transisi untuk gambar dan konten dalam card */
+.project-card img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.project-card h3, 
+.project-card h4 {
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3,
+.project-card:hover h4 {
+    color: #5C694B;
+}
+
+.project-card .btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .btn {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Memastikan slider terlihat bisa di-scroll pada perangkat mobile */
