@@ -73,3 +73,30 @@
     transform: scale(0.98);
     transition: transform 0.2s ease-out;
 }
+
+/* Scrollbar styling untuk browser modern */
+.projects-slider::-webkit-scrollbar {
+    height: 4px;
+}
+
+.projects-slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.projects-slider::-webkit-scrollbar-thumb {
+    background: #5C694B;
+    border-radius: 10px;
+}
+
+/* Memastikan slider terlihat bisa di-scroll pada perangkat mobile */
+@media (max-width: 480px) {
+    .projects-slider::after {
+        width: 50px; /* Lebih lebar fade effect untuk layar kecil */
+    }
+    
+    .projects-slider .project-card {
+        flex: 0 0 90%; /* Card lebih lebar pada perangkat sangat kecil */
+        min-width: 200px;
+    }
+}
