@@ -1,5 +1,6 @@
 /* CSS untuk menampilkan judul tanpa titik */
-.section-title {
+.section-title,
+.projects-section h3 {
     text-align: center;
     color: #5C694B;
     font-weight: 700;
@@ -12,8 +13,11 @@
     padding: 0 20px;
 }
 
+/* Garis horizontal di samping judul sebagai pengganti titik */
 .section-title::before,
-.section-title::after {
+.section-title::after,
+.projects-section h3::before,
+.projects-section h3::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -22,11 +26,13 @@
     width: 50px;
 }
 
-.section-title::before {
+.section-title::before,
+.projects-section h3::before {
     right: 100%;
 }
 
-.section-title::after {
+.section-title::after,
+.projects-section h3::after {
     left: 100%;
 }
 
@@ -34,4 +40,21 @@
 .title-container {
     text-align: center;
     margin: 40px 0 30px;
+}
+
+/* CSS untuk menghilangkan titik pada judul di file yang ada */
+/* Gunakan !important untuk memastikan ini mengganti style yang ada */
+h3:contains("OUR RECOMMENDATIONS")::before,
+h3:contains("OUR RECOMMENDATIONS")::after,
+h3:contains("Our Recommendations")::before,
+h3:contains("Our Recommendations")::after,
+section#menu h3::before,
+section#menu h3::after {
+    content: none !important;
+}
+
+/* Khusus untuk override judul dengan titik */
+h3.section-title-no-dots::before,
+h3.section-title-no-dots::after {
+    content: none !important;
 }

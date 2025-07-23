@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Project - Paperplane Project</title>
+    
+    <!-- Preload key resources for better performance -->
+    <link rel="preload" href="img/food.jpg" as="image">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-sliders.css">
+    <link rel="stylesheet" href="menu-spacing.css">
+    <link rel="stylesheet" href="rtl-scroll.css">
+    <link rel="stylesheet" href="page-transition.css">
+    <!-- Tambahkan file CSS untuk judul tanpa titik -->
+    <link rel="stylesheet" href="section-titles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="search.js" defer></script>
+    <script src="menu-scroll.js" defer></script>
+    <script src="touch-scroll.js" defer></script>
+    <script src="page-transition.js" defer></script>
+
+    <style>
+        /* Override untuk menghilangkan titik pada judul */
+        .projects-section h3 {
+            position: relative;
+        }
+        /* Hapus pseudo-elements yang membuat titik */
+        .projects-section h3::before, 
+        .projects-section h3::after {
+            content: none !important; 
+        }
+        
+        /* Khusus untuk judul OUR RECOMMENDATIONS */
+        .section-header {
+            text-align: center;
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section-header h3 {
+            display: inline-block;
+            position: relative;
+            background-color: white;
+            padding: 0 15px;
+            margin: 0;
+            z-index: 1;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background-color: #5C694B;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Konten lain akan ditambahkan dari file menu-fixed.html -->
+    <h1>Menu Paperplane Project</h1>
+    <p>Mohon tambahkan konten menu dari menu-fixed.html</p>
+</body>
+</html>
