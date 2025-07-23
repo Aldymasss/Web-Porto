@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultMsg = document.createElement('div');
         resultMsg.className = 'search-result-message';
         if (result.foundCount > 0) {
-            resultMsg.innerHTML = `<div class="search-icon"><i class="fa fa-search"></i></div><div class="search-message">Menampilkan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"</div>`;
+            resultMsg.innerHTML = `<div class="search-icon"><i class="fa fa-check-circle"></i></div><div class="search-message">Menampilkan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"</div>`;
         } else {
             resultMsg.innerHTML = `<div class="search-icon"><i class="fa fa-exclamation-circle"></i></div><div class="search-message">Tidak ada menu yang ditemukan untuk "<strong>${keyword}</strong>"<span class="search-tip">Coba kata kunci lain atau periksa ejaan</span></div>`;
             resultMsg.classList.add('no-results');
@@ -146,20 +146,19 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => resultMsg.remove(), 500);
         };
         resultMsg.appendChild(closeBtn);
-        // Place in center of viewport
-        resultMsg.style.position = 'fixed';
-        resultMsg.style.top = '50%';
-        resultMsg.style.left = '50%';
-        resultMsg.style.transform = 'translate(-50%, -50%)';
-        resultMsg.style.zIndex = '9999';
+        // Place at top of viewport
+        // Let CSS handle the styling
         document.body.appendChild(resultMsg);
-        // Auto-hide after 8 seconds
+
+        // Auto-hide after 5 seconds (reduced from 8 seconds)
         setTimeout(() => {
             if (resultMsg && resultMsg.parentNode) {
                 resultMsg.style.opacity = '0';
-                setTimeout(() => resultMsg.remove(), 500);
+                resultMsg.style.transform = 'translateY(-20px)';
+                resultMsg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                setTimeout(() => resultMsg.remove(), 300);
             }
-        }, 8000);
+        }, 5000);
     }
 
     // Handle form submission (search button click or Enter key)
