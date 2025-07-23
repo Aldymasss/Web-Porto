@@ -128,9 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultMsg = document.createElement('div');
         resultMsg.className = 'search-result-message';
         if (result.foundCount > 0) {
-            resultMsg.innerHTML = `<i class="fa fa-search" style="margin-right:8px;"></i>Menampilkan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"`;
+            resultMsg.innerHTML = `<div class="search-icon"><i class="fa fa-search"></i></div><div class="search-message">Menampilkan ${result.foundCount} menu untuk "<strong>${keyword}</strong>"</div>`;
         } else {
-            resultMsg.innerHTML = `<i class="fa fa-exclamation-circle" style="margin-right:8px;"></i>Tidak ada menu yang ditemukan untuk "<strong>${keyword}</strong>"<span style="display:block;font-size:0.9em;opacity:0.8;margin-top:5px;">Coba kata kunci lain atau periksa ejaan</span>`;
+            resultMsg.innerHTML = `<div class="search-icon"><i class="fa fa-exclamation-circle"></i></div><div class="search-message">Tidak ada menu yang ditemukan untuk "<strong>${keyword}</strong>"<span class="search-tip">Coba kata kunci lain atau periksa ejaan</span></div>`;
             resultMsg.classList.add('no-results');
             resetSearch();
             searchInput.classList.add('search-error');

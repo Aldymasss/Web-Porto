@@ -1230,24 +1230,49 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   z-index: 9999 !important;
-  min-width: 320px;
-  max-width: 90vw;
+  min-width: 280px;
+  max-width: 85vw;
   background: #5C694B;
   color: white;
-  padding: 1.2rem 2.2rem;
+  padding: 18px;
   border-radius: 14px;
   font-weight: 600;
   box-shadow: 0 4px 24px rgba(92,105,75,0.25);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: opacity 0.5s;
+  text-align: left;
+}
+
+.search-result-message .search-icon {
+  margin-right: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255,255,255,0.1);
-  transition: opacity 0.5s;
+  font-size: 18px;
+  flex-shrink: 0;
 }
+
+.search-result-message .search-message {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.search-result-message .search-tip {
+  display: block;
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
 .search-result-message.no-results {
   background: #e11d48;
 }
+
 .search-result-message .search-close-btn {
   position: absolute;
   right: 10px;
@@ -1257,6 +1282,24 @@ body.dark-mode .slider-btn:hover i, body.dark-mode .slider-btn:focus i {
   color: white;
   font-size: 20px;
   cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile-specific styling */
+@media (max-width: 480px) {
+  .search-result-message {
+    padding: 15px;
+    min-width: 260px;
+  }
+  
+  .search-result-message .search-message {
+    font-size: 13px;
+  }
 }
 
 /* Search error state */
