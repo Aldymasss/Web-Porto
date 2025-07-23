@@ -1314,6 +1314,25 @@ input[type="search"].search-error {
   50% { transform: scale(1.05); }
 }
 
+/* Animation for search highlight */
+@keyframes highlight-pulse {
+  0% { 
+    background-color: rgba(92,105,75,0.4);
+    transform: scale(1);
+    box-shadow: 0 0 2px rgba(92,105,75,0.4);
+  }
+  50% { 
+    background-color: rgba(92,105,75,0.7);
+    transform: scale(1.03);
+    box-shadow: 0 0 6px rgba(92,105,75,0.7);
+  }
+  100% { 
+    background-color: rgba(92,105,75,0.4);
+    transform: scale(1);
+    box-shadow: 0 0 2px rgba(92,105,75,0.4);
+  }
+}
+
 @keyframes slideInFromTop {
   from {
     opacity: 0;
@@ -1328,20 +1347,18 @@ input[type="search"].search-error {
 /* Highlight search matches */
 .search-highlight {
   background-color: rgba(92,105,75,0.4);
-  padding: 0 2px;
-  border-radius: 2px;
+  padding: 0 3px;
+  border-radius: 3px;
   font-weight: bold;
   display: inline-block;
-  box-shadow: 0 0 3px rgba(92,105,75,0.5);
+  box-shadow: 0 0 4px rgba(92,105,75,0.6);
+  border-bottom: 2px solid #5C694B;
   animation: highlight-pulse 1.5s infinite alternate;
   color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,0.4);
 }
 
-@keyframes highlight-pulse {
-  from { background-color: rgba(92,105,75,0.4); }
-  to { background-color: rgba(92,105,75,0.7); }
-}
+/* Deleted duplicate keyframe definition */
 
 /* Mobile responsiveness for About section */
 @media (max-width: 700px) {
