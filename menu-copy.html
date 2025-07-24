@@ -6,7 +6,29 @@
     <link rel="stylesheet" href="menu-spacing.css">
     <link rel="stylesheet" href="rtl-scroll.css">
     <link rel="stylesheet" href="page-transition.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <script src="search.js" defer></script>
+    <link rel="stylesheet" href="section-titles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Tambahan style untuk menghilangkan titik pada judul secara paksa -->
+    <style>
+        /* Menghilangkan semua titik/bullet di samping judul */
+        .section-title::before,
+        .section-title::after,
+        .projects-section h3::before, 
+        .projects-section h3::after,
+        h3[style*="text-align:center"]::before,
+        h3[style*="text-align:center"]::after,
+        h3::before,
+        h3::after,
+        .menu-category h3::before,
+        .menu-category h3::after {
+            display: none !important;
+            content: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            background: none !important;
+            position: static !important;
+        }
+    </style>    <script src="search.js" defer></script>
     <script src="menu-scroll.js" defer></script>
     <script src="touch-scroll.js" defer></script>
     <script src="page-transition.js" defer></script>
