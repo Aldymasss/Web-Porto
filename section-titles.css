@@ -13,27 +13,13 @@
     padding: 0 20px;
 }
 
-/* Garis horizontal di samping judul sebagai pengganti titik */
+/* Menghilangkan garis/titik di samping judul */
 .section-title::before,
 .section-title::after,
 .projects-section h3::before,
 .projects-section h3::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    height: 2px;
-    background-color: #5C694B;
-    width: 50px;
-}
-
-.section-title::before,
-.projects-section h3::before {
-    right: 100%;
-}
-
-.section-title::after,
-.projects-section h3::after {
-    left: 100%;
+    content: none; /* Menghilangkan titik/bullet/garis */
+    display: none; /* Memastikan tidak ada elemen yang ditampilkan */
 }
 
 /* Tambahan untuk container judul */

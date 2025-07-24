@@ -14,6 +14,17 @@
     <link rel="stylesheet" href="page-transition.css">
     <!-- Tambahkan file CSS untuk judul tanpa titik -->
     <link rel="stylesheet" href="section-titles.css">
+    <!-- Tambahan style untuk memastikan tidak ada titik di judul -->
+    <style>
+        /* Override untuk menghilangkan titik pada judul secara paksa */
+        .projects-section h3::before, 
+        .projects-section h3::after,
+        h3[style*="text-align:center"]::before,
+        h3[style*="text-align:center"]::after {
+            display: none !important;
+            content: none !important;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="search.js" defer></script>
     <script src="menu-scroll.js" defer></script>

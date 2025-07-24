@@ -1435,3 +1435,18 @@ input[type="search"].search-error {
 }
 
 /* Using the updated pulse-error animation defined earlier */
+
+/* Style untuk menghilangkan titik pada semua heading di menu */
+.projects-section h3::before,
+.projects-section h3::after,
+h3.section-title::before,
+h3.section-title::after,
+[class*="menu"] h3::before,
+[class*="menu"] h3::after,
+h3[style*="text-align:center"]::before,
+h3[style*="text-align:center"]::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
