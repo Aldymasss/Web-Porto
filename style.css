@@ -482,6 +482,7 @@ body.dark-mode .projects-slider {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* Untuk scrolling halus di iOS */
   scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+  padding: 0 1rem; /* Tambahan padding untuk mobile */
 }
 .projects-slider .projects-grid::-webkit-scrollbar {
   display: none; /* Menyembunyikan scrollbar di Chrome/Safari */
@@ -489,6 +490,12 @@ body.dark-mode .projects-slider {
 
 .projects-slider .projects-grid.active {
   cursor: grabbing;
+}
+
+/* Container untuk gambar yang lebih baik */
+.project-card {
+  overflow: hidden; /* Mencegah gambar keluar dari container */
+  position: relative;
 }
 
 .projects-slider .project-card {
@@ -546,10 +553,27 @@ body.dark-mode .projects-slider {
 @media (max-width: 700px) {
   .projects-slider {
     padding: 0 0.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
   }
   .projects-slider .project-card {
     min-width: 85vw;
-    max-width: 95vw;
+    max-width: 90vw;
+    flex: 0 0 auto;
+  }
+  
+  /* Perbaiki grid untuk mobile */
+  .projects-grid {
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+  }
+  
+  /* Styling tombol slider untuk mobile */
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    opacity: 0.9;
   }
 }
 .project-card {
@@ -574,18 +598,28 @@ body.dark-mode .projects-slider {
 }
 .project-card img {
     width: 100%;
-    height: 200px;
-    object-fit: contain;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
     background-color: #f8f9fa;
     border-radius: 12px 12px 0 0;
+    transition: transform 0.3s ease;
 }
 
 /* Styling khusus untuk gambar menu */
 .menu-image {
     width: 100% !important;
     border-radius: 12px 12px 0 0 !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
+    object-position: center !important;
     background-color: #f8f9fa !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Hover effect untuk gambar */
+.project-card:hover img,
+.project-card:hover .menu-image {
+    transform: scale(1.05);
 }
 .project-card h3 {
     margin: 16px 16px 8px 16px;
@@ -618,32 +652,132 @@ body.dark-mode .projects-slider {
 /* Media queries untuk tampilan gambar yang lebih baik pada mobile */
 @media (max-width: 768px) {
     .project-card img, .menu-image {
-        height: 180px !important;
-        object-fit: contain !important;
+        height: 200px !important;
+        object-fit: cover !important;
+        object-position: center !important;
     }
     
     .project-card {
-        min-width: 270px;
-        max-width: 300px;
+        min-width: 280px;
+        max-width: 320px;
+        margin: 0 8px;
+    }
+    
+    /* Perbaiki spacing untuk mobile */
+    .project-card h3,
+    .project-card h4 {
+        font-size: 1.1rem;
+        margin: 12px 12px 6px 12px;
+    }
+    
+    .project-card p {
+        margin: 0 12px 12px 12px;
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 }
 
 @media (max-width: 480px) {
     .project-card img, .menu-image {
-        height: 160px !important;
-        object-fit: contain !important;
+        height: 180px !important;
+        object-fit: cover !important;
+        object-position: center !important;
     }
     
     .project-card {
-        min-width: 250px;
-        max-width: 280px;
+        min-width: 260px;
+        max-width: 300px;
+        margin: 0 6px;
+    }
+    
+    /* Optimasi konten untuk layar kecil */
+    .project-card h3,
+    .project-card h4 {
+        font-size: 1rem;
+        margin: 10px 10px 5px 10px;
+    }
+    
+    .project-card p {
+        margin: 0 10px 10px 10px;
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .project-card .btn {
+        width: 85%;
+        font-size: 1rem;
+        padding: 8px 0;
     }
 }
 
 @media (max-width: 360px) {
     .project-card img, .menu-image {
+        height: 160px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    
+    .project-card {
+        min-width: 240px;
+        max-width: 280px;
+        margin: 0 4px;
+    }
+    
+    /* Kompak untuk layar sangat kecil */
+    .project-card h3,
+    .project-card h4 {
+        font-size: 0.95rem;
+        margin: 8px 8px 4px 8px;
+    }
+    
+    .project-card p {
+        margin: 0 8px 8px 8px;
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+    
+    .project-card .btn {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 7px 0;
+    }
+}
+
+/* Media query khusus untuk iPhone dan perangkat mobile landscape */
+@media (max-width: 480px) and (orientation: landscape) {
+    .project-card img, .menu-image {
         height: 140px !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    
+    .project-card {
+        min-width: 220px;
+        max-width: 260px;
+    }
+}
+
+/* Media query untuk perangkat dengan pixel density tinggi (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .project-card img, .menu-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Styling khusus untuk touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .project-card:hover img,
+    .project-card:hover .menu-image {
+        transform: none; /* Nonaktifkan hover effect di touch devices */
+    }
+    
+    .project-card {
+        transition: transform 0.2s ease;
+    }
+    
+    .project-card:active {
+        transform: scale(0.98);
     }
 }
 .contact-section a {
