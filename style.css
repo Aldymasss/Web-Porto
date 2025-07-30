@@ -616,6 +616,26 @@ body.dark-mode .projects-slider {
     transition: transform 0.3s ease !important;
 }
 
+/* Class untuk gambar menu yang lebih responsif */
+.menu-image-responsive {
+    width: 100% !important;
+    border-radius: 12px 12px 0 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: #f8f9fa !important;
+    transition: transform 0.3s ease !important;
+    padding: 4px !important;
+}
+
+/* Override untuk mobile - gunakan contain instead of cover */
+@media (max-width: 768px) {
+    .menu-image {
+        object-fit: contain !important;
+        background-color: #f8f9fa !important;
+        padding: 6px !important;
+    }
+}
+
 /* Hover effect untuk gambar */
 .project-card:hover img,
 .project-card:hover .menu-image {
@@ -653,8 +673,10 @@ body.dark-mode .projects-slider {
 @media (max-width: 768px) {
     .project-card img, .menu-image {
         height: 200px !important;
-        object-fit: cover !important;
+        object-fit: contain !important;
         object-position: center !important;
+        background-color: #f8f9fa !important;
+        padding: 8px !important;
     }
     
     .project-card {
@@ -680,8 +702,10 @@ body.dark-mode .projects-slider {
 @media (max-width: 480px) {
     .project-card img, .menu-image {
         height: 180px !important;
-        object-fit: cover !important;
+        object-fit: contain !important;
         object-position: center !important;
+        background-color: #f8f9fa !important;
+        padding: 6px !important;
     }
     
     .project-card {
@@ -747,8 +771,10 @@ body.dark-mode .projects-slider {
 @media (max-width: 480px) and (orientation: landscape) {
     .project-card img, .menu-image {
         height: 140px !important;
-        object-fit: cover !important;
+        object-fit: contain !important;
         object-position: center !important;
+        background-color: #f8f9fa !important;
+        padding: 4px !important;
     }
     
     .project-card {
@@ -780,6 +806,53 @@ body.dark-mode .projects-slider {
         transform: scale(0.98);
     }
 }
+
+/* CSS tambahan untuk menangani gambar menu dengan berbagai aspek rasio */
+@media (max-width: 768px) {
+    /* Container gambar dengan aspect ratio yang fleksibel */
+    .project-card {
+        overflow: hidden;
+    }
+    
+    .project-card img,
+    .menu-image {
+        transition: all 0.3s ease !important;
+        border-radius: 12px 12px 0 0 !important;
+    }
+    
+    /* Penanganan khusus untuk gambar dengan aspect ratio berbeda */
+    .project-card img[src*="beverages/"],
+    .project-card img[src*="food/"],
+    .project-card img[src*="bakery/"] {
+        object-fit: contain !important;
+        background-color: #f8f9fa !important;
+        padding: 8px !important;
+    }
+    
+    /* Fallback untuk gambar dengan nama khusus */
+    .project-card img[alt*="Menu Preview"] {
+        object-fit: contain !important;
+        background-color: #f8f9fa !important;
+        padding: 6px !important;
+    }
+}
+
+/* Penanganan khusus untuk mobile portrait yang sangat kecil */
+@media (max-width: 360px) {
+    .project-card img, .menu-image {
+        height: 160px !important;
+        object-fit: contain !important;
+        padding: 4px !important;
+        background-color: #f8f9fa !important;
+    }
+    
+    .project-card {
+        min-width: 240px;
+        max-width: 280px;
+        margin: 0 4px;
+    }
+}
+
 .contact-section a {
     color: #e11d48;
     text-decoration: none;
