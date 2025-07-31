@@ -653,17 +653,15 @@ body.dark-mode .projects-slider {
 @media (max-width: 768px) {
     .project-card img, .menu-image {
         height: 200px !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center !important;
-        background-color: #f8f9fa !important;
-        padding: 8px !important;
     }
     
     .project-card {
         min-width: 280px;
         max-width: 320px;
         margin: 0 8px;
-    }
+    }}
     
     /* Perbaiki spacing untuk mobile */
     .project-card h3,
@@ -682,17 +680,15 @@ body.dark-mode .projects-slider {
 @media (max-width: 480px) {
     .project-card img, .menu-image {
         height: 180px !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center !important;
-        background-color: #f8f9fa !important;
-        padding: 8px !important;
     }
     
     .project-card {
         min-width: 260px;
         max-width: 300px;
         margin: 0 6px;
-    }
+    }}
     
     /* Optimasi konten untuk layar kecil */
     .project-card h3,
@@ -751,10 +747,8 @@ body.dark-mode .projects-slider {
 @media (max-width: 480px) and (orientation: landscape) {
     .project-card img, .menu-image {
         height: 140px !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center !important;
-        background-color: #f8f9fa !important;
-        padding: 6px !important;
     }
     
     .project-card {
@@ -804,16 +798,12 @@ body.dark-mode .projects-slider {
     .project-card img[src*="beverages/"],
     .project-card img[src*="food/"],
     .project-card img[src*="bakery/"] {
-        object-fit: contain !important;
-        background-color: #f8f9fa !important;
-        padding: 8px !important;
+        object-fit: cover !important;
     }
     
     /* Fallback untuk gambar dengan nama khusus */
     .project-card img[alt*="Menu Preview"] {
-        object-fit: contain !important;
-        background-color: #f8f9fa !important;
-        padding: 8px !important;
+        object-fit: cover !important;
     }
 }
 
@@ -821,10 +811,8 @@ body.dark-mode .projects-slider {
 @media (max-width: 360px) {
     .project-card img, .menu-image {
         height: 160px !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center !important;
-        background-color: #f8f9fa !important;
-        padding: 6px !important;
     }
     
     .project-card {
