@@ -653,8 +653,10 @@ body.dark-mode .projects-slider {
 @media (max-width: 768px) {
     .project-card img, .menu-image {
         height: 200px !important;
-        object-fit: cover !important;
+        object-fit: contain !important;
         object-position: center !important;
+        background-color: #f8f9fa !important;
+        padding: 8px !important;
     }
     
     .project-card {
