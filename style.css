@@ -722,15 +722,24 @@ body.dark-mode .projects-slider {
 
 @media (max-width: 480px) {
     .project-card img, .menu-image {
-        height: 180px !important;
-        object-fit: cover !important;
+        max-height: 220px !important;
+        min-height: 200px !important;
+        object-fit: contain !important;
         object-position: center !important;
     }
     
     .project-card {
-        min-width: 260px;
-        max-width: 300px;
+        min-width: 260px !important;
+        max-width: 85% !important;
         margin: 0 6px;
+    }
+    
+    .projects-section h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .projects-section h3 {
+        font-size: 1.2rem !important;
     }}
     
     /* Optimasi konten untuk layar kecil */
