@@ -651,17 +651,60 @@ body.dark-mode .projects-slider {
 
 /* Media queries untuk tampilan gambar yang lebih baik pada mobile */
 @media (max-width: 768px) {
-    .project-card img, .menu-image {
-        height: 200px !important;
-        object-fit: cover !important;
-        object-position: center !important;
+    /* Optimasi gambar untuk mobile */
+    img {
+        image-rendering: -webkit-optimize-contrast !important; /* Untuk Chrome */
+        image-rendering: crisp-edges !important; /* Standar */
     }
     
+    /* Perbaikan tampilan gambar */
+    .project-card img, .menu-image {
+        height: auto !important;
+        max-height: 240px !important;
+        min-height: 220px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        background-color: #f8f9fa !important;
+        padding: 6px !important;
+        border-radius: 12px 12px 0 0 !important;
+        margin: 0 auto !important;
+        display: block !important;
+        margin-bottom: 6px !important;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Transisi halus saat hover */
+    .project-card img:hover, .menu-image:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Override style untuk gambar inline */
+    [style*="height:150px"] {
+        height: auto !important;
+        min-height: 220px !important;
+    }
+    
+    /* Layout Card yang lebih baik */
     .project-card {
+        width: 90% !important;
         min-width: 280px;
         max-width: 320px;
-        margin: 0 8px;
-    }}
+        margin: 0 auto 20px !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
+        border-radius: 12px !important;
+        background-color: #fff !important;
+        padding-bottom: 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Optimasi untuk gambar khusus */
+    .project-card img[src*="beverages/"],
+    .project-card img[src*="food/"],
+    .project-card img[src*="bakery/"] {
+        object-position: center center !important;
+    }
+}
     
     /* Perbaiki spacing untuk mobile */
     .project-card h3,
