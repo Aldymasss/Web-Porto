@@ -1,6 +1,22 @@
 /* Styling khusus untuk slider pada perangkat mobile */
 
 @media (max-width: 768px) {
+    /* Optimasi tampilan gambar */
+    img {
+        image-rendering: -webkit-optimize-contrast !important; /* Untuk Chrome */
+        image-rendering: crisp-edges !important; /* Standar */
+    }
+    
+    .project-card img {
+        margin-bottom: 6px !important;
+    }
+    
+    .project-card img[src*="beverages/"],
+    .project-card img[src*="food/"],
+    .project-card img[src*="bakery/"] {
+        object-position: center center !important;
+    }
+    
     /* Memastikan slider terlihat dengan baik pada layar kecil */
     .projects-slider {
         width: 100%;

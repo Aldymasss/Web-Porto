@@ -1,0 +1,9 @@
+/* CSS tambahan untuk penyesuaian inline */
+
+/* Ganti ukuran inline height:150px menjadi lebih besar pada mobile */
+@media (max-width: 768px) {
+    [style*="height:150px"] {
+        height: auto !important;
+        min-height: 220px !important;
+    }
+}

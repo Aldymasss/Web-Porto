@@ -1,0 +1,208 @@
+/* Mobile Preview Style - Jangan dicommit, hanya untuk melihat tampilan */
+
+/* 1. Perbaikan Tampilan Gambar untuk Mobile */
+@media (max-width: 768px) {
+    .project-card img, .menu-image {
+        height: auto !important; /* Biarkan tinggi menyesuaikan rasio gambar */
+        max-height: 240px !important; /* Meningkatkan tinggi maksimum */
+        min-height: 220px !important; /* Tambahkan tinggi minimum */
+        object-fit: contain !important; /* Tampilkan gambar penuh */
+        object-position: center !important;
+        background-color: #f8f9fa !important; /* Background warna terang untuk gambar */
+        padding: 6px !important; /* Mengurangi padding untuk ruang lebih besar */
+        border-radius: 12px 12px 0 0 !important;
+        transition: transform 0.3s ease;
+        margin: 0 auto !important; /* Pastikan gambar terpusat */
+        display: block !important; /* Untuk memastikan margin auto bekerja */
+    }
+    
+    /* Transisi halus saat hover */
+    .project-card img:hover, .menu-image:hover {
+        transform: scale(1.02);
+    }
+
+    /* 2. Layout Card yang Lebih Baik untuk Mobile */
+    .project-card {
+        width: 90% !important;
+        margin: 0 auto 20px !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
+        border-radius: 12px !important;
+        background-color: #fff !important;
+        padding-bottom: 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Gambar container untuk kontrol lebih baik */
+    .project-card > img:first-child {
+        flex-shrink: 0 !important;
+        flex-grow: 0 !important;
+        width: 100% !important;
+    }
+    
+    .projects-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 12px !important;
+    }
+    
+    /* Tombol slider yang lebih besar untuk mobile */
+    .slider-btn {
+        width: 40px !important;
+        height: 40px !important;
+        background-color: rgba(255,255,255,0.9) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+    }
+
+    /* 3. Typography yang Lebih Baik untuk Mobile */
+    .project-card h3, 
+    .project-card h4 {
+        font-size: 1.1rem !important;
+        margin: 12px 12px 8px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .project-card p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin: 8px 12px !important;
+        color: #555 !important;
+    }
+    
+    .project-card .btn {
+        margin: 8px 12px !important;
+        display: inline-block !important;
+        padding: 6px 14px !important;
+        border-radius: 20px !important;
+        background-color: #5C694B !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* 4. Perbaikan Section Header untuk Mobile */
+    .projects-section h2 {
+        font-size: 1.6rem !important;
+        margin: 24px 0 16px !important;
+    }
+    
+    .projects-section h3 {
+        font-size: 1.3rem !important;
+        margin: 20px 0 12px !important;
+        padding-top: 16px !important;
+        border-top: 1px solid #eee !important;
+    }
+    
+    /* Space antara section pada mobile */
+    .projects-section {
+        padding: 20px 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 5. Kartu Rekomendasi yang Lebih Menarik */
+    .recommendation-card {
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    .recommendation-badge {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        background-color: rgba(92, 105, 75, 0.85) !important;
+        color: white !important;
+        padding: 4px 12px !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: bold !important;
+        z-index: 5 !important;
+    }
+
+    /* 6. Layout Navbar untuk Mobile */
+    .navbar-container {
+        padding: 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    
+    .navbar-logo {
+        height: 40px !important;
+    }
+    
+    /* Tombol burger yang lebih besar dan mudah di-tap */
+    .burger {
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 50% !important;
+        background-color: rgba(255,255,255,0.2) !important;
+    }
+
+    /* 9. Memperbaiki Spasi dan Grid pada Mobile */
+    .projects-grid {
+        gap: 16px !important;
+        padding: 10px 5px !important;
+        scroll-padding: 16px !important;
+    }
+    
+    /* Pastikan slider scroll dengan halus */
+    .projects-slider {
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: smooth !important;
+        padding: 5px 0 20px !important;
+    }
+}
+
+/* Breakpoint tambahan untuk layar yang lebih kecil */
+@media (max-width: 480px) {
+    .project-card img, .menu-image {
+        max-height: 220px !important;
+        min-height: 200px !important;
+    }
+
+    .project-card {
+        min-width: 260px !important;
+        max-width: 85% !important;
+    }
+
+    .projects-section h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .projects-section h3 {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .project-card img, .menu-image {
+        max-height: 200px !important;
+        min-height: 180px !important;
+    }
+
+    .project-card {
+        min-width: 240px !important;
+    }
+
+    .project-card p {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Media query untuk landscape mode */
+@media (max-width: 768px) and (orientation: landscape) {
+    .project-card img, .menu-image {
+        max-height: 180px !important;
+        min-height: 160px !important;
+    }
+
+    .projects-grid {
+        flex-wrap: nowrap !important;
+    }
+
+    .project-card {
+        min-width: 220px !important;
+    }
+}
