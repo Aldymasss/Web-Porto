@@ -12,8 +12,18 @@
 
 /* Memastikan judul tetap di tengah */
 .projects-section h2,
-h2.section-title {
+h2.section-title,
+.projects-section h2[style],
+.section-title[style],
+#our-recommendations,
+.menu-project h1,
+h1.menu-title,
+#menu-project-title {
     text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Memastikan deskripsi kategori menu tetap terlihat */
@@ -22,6 +32,28 @@ h2.section-title {
 h3 + p {
     display: block !important;
     margin-bottom: 1.5rem !important;
+}
+
+/* Perbaikan khusus untuk judul OUR RECOMMENDATIONS */
+.projects-section h3[style*="text-align:center"],
+.projects-section h3[style*="text-align: center"] {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Perbaikan untuk deskripsi di bawah judul */
+.projects-section p[style*="text-align:center"],
+.projects-section p[style*="text-align: center"],
+p[style*="text-align:center"],
+p[style*="text-align: center"] {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Reset tampilan setelah kembali dari pencarian */
