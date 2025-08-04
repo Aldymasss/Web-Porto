@@ -415,8 +415,8 @@ h3[style*="text-align:center;"] {
     letter-spacing: 1px !important;
     color: var(--primary-color) !important;
     text-align: center !important;
-    border-bottom: 2px solid var(--primary-color) !important;
-    border-top: 2px solid var(--primary-color) !important;
+    border-bottom: none !important;
+    border-top: none !important;
     width: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
@@ -424,7 +424,7 @@ h3[style*="text-align:center;"] {
 
 .menu-category h3::before,
 h3[style*="text-align:center;"]::before {
-    content: "●";
+    content: "";
     position: absolute;
     left: 10px;
     color: var(--primary-color);
@@ -432,7 +432,7 @@ h3[style*="text-align:center;"]::before {
 
 .menu-category h3::after,
 h3[style*="text-align:center;"]::after {
-    content: "●";
+    content: "";
     position: absolute;
     right: 10px;
     color: var(--primary-color);
