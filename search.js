@@ -11,12 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const allSliders = document.querySelectorAll('.projects-slider');
         let foundCount = 0;
         
-        // Save current states before hiding
-        const sectionStates = new Map();
-        allSections.forEach(section => {
-            sectionStates.set(section, {
-                display: section.style.display,
-                visible: section.offsetParent !== null
+        // Simpan style asli elemen untuk dipulihkan nanti
+        const originalStyles = new Map();
+        
+        // Simpan style untuk judul
+        document.querySelectorAll('.projects-section h2, .projects-section h3, h3[style*="text-align:center"], h2[style*="text-align:center"]').forEach(heading => {
+            originalStyles.set(heading, {
+                display: heading.style.display,
+                textAlign: heading.style.textAlign,
+                hasInlineStyle: heading.hasAttribute('style') && heading.getAttribute('style').includes('text-align')
+            });
+        });
+        
+        // Simpan style untuk deskripsi
+        document.querySelectorAll('.projects-section p, .menu-category p, p[style*="text-align:center"]').forEach(desc => {
+            originalStyles.set(desc, {
+                display: desc.style.display,
+                textAlign: desc.style.textAlign,
+                hasInlineStyle: desc.hasAttribute('style') && desc.getAttribute('style').includes('text-align')
             });
         });
         
@@ -102,12 +114,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show all headings and ensure correct alignment
         document.querySelectorAll('h2, h3').forEach(heading => {
             heading.style.display = '';
-            heading.style.textAlign = ''; // Reset alignment
+            // Jangan ubah textAlign jika ada inline style
+            if (!heading.hasAttribute('style') || !heading.getAttribute('style').includes('text-align')) {
+                heading.style.textAlign = ''; 
+            }
+        });
+        
+        // Tampilkan kembali judul dengan style khusus
+        document.querySelectorAll('h3[style*="text-align:center"], h2[style*="text-align:center"]').forEach(heading => {
+            heading.style.display = '';
+            heading.style.textAlign = 'center';
         });
         
         // Show all descriptions - be more thorough with selectors
-        document.querySelectorAll('.menu-category p, .projects-section p, h3 + p, .description').forEach(desc => {
+        document.querySelectorAll('.menu-category p, .projects-section p, h3 + p, .description, p[style*="text-align:center"]').forEach(desc => {
             desc.style.display = '';
+            // Jangan ubah textAlign jika ada inline style
+            if (desc.hasAttribute('style') && desc.getAttribute('style').includes('text-align:center')) {
+                desc.style.textAlign = 'center';
+            }
         });
         
         // Show all cards
@@ -148,6 +173,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const existingMsg = document.querySelector('.search-result-message');
         if (existingMsg) existingMsg.remove();
         if (keyword === '') return;
+        
+        // Memastikan judul dengan style inline tetap dipertahankan
+        document.querySelectorAll('h3[style*="text-align:center"], h2[style*="text-align:center"]').forEach(heading => {
+            if (heading.style.display !== 'none') {
+                heading.style.textAlign = 'center';
+            }
+        });
+        
+        // Memastikan deskripsi dengan style inline tetap dipertahankan
+        document.querySelectorAll('p[style*="text-align:center"]').forEach(desc => {
+            if (desc.style.display !== 'none') {
+                desc.style.textAlign = 'center';
+            }
+        });
         // Create new message
         const resultMsg = document.createElement('div');
         resultMsg.className = 'search-result-message';
