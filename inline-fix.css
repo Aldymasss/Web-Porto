@@ -7,3 +7,51 @@
         min-height: 220px !important;
     }
 }
+
+/* Perbaikan untuk tampilan setelah pencarian */
+
+/* Memastikan judul tetap di tengah */
+.projects-section h2,
+h2.section-title {
+    text-align: center !important;
+}
+
+/* Memastikan deskripsi kategori menu tetap terlihat */
+.menu-category p,
+.projects-section p.description,
+h3 + p {
+    display: block !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Reset tampilan setelah kembali dari pencarian */
+.project-card {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Gaya untuk hasil pencarian */
+.search-result-message {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(92,105,75,0.95);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-width: 90%;
+    animation: slideDown 0.3s ease;
+}
+
+.search-highlight {
+    background-color: rgba(255, 255, 0, 0.4);
+    padding: 0 2px;
+    border-radius: 3px;
+}

@@ -10,12 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const allSections = document.querySelectorAll('.projects-section');
         const allSliders = document.querySelectorAll('.projects-slider');
         let foundCount = 0;
+        
+        // Save current states before hiding
+        const sectionStates = new Map();
+        allSections.forEach(section => {
+            sectionStates.set(section, {
+                display: section.style.display,
+                visible: section.offsetParent !== null
+            });
+        });
+        
         // Hide all cards, sliders, headings, sections
         allCards.forEach(card => card.style.display = 'none');
         allSliders.forEach(slider => slider.style.display = 'none');
         allSections.forEach(section => section.style.display = 'none');
         document.querySelectorAll('.projects-section h3').forEach(h => h.style.display = 'none');
-        document.querySelectorAll('.projects-section h3 + p').forEach(p => p.style.display = 'none');
+        document.querySelectorAll('.projects-section h3 + p, .description, .menu-category p').forEach(p => p.style.display = 'none');
         // Remove highlight
         document.querySelectorAll('.search-highlight').forEach(el => { el.outerHTML = el.innerHTML; });
         // Show only matching cards and their containers
@@ -35,14 +45,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (slider) slider.style.display = '';
                 const section = card.closest('.projects-section');
                 if (section) section.style.display = '';
-                // Show heading before slider
+                // Show heading before slider and ensure correct styling
                 if (slider) {
                     let heading = slider.previousElementSibling;
                     while (heading && heading.tagName !== 'H3') heading = heading.previousElementSibling;
                     if (heading) {
                         heading.style.display = '';
-                        if (heading.nextElementSibling && (heading.nextElementSibling.tagName === 'P' || heading.nextElementSibling.classList.contains('description'))) {
-                            heading.nextElementSibling.style.display = '';
+                        heading.style.textAlign = ''; // Reset to default alignment
+                        
+                        // Show description paragraph if it exists
+                        if (heading.nextElementSibling) {
+                            const nextEl = heading.nextElementSibling;
+                            if (nextEl.tagName === 'P' || nextEl.classList.contains('description')) {
+                                nextEl.style.display = '';
+                            }
+                        }
+                        
+                        // Find all related descriptions
+                        const sectionParent = heading.closest('.projects-section');
+                        if (sectionParent) {
+                            const relatedDescs = sectionParent.querySelectorAll('p.description, .menu-category p');
+                            relatedDescs.forEach(desc => desc.style.display = '');
                         }
                     }
                 }
@@ -76,13 +99,14 @@ document.addEventListener('DOMContentLoaded', function() {
             section.style.display = '';
         });
         
-        // Show all headings
+        // Show all headings and ensure correct alignment
         document.querySelectorAll('h2, h3').forEach(heading => {
             heading.style.display = '';
+            heading.style.textAlign = ''; // Reset alignment
         });
         
-        // Show all descriptions
-        document.querySelectorAll('.menu-category p').forEach(desc => {
+        // Show all descriptions - be more thorough with selectors
+        document.querySelectorAll('.menu-category p, .projects-section p, h3 + p, .description').forEach(desc => {
             desc.style.display = '';
         });
         
@@ -144,6 +168,10 @@ document.addEventListener('DOMContentLoaded', function() {
         closeBtn.onclick = function() {
             resultMsg.style.opacity = '0';
             setTimeout(() => resultMsg.remove(), 500);
+            
+            // Reset search when closing results
+            resetSearch();
+            searchInput.value = '';
         };
         resultMsg.appendChild(closeBtn);
         // Place at top of viewport

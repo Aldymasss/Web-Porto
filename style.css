@@ -447,7 +447,7 @@ nav#navbar, nav.navibar {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #5C694B;
-    text-align: center;
+    text-align: center !important; /* Memastikan selalu tengah */
     margin-top: 3rem;
 }
 .menu-category h3 {
