@@ -415,8 +415,8 @@ h3[style*="text-align:center;"] {
     letter-spacing: 1px !important;
     color: var(--primary-color) !important;
     text-align: center !important;
-    border-bottom: none !important;
-    border-top: none !important;
+    border-bottom: none !important; /* Menghilangkan garis bawah */
+    border-top: none !important; /* Menghilangkan garis atas */
     width: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
