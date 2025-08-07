@@ -598,42 +598,22 @@ body.dark-mode .projects-slider {
 }
 .project-card img {
     width: 100%;
-    height: auto;
-    min-height: 220px;
-    max-height: 240px;
-    object-fit: contain;
+    height: 220px;
+    object-fit: cover;
     object-position: center;
     background-color: #f8f9fa;
     border-radius: 12px 12px 0 0;
     transition: transform 0.3s ease;
-    padding: 6px;
 }
 
 /* Styling khusus untuk gambar menu */
 .menu-image {
     width: 100% !important;
-    height: auto !important;
-    min-height: 220px !important;
-    max-height: 240px !important;
     border-radius: 12px 12px 0 0 !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
     object-position: center !important;
     background-color: #f8f9fa !important;
     transition: transform 0.3s ease !important;
-    padding: 6px !important;
-}
-
-/* Kelas untuk gambar menu standar */
-.menu-img-std {
-    width: 100%;
-    height: auto;
-    min-height: 220px;
-    max-height: 240px;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 12px 12px 0 0;
-    background-color: #f8f9fa;
-    padding: 6px;
 }
 
 /* Hover effect untuk gambar */
@@ -677,11 +657,20 @@ body.dark-mode .projects-slider {
         image-rendering: crisp-edges !important; /* Standar */
     }
     
-    /* Perbaikan tampilan gambar - menggunakan setelan yang sama seperti desktop */
+    /* Perbaikan tampilan gambar */
     .project-card img, .menu-image {
+        height: auto !important;
+        max-height: 240px !important;
+        min-height: 220px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        background-color: #f8f9fa !important;
+        padding: 6px !important;
+        border-radius: 12px 12px 0 0 !important;
         margin: 0 auto !important;
         display: block !important;
         margin-bottom: 6px !important;
+        transition: transform 0.3s ease;
     }
     
     /* Transisi halus saat hover */
@@ -719,15 +708,6 @@ body.dark-mode .projects-slider {
         object-position: center center !important;
     }
 }
-
-/* Override global untuk gambar inline di semua ukuran layar */
-img[style*="height:150px"] {
-    height: auto !important;
-    min-height: 220px !important;
-    max-height: 240px !important;
-    object-fit: contain !important;
-    padding: 6px !important;
-}
     
     /* Perbaiki spacing untuk mobile */
     .project-card h3,
@@ -747,6 +727,8 @@ img[style*="height:150px"] {
     .project-card img, .menu-image {
         max-height: 220px !important;
         min-height: 200px !important;
+        object-fit: contain !important;
+        object-position: center !important;
     }
     
     .project-card {
