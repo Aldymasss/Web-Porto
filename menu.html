@@ -43,6 +43,24 @@
             filter: contrast(1.08) saturate(1.15) brightness(1.03) !important;
         }
         
+        /* Special settings for Elder Brew - shows more of the original image (at least 3/4) */
+        .elder-brew-img {
+            object-position: center center !important; /* Center the image */
+            object-fit: contain !important; /* Show more of the image */
+            padding: 8px !important; /* Add some padding */
+            background-color: #f7f7f7 !important; /* Light background */
+            height: 180px !important; /* Make it slightly taller */
+        }
+        
+        /* Special settings for Biscoff Shake - shows more of the original image (at least 3/4) */
+        .biscoff-shake-img {
+            object-position: center center !important; /* Center the image */
+            object-fit: contain !important; /* Show more of the image */
+            padding: 8px !important; /* Add some padding */
+            background-color: #f7f7f7 !important; /* Light background */
+            height: 180px !important; /* Make it slightly taller */
+        }
+        
         /* Enhance shadows for better depth perception in AI images */
         .project-card img {
             box-shadow: inset 0 -8px 12px rgba(0,0,0,0.06);
@@ -185,7 +203,7 @@
                     <div class="project-card"><img src="img/beverages/MATCHA.jpeg" alt="Menu Preview" class="beverage-ai-img" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MATCHA</h4><p>Milkshake matcha yang khas dan lembut dari bubuk matcha premium Jepang. Disajikan dengan condiment azuki red bean topping, matcha powder dusting, dan vanilla cream swirl.</p><span class="btn">Rp 26.000</span></div>
                     <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MOKA</h4><p>Milkshake coklat dengan sentuhan kopi espresso untuk pengalaman caffeine yang menyegarkan. Disajikan dengan condiment coffee jelly, chocolate covered espresso beans, dan caramel drizzle.</p><span class="btn">Rp 26.000</span></div>
                     <div class="project-card"><img src="img/beverages/chocolate.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>ES COKLAT</h4><p>Milkshake coklat yang rich dan dingin dengan coklat Belgian premium. Disajikan dengan condiment chocolate fudge sauce, whipped cream, dan chocolate flakes.</p><span class="btn">Rp 20.000</span></div>
-                    <div class="project-card"><img src="img/beverages/biscoff sh.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BISCOFF</h4><p>Milkshake dengan biskuit Biscoff yang lezat dan caramel notes yang khas. Disajikan dengan condiment crushed Biscoff cookies, speculoos spread dollop, dan caramelized biscuit crumbs.</p><span class="btn">Rp 28.000</span></div>
+                    <div class="project-card"><img src="img/beverages/biscoff sh.png" alt="Menu Preview" class="biscoff-shake-img" style="width:100%;border-radius:12px 12px 0 0;"><h4>BISCOFF</h4><p>Milkshake dengan biskuit Biscoff yang lezat dan caramel notes yang khas. Disajikan dengan condiment crushed Biscoff cookies, speculoos spread dollop, dan caramelized biscuit crumbs.</p><span class="btn">Rp 28.000</span></div>
                 </div>
                 <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
             </div>            <h3 style="text-align:center;">MOCKTAIL</h3>
@@ -197,7 +215,7 @@
                     <div class="project-card"><img src="img/beverages/magic.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MAGIC RED</h4><p>Mocktail berwarna merah dengan rasa buah eksotis seperti cranberry dan raspberry. Disajikan dengan condiment candied hibiscus flower, star anise, dan orange peel.</p><span class="btn">Rp 23.000</span></div>
                     <div class="project-card"><img src="img/beverages/SODA GEMBIRA.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SODA GEMBIRA</h4><p>Mocktail klasik dengan soda, susu, dan sirup strawberry yang mengingatkan pada masa kecil. Disajikan dengan condiment fresh strawberry slice, sprinkles, dan maraschino cherry.</p><span class="btn">Rp 18.000</span></div>
                     <div class="project-card"><img src="img/beverages/berry.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BERRY FURRY</h4><p>Mocktail dengan campuran mixed berries segar dan foam yang lembut seperti bulu. Perpaduan rasa asam manis dengan tekstur creamy yang unik. Disajikan dengan condiment fresh berry medley, berry foam art, dan edible glitter.</p><span class="btn">Rp 25.000</span></div>
-                    <div class="project-card"><img src="img/beverages/elderbr.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>ELDER BREW</h4><p>Mocktail spesial dengan elderflower premium dan herbal brew yang kompleks. Aroma floral yang menenangkan dengan rasa yang sophisticated. Disajikan dengan condiment elderflower garnish, herbal ice cubes, dan lavender sprig.</p><span class="btn">Rp 28.000</span></div>
+                    <div class="project-card"><img src="img/beverages/elderbr.png" alt="Menu Preview" class="elder-brew-img" style="width:100%;border-radius:12px 12px 0 0;"><h4>ELDER BREW</h4><p>Mocktail spesial dengan elderflower premium dan herbal brew yang kompleks. Aroma floral yang menenangkan dengan rasa yang sophisticated. Disajikan dengan condiment elderflower garnish, herbal ice cubes, dan lavender sprig.</p><span class="btn">Rp 28.000</span></div>
                 </div>
                 <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
             </div>            <h3 style="text-align:center;">ICE CREAM</h3>
