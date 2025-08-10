@@ -31,6 +31,30 @@
             background: none !important;
             position: static !important;
         }
+        
+        /* Optimasi khusus untuk gambar AI */
+        .beverage-ai-img {
+            object-position: center 40% !important; /* Focus on the drink's top portion */
+            filter: contrast(1.08) saturate(1.15) brightness(1.03) !important;
+        }
+        
+        .food-ai-img {
+            object-position: center 35% !important; /* Focus more on the food's center */
+            filter: contrast(1.08) saturate(1.15) brightness(1.03) !important;
+        }
+        
+        /* Enhance shadows for better depth perception in AI images */
+        .project-card img {
+            box-shadow: inset 0 -8px 12px rgba(0,0,0,0.06);
+        }
+        
+        /* Enhance edges for better definition in AI images */
+        @media (min-width: 769px) {
+            .project-card img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
     </style>    <script src="search.js" defer></script>
     <script src="menu-scroll.js" defer></script>
     <script src="touch-scroll.js" defer></script>
@@ -102,14 +126,14 @@
                 </div>
                 <div class="project-card recommendation-card">
                     <div class="recommendation-badge">New Menu</div>
-                    <img src="img/food/chicken chacha.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <img src="img/food/chicken chacha.jpg" alt="Menu Preview" class="food-ai-img" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
                     <h3>Chicken Chacha</h3>
                     <p>Nasi putih dengan ayam bumbu chacha spesial yang gurih dan sedikit pedas, disajikan dengan telur mata sapi dan acar segar.</p>
                     <span class="btn">Rp 32.000</span>
                 </div>
                 <div class="project-card recommendation-card">
                     <div class="recommendation-badge">Fresh Pick</div>
-                    <img src="img/beverages/punchy.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <img src="img/beverages/punchy.jpg" alt="Menu Preview" class="beverage-ai-img" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
                     <h3>Punchy Peach</h3>
                     <p>Teh dingin dengan kombinasi buah persik segar dan rasa sedikit asam yang menyegarkan. Disajikan dengan potongan persik segar.</p>
                     <span class="btn">Rp 26.000</span>
@@ -137,7 +161,7 @@
                     <div class="project-card"><img src="img/beverages/APPLE TEA.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>APPLE TEA</h4><p>Teh hitam berkualitas dengan infused potongan apel segar dan sirup apel alami. Disajikan dingin dengan potongan apel dan kayu manis stick.</p><span class="btn">Rp 25.000</span></div>
                     <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>LEMON TEA</h4><p>Teh hitam dingin dengan perasan lemon segar dan honey. Minuman menyegarkan dengan keseimbangan antara rasa asam dan manis yang sempurna.</p><span class="btn">Rp 22.000</span></div>
                     <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>LYCHEE TEA</h4><p>Teh dingin dengan buah leci segar dan sirup leci premium. Disajikan dengan potongan buah leci dan daun mint untuk aroma yang menyegarkan.</p><span class="btn">Rp 25.000</span></div>
-                    <div class="project-card"><img src="img/beverages/punchy.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>PUNCHY PEACH</h4><p>Teh dingin dengan kombinasi buah persik segar dan rasa sedikit asam yang menyegarkan. Disajikan dengan potongan persik dan daun basil untuk aroma yang unik.</p><span class="btn">Rp 26.000</span></div>
+                    <div class="project-card"><img src="img/beverages/punchy.jpg" alt="Menu Preview" class="beverage-ai-img" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>PUNCHY PEACH</h4><p>Teh dingin dengan kombinasi buah persik segar dan rasa sedikit asam yang menyegarkan. Disajikan dengan potongan persik dan daun basil untuk aroma yang unik.</p><span class="btn">Rp 26.000</span></div>
                 </div>
                 <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
             </div>
@@ -148,7 +172,7 @@
                     <div class="project-card"><img src="img/beverages/soesoe.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>KOPI SOE SOE</h4><p>Kopi susu dingin dengan sentuhan lokal dari biji kopi Toraja pilihan dan susu segar. Disajikan dengan condiment vanilla bean syrup, coffee ice cubes, dan cinnamon dust.</p><span class="btn">Rp 20.000</span></div>
                     <div class="project-card"><img src="img/beverages/Kopi susu gula aren.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>KOPI SUSU GULA AREN</h4><p>Kopi susu dengan gula aren asli dari Sulawesi yang diolah tradisional. Disajikan dengan condiment palm sugar crumble, fresh milk foam, dan vanilla powder dusting.</p><span class="btn">Rp 20.000</span></div>
                     <div class="project-card"><img src="img/beverages/cafe.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>CAFFE LATTE</h4><p>Kopi susu dingin dengan rasa yang seimbang antara espresso premium dan susu segar. Disajikan dengan condiment caramel drizzle, chocolate shavings, dan cocoa powder dusting.</p><span class="btn">Rp 20.000</span></div>
-                    <div class="project-card"><img src="img/beverages/biscoff salted.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BISCOFF SALTED CARAMEL</h4><p>Kopi dengan caramel asin dan biskuit Biscoff yang lembut dan creamy. Disajikan dengan condiment crushed Biscoff cookies, salted caramel drizzle, dan whipped cream.</p><span class="btn">Rp 28.000</span></div>
+                    <div class="project-card"><img src="img/beverages/biscoff salted.png" alt="Menu Preview" class="beverage-ai-img" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BISCOFF SALTED CARAMEL</h4><p>Kopi dengan caramel asin dan biskuit Biscoff yang lembut dan creamy. Disajikan dengan condiment crushed Biscoff cookies, salted caramel drizzle, dan whipped cream.</p><span class="btn">Rp 28.000</span></div>
                 </div>
                 <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
             </div>
@@ -158,7 +182,7 @@
                     <div class="project-card"><img src="img/beverages/milo.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MILO</h4><p>Milkshake Milo dingin dengan powder milo, nostalgia dalam setiap tegukan. Disajikan dengan condiment whipped cream, chocolate sauce drizzle, dan malt crumbles.</p><span class="btn">Rp 22.000</span></div>
                     <div class="project-card"><img src="img/beverages/oreo.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>OREO</h4><p>Milkshake dengan biskuit Oreo yang lezat dan vanilla ice cream premium. Disajikan dengan condiment crushed Oreo cookies, chocolate drizzle, dan mini chocolate chips.</p><span class="btn">Rp 25.000</span></div>
                     <div class="project-card"><img src="img/beverages/TARO.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>TARO</h4><p>Milkshake taro yang creamy dengan rasa khas ubi ungu dan vanilla. Disajikan dengan condiment taro paste swirl, coconut whipped cream, dan purple yam crumble.</p><span class="btn">Rp 25.000</span></div>
-                    <div class="project-card"><img src="img/beverages/MATCHA.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MATCHA</h4><p>Milkshake matcha yang khas dan lembut dari bubuk matcha premium Jepang. Disajikan dengan condiment azuki red bean topping, matcha powder dusting, dan vanilla cream swirl.</p><span class="btn">Rp 26.000</span></div>
+                    <div class="project-card"><img src="img/beverages/MATCHA.jpeg" alt="Menu Preview" class="beverage-ai-img" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MATCHA</h4><p>Milkshake matcha yang khas dan lembut dari bubuk matcha premium Jepang. Disajikan dengan condiment azuki red bean topping, matcha powder dusting, dan vanilla cream swirl.</p><span class="btn">Rp 26.000</span></div>
                     <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>MOKA</h4><p>Milkshake coklat dengan sentuhan kopi espresso untuk pengalaman caffeine yang menyegarkan. Disajikan dengan condiment coffee jelly, chocolate covered espresso beans, dan caramel drizzle.</p><span class="btn">Rp 26.000</span></div>
                     <div class="project-card"><img src="img/beverages/chocolate.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>ES COKLAT</h4><p>Milkshake coklat yang rich dan dingin dengan coklat Belgian premium. Disajikan dengan condiment chocolate fudge sauce, whipped cream, dan chocolate flakes.</p><span class="btn">Rp 20.000</span></div>
                     <div class="project-card"><img src="img/beverages/biscoff sh.png" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BISCOFF</h4><p>Milkshake dengan biskuit Biscoff yang lezat dan caramel notes yang khas. Disajikan dengan condiment crushed Biscoff cookies, speculoos spread dollop, dan caramelized biscuit crumbs.</p><span class="btn">Rp 28.000</span></div>
@@ -255,7 +279,7 @@
                     <div class="project-card"><img src="img/food/Nasi kedewatan.jpeg" alt="Menu Preview" class="menu-image"><h4>NASI AYAM KEDEWATAN</h4><p>Nasi putih dengan ayam suwir bumbu betutu khas Bali, sambal matah kecombrang segar, sayuran lokal, kering tempe kacang, dan telur. Disajikan dengan condiment sambal bali, plecing kangkung, dan kacang goreng.</p><span class="btn">Rp 22.000</span></div>
                     <div class="project-card"><img src="img/food/Nasi ayam crispy.jpeg" alt="Menu Preview" class="menu-image"><h4>NASI AYAM KRISPI</h4><p>Nasi putih dengan ayam goreng tepung krispi, sambal matah segar, dan sayuran lokal. Disajikan dengan kerupuk udang dan condiment lalapan, jeruk limau, dan sambal bawang.</p><span class="btn">Rp 25.000</span></div>
                     <div class="project-card"><img src="img/food/salted egg.jpg" alt="Menu Preview" class="menu-image"><h4>NASI CHICKEN SALTED EGG</h4><p>Nasi putih dengan potongan ayam dibalut saus telur asin yang creamy dan gurih, telur mata sapi, dan kerupuk. Menu favorit pelanggan dengan condiment acar kuning, bawang goreng, dan wijen sangrai.</p><span class="btn">Rp 35.000</span></div>
-                    <div class="project-card"><img src="img/food/chicken chacha.jpg" alt="Menu Preview" class="menu-image"><h4>CHICKEN CHACHA</h4><p>Nasi putih dengan ayam bumbu chacha spesial yang gurih dan sedikit pedas, disajikan dengan telur mata sapi dan acar segar. Dilengkapi dengan sambal terasi dan kerupuk.</p><span class="btn">Rp 32.000</span></div>
+                    <div class="project-card"><img src="img/food/chicken chacha.jpg" alt="Menu Preview" class="menu-image food-ai-img"><h4>CHICKEN CHACHA</h4><p>Nasi putih dengan ayam bumbu chacha spesial yang gurih dan sedikit pedas, disajikan dengan telur mata sapi dan acar segar. Dilengkapi dengan sambal terasi dan kerupuk.</p><span class="btn">Rp 32.000</span></div>
                 </div>
                 <button class="slider-btn next" aria-label="Berikutnya"><i class="fa fa-chevron-right"></i></button>
             </div><h3 style="text-align:center;" id="pondasi-tanpa-nasi">PONDASI TANPA NASI</h3>

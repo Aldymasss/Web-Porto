@@ -600,10 +600,11 @@ body.dark-mode .projects-slider {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    object-position: center;
-    background-color: #f8f9fa;
+    object-position: center 30%; /* Adjusted to focus more on the center-top area where food/drink details are usually shown */
+    background-color: #f0f2f5; /* Slightly darker background to enhance AI image contrast */
     border-radius: 12px 12px 0 0;
     transition: transform 0.3s ease;
+    filter: contrast(1.05) saturate(1.1); /* Slight enhancement to make AI images more vibrant */
 }
 
 /* Styling khusus untuk gambar menu */
@@ -611,15 +612,19 @@ body.dark-mode .projects-slider {
     width: 100% !important;
     border-radius: 12px 12px 0 0 !important;
     object-fit: cover !important;
-    object-position: center !important;
-    background-color: #f8f9fa !important;
-    transition: transform 0.3s ease !important;
+    object-position: center 25% !important; /* Focus more on the top portion of food/beverages */
+    background-color: #f0f2f5 !important; /* Slightly darker background */
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+    filter: contrast(1.05) saturate(1.1) brightness(1.02) !important; /* Enhance AI images */
+    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05) !important; /* Subtle inner shadow at bottom */
 }
 
 /* Hover effect untuk gambar */
 .project-card:hover img,
 .project-card:hover .menu-image {
     transform: scale(1.05);
+    filter: contrast(1.08) saturate(1.15) brightness(1.03) !important; /* Enhanced effect for AI images */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Add depth on hover */
 }
 .project-card h3 {
     margin: 16px 16px 8px 16px;
@@ -662,20 +667,32 @@ body.dark-mode .projects-slider {
         height: auto !important;
         max-height: 240px !important;
         min-height: 220px !important;
-        object-fit: contain !important;
-        object-position: center !important;
-        background-color: #f8f9fa !important;
-        padding: 6px !important;
+        object-fit: cover !important; /* Changed to cover for AI images to look better */
+        object-position: center 30% !important; /* Focus more on top portion of food/beverages */
+        background-color: #f0f2f5 !important; /* Slightly darker background */
+        padding: 4px !important; /* Reduced padding for more image space */
         border-radius: 12px 12px 0 0 !important;
         margin: 0 auto !important;
         display: block !important;
         margin-bottom: 6px !important;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: contrast(1.05) saturate(1.1) brightness(1.02) !important; /* Enhance AI images */
     }
     
     /* Transisi halus saat hover */
     .project-card img:hover, .menu-image:hover {
         transform: scale(1.02);
+    }
+    
+    /* Khusus untuk gambar AI yang memerlukan penyesuaian lebih */
+    .ai-image {
+        filter: contrast(1.08) saturate(1.15) brightness(1.03) !important;
+        object-position: center 25% !important; /* Focus on top portion where food/drink details are */
+        transition: all 0.3s ease !important;
+    }
+    
+    .ai-image:hover {
+        filter: contrast(1.12) saturate(1.2) brightness(1.05) !important;
     }
     
     /* Override style untuk gambar inline */
