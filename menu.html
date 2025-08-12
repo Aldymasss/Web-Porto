@@ -1,8 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Menu Project - Paperplane Project</title>    
+<html lang="id">
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Menu Paperplane Project Cafe - Nikmati Makanan & Minuman Terbaik Kami</title>    
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Temukan beragam menu makanan dan minuman lezat di Paperplane Project Cafe. Mulai dari brioche toast, bakery, ice cream, kopi spesial, dan menu makanan kami yang unik.">
+    <meta name="keywords" content="Paperplane Cafe, cafe Jakarta, menu kopi, makanan cafe, brioche toast, bakery, menu minuman">
+    <meta name="author" content="Paperplane Project Cafe">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Menu Paperplane Project Cafe">
+    <meta property="og:description" content="Temukan beragam menu makanan dan minuman lezat di Paperplane Project Cafe.">
+    <meta property="og:image" content="img/jumbotron.png">
+    <meta property="og:url" content="https://paperplanecafe.com/menu.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Menu Paperplane Project Cafe">
+    <meta name="twitter:description" content="Temukan beragam menu makanan dan minuman lezat di Paperplane Project Cafe.">
+    <meta name="twitter:image" content="img/jumbotron.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo-pp.png" type="image/png">
+    
     <!-- Preload key resources for better performance -->
-    <link rel="preload" href="img/food.jpg" as="image">    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="img/food.jpg" as="image">
+    <link rel="preload" href="fonts/font-awesome.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="menu-spacing.css">
     <link rel="stylesheet" href="rtl-scroll.css">
     <link rel="stylesheet" href="page-transition.css">
@@ -11,6 +41,7 @@
     <link rel="stylesheet" href="mobile-preview.css">
     <link rel="stylesheet" href="mobile-sliders.css">
     <link rel="stylesheet" href="inline-fix.css">
+    <link rel="stylesheet" href="mobile-optimize.css">
     <!-- Tambahan style untuk menghilangkan titik pada judul secara paksa -->
     <style>
         /* Menghilangkan semua titik/bullet di samping judul */
@@ -110,21 +141,21 @@
             <div class="projects-grid slide-active" id="recommendations-container">
                 <div class="project-card recommendation-card">
                     <div class="recommendation-badge">Staff Pick</div>
-                    <img src="img/food/Chicken creamy mushroom.jpeg" alt="Menu Preview" loading="lazy" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23eee'/%3E%3C/svg%3E" data-src="img/food/Chicken creamy mushroom.jpeg" alt="Menu Preview - Chicken Creamy Mushroom" class="lazy-image" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
                     <h3>Chicken Creamy Mushroom</h3>
                     <p>Ayam panggang juicy dengan saus jamur.</p>
                     <span class="btn">35 K</span>
                 </div>
                 <div class="project-card recommendation-card">
                     <div class="recommendation-badge">Best Seller</div>
-                    <img src="img/food/Nasi ayam crispy.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23eee'/%3E%3C/svg%3E" data-src="img/food/Nasi ayam crispy.jpeg" alt="Menu Preview - Nasi Ayam Crispy" class="lazy-image" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
                     <h3>Nasi Ayam Krispi</h3>
                     <p>Nasi daun jeruk, ayam goreng krispy, rumput tetangga, sambal matah.</p>
                     <span class="btn">23 K</span>
                 </div>
                 <div class="project-card recommendation-card">
                     <div class="recommendation-badge">Best Seller</div>
-                    <img src="img/beverages/Agave cute cumber.jpeg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23eee'/%3E%3C/svg%3E" data-src="img/beverages/Agave cute cumber.jpeg" alt="Menu Preview - Agave Cute Cumber" class="lazy-image" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;">
                     <h3>Agave Cute Cucumber</h3>
                     <p>Mocktail segar dengan agave dan mentimun.</p>
                     <span class="btn">26 K</span>
@@ -173,7 +204,7 @@
         <div class="menu-category">
             <h3 style="text-align:center;">HOT</h3>
             <div class="projects-slider" id="slider-beverages-hot">
-                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">                    <div class="project-card"><img src="img/beverages/hot.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4 style="margin-bottom: 8px;">ESPRESSO</h4><p>Ekstrak kopi murni single origin, crema keemasan</p><span class="btn">20 K</span></div>
+                <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">                    <div class="project-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23eee'/%3E%3C/svg%3E" data-src="img/beverages/hot.jpg" alt="Menu Preview - Espresso" class="lazy-image" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4 style="margin-bottom: 8px;">ESPRESSO</h4><p>Ekstrak kopi murni single origin, crema keemasan</p><span class="btn">20 K</span></div>
                     <div class="project-card"><img src="img/beverages/hot.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>AMERICANO</h4><p>Espresso dengan air panas, body ringan kaya flavor</p><span class="btn">20 K</span></div>
                     <div class="project-card"><img src="img/beverages/hot.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>CAPPUCCINO</h4><p>Espresso dengan steam milk dan foam lembut 1:1:1</p><span class="btn">25 K</span></div>                    <div class="project-card"><img src="img/beverages/hot.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>TEA</h4><p>Teh premium pilihan whole leaf, disajikan dengan gula terpisah</p><span class="btn">18 K</span></div>
                     <div class="project-card"><img src="img/beverages/hot.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SOE SOE COKLAT</h4><p>Coklat panas premium Belgian 70% dengan susu segar</p><span class="btn">22 K</span></div>
@@ -278,7 +309,7 @@
             <div class="projects-slider" id="slider-food-bakery">
                 <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">                    <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BRIOCHE TOAST WHOLE</h4><p>Brioche toast utuh dengan tekstur lembut.</p><span class="btn">30 K</span></div>
                     <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>SOUR DOUGH WHOLE</h4><p>Roti sourdough utuh dengan tekstur renyah.</p><span class="btn">50 K</span></div>
-                    <div class="project-card"><img src="img/bakery/cinamon.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>CINNAMON ROLL VANILLA</h4><p>Roti gulung dengan kayu manis dan cream cheese frosting.</p><span class="btn">15 K</span></div><div class="project-card"><img src="img/food.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BREAD+</h4><p>Roti spesial dengan topping tambahan pilihan.</p><span class="btn">15 K</span></div>
+                    <div class="project-card"><img src="img/bakery/cinamon.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>CINNAMON ROLL VANILLA</h4><p>Roti gulung dengan kayu manis dan cream cheese frosting.</p><span class="btn">15 K</span></div><div class="project-card">
                     <div class="project-card"><img src="img/bakery/cheese bun.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>CHEESE BUN</h4><p>Roti dengan isian keju mozzarella dan cheddar.</p><span class="btn">15 K</span></div>
                     <div class="project-card"><img src="img/bakery/roti pisang klasik.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>PISANG KLASIK</h4><p>Roti dengan isian pisang raja yang manis.</p><span class="btn">18 K</span></div><div class="project-card"><img src="img/bakery/bratwurst horn .jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>BRATWURST HORN</h4><p>Roti berbentuk tanduk dengan isian sosis bratwurst.</p><span class="btn">15 K</span></div>
                     <div class="project-card"><img src="img/bakery/plain.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>PLAIN CROISSANT</h4><p>Croissant klasik Prancis yang renyah di luar.</p><span class="btn">15 K</span></div><div class="project-card"><img src="img/bakery/kouigh amann.jpg" alt="Menu Preview" style="width:100%;border-radius:12px 12px 0 0;height:150px;object-fit:cover;"><h4>KOUIGN AMANN</h4><p>Pastry tradisional dari Brittany, Prancis.</p><span class="btn">18 K</span></div>
@@ -291,7 +322,7 @@
             <div class="projects-slider" id="slider-food-gakbikin">
                 <button class="slider-btn prev" aria-label="Sebelumnya"><i class="fa fa-chevron-left"></i></button>                <div class="projects-grid">                    <div class="project-card"><img src="img/food/MENDOAN.jpeg" alt="Menu Preview" class="menu-image"><h4>MENDOAN</h4><p>Tempe pilihan dibalut dengan tepung berbumbu.</p><span class="btn">12 K</span></div>
                     <div class="project-card"><img src="img/food/TAHU BAXO.jpeg" alt="Menu Preview" class="menu-image"><h4>TAHU BAKSO</h4><p>Tahu bakso dengan isian daging sapi.</p><span class="btn">18 K</span></div>
-                    <div class="project-card"><img src="img/food/PENTOL.jpeg" alt="Menu Preview" class="menu-image"><h4>PENTOL PAPERPLANE</h4><p>Pentol daging sapi premium dengan tahu bakso.</p><span class="btn">20 K</span></div><div class="project-card"><img src="img/food.jpg" alt="Menu Preview" class="menu-image"><h4>PENTOL AJA</h4><p>Pentol daging sapi premium.</p><span class="btn">20 K</span></div>
+                    <div class="project-card"><img src="img/food/PENTOL.jpeg" alt="Menu Preview" class="menu-image"><h4>PENTOL PAPERPLANE</h4><p>Pentol daging sapi premium dengan tahu bakso.</p><span class="btn">20 K</span></div><div class="project-card"><img src="img/food/PENTOL.jpeg" alt="Menu Preview" class="menu-image"><h4>PENTOL AJA</h4><p>Pentol daging sapi premium.</p><span class="btn">20 K</span></div>
                     <div class="project-card"><img src="img/food/Pisang goreng pak cik.jpeg" alt="Menu Preview" class="menu-image"><h4>PISANG GORENG PAK CIK</h4><p>Pisang raja pilihan yang digoreng dengan tepung spesial.</p><span class="btn">20 K</span></div>
                     <div class="project-card"><img src="img/food/french-fries-min-1024x1024.jpg" alt="Menu Preview" class="menu-image"><h4>FRENCH FRIES</h4><p>Kentang impor dipotong tebal dan digoreng garing.</p><span class="btn">20 K</span></div><div class="project-card"><img src="img/food/SIOMAY.jpeg" alt="Menu Preview" class="menu-image"><h4>SIOMAY PAPERPLANE</h4><p>Siomay ayam premium dengan campuran udang.</p><span class="btn">28 K</span></div>
                     <div class="project-card"><img src="img/food.jpg" alt="Menu Preview" class="menu-image"><h4>P4 PLATTER</h4><p>Platter favorit dengan kombinasi sosis, french fries, bakso goreng.</p><span class="btn">40 K</span></div>
@@ -523,5 +554,60 @@ document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
     
     <!-- Additional responsive JS for menu card spacing -->
     <script src="menu-responsive.js"></script>
+    <!-- Lazy loading implementation -->
+    <script src="lazy-loading.js" defer></script>
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Paperplane Project Cafe",
+      "image": "img/jumbotron.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jakarta",
+        "addressCountry": "ID"
+      },
+      "servesCuisine": ["Cafe", "Indonesian", "Bakery"],
+      "priceRange": "$$",
+      "menu": {
+        "@type": "Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Menu Bakery",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Plain Croissant",
+                "description": "Croissant mentega klasik, crispy dan buttery",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "24000",
+                  "priceCurrency": "IDR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Menu Beverages",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Espresso",
+                "description": "Ekstrak kopi murni single origin, crema keemasan",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "20000",
+                  "priceCurrency": "IDR"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
 </body>
 </html>

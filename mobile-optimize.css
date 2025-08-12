@@ -1,0 +1,148 @@
+/* Mobile Optimization CSS for Paperplane Project Cafe */
+
+/* Dasar optimasi mobile */
+@media (max-width: 768px) {
+  /* Pengaturan ukuran teks yang lebih baik untuk mobile */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  /* Kontainer dan spasi */
+  .container {
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .projects-section {
+    padding: 20px 0;
+  }
+
+  .menu-category {
+    padding: 10px;
+  }
+
+  .project-card {
+    margin-bottom: 15px;
+  }
+
+  /* Penyesuaian ukuran menu card */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Optimize buttons */
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  /* Touch optimized navigation */
+  .nav-list {
+    padding: 10px 0;
+  }
+  
+  .nav-list li a {
+    padding: 12px 15px;
+    display: block;
+  }
+  
+  /* Memperbesar area sentuh untuk tombol slider */
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Menu images size optimization */
+  .project-card img {
+    height: 120px; /* Smaller image height */
+  }
+}
+
+/* Optimasi untuk layar yang sangat kecil (ponsel) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .project-card p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  /* Margin yang lebih kecil */
+  .projects-section {
+    padding: 15px 0;
+  }
+  
+  .recommendation-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+/* Optimasi performa untuk animasi */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print optimization */
+@media print {
+  .slider-btn,
+  .nav-list,
+  .burger,
+  header {
+    display: none !important;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    break-inside: avoid;
+  }
+  
+  .project-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
